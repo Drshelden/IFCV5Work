@@ -1,0 +1,69 @@
+name: New RFC Proposal
+description: Propose an architectural decision not covered by the current 38 RFCs
+title: "[New RFC] "
+labels: ["new-rfc-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to propose a new RFC. Review the [RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md) first to confirm the topic isn't already covered.
+
+        A maintainer will review this proposal, assign an RFC ID if accepted, and add it to the Decision Register.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What decision is missing?
+      description: Describe the architectural question that isn't addressed by any existing RFC. What is broken, ambiguous, or blocked without resolving this?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Known alternatives
+      description: List at least two possible approaches, including how IFC4.x handles this today (if applicable).
+      placeholder: |
+        Option A: ...
+        Option B: ...
+        IFC4.x convention: ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Suggested tier
+      description: Where does this decision fit in the dependency order?
+      options:
+        - "Tier 1 — Foundational (everything depends on this)"
+        - "Tier 2 — Core Architecture (depends on Tier 1)"
+        - "Tier 3 — Domain Modeling (depends on Tier 2)"
+        - "Tier 4 — Process & Governance (cross-cutting)"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prototype
+    attributes:
+      label: Does this decision require a prototype to resolve?
+      options:
+        - "Yes — a prototype is needed before consensus is possible"
+        - "No — can be resolved through discussion and analysis"
+        - "Possibly — depends on which alternative is being evaluated"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Which existing RFCs must be resolved before this one can be decided? Which RFCs does this decision unlock or constrain?
+      placeholder: "Depends on: IFC5-003, IFC5-007. Unlocks: ..."
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Links to relevant GitHub issues, IFC4.x schema sections, papers, or prior art.

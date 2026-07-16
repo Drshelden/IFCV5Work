@@ -1,0 +1,45 @@
+title: "[General] "
+labels: ["general-approach"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for feedback on the overall RFC process and initiative structure — not on a specific RFC.
+
+        For RFC-specific feedback, use the **RFC Feedback** template instead.
+        For prioritization input, use the **RFC Priority Poll** template.
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: What aspect of the approach does this relate to?
+      options:
+        - "RFC process and lifecycle"
+        - "Folder and document structure"
+        - "How decisions are recorded"
+        - "How feedback is collected and classified"
+        - "Prototype requirements"
+        - "Relationship between this repo and other IFC5 work"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Feedback
+      description: What's working, what isn't, or what's missing from the overall approach?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested change
+      description: Optional. What would you do differently?
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context or prior art
+      description: Optional. Links to relevant examples from other standards processes, working groups, or initiatives.
