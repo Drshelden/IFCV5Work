@@ -6,93 +6,49 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Fill in each field below.** Update the title to include the RFC ID and a short description of your comment (e.g. `[RFC Feedback] IFC5-007 — Alternative graph model`).
+        **Instructions:**
+        1. Update the title — replace `IFC5-XXX` with the RFC ID and add a short description (e.g. `[RFC Feedback] IFC5-007 — Alternative graph model`)
+        2. Fill in the fields below
+        3. After posting, apply the matching RFC label (e.g. `IFC5-007`) using the **Labels** gear in the sidebar
 
-        After posting, apply the matching **RFC label** (e.g. `IFC5-007`) using the Labels gear in the sidebar so this discussion is findable.
+        ---
 
-  - type: dropdown
-    id: rfc-id
-    attributes:
-      label: Which RFC does this feedback relate to?
-      description: Select the RFC ID. Also apply the matching label in the sidebar.
-      options:
-        - "IFC5-001 — Strategic Architecture Mode"
-        - "IFC5-002 — Normative Information Model Formalism"
-        - "IFC5-003 — Identity Model"
-        - "IFC5-004 — Path Model and Addressing"
-        - "IFC5-005 — Namespace and Qualified Names"
-        - "IFC5-006 — Serialization and Encoding"
-        - "IFC5-007 — Scene Graph vs. ECS vs. Hybrid Architecture"
-        - "IFC5-008 — Relationship Modeling Strategy"
-        - "IFC5-009 — Class and Type Representation"
-        - "IFC5-010 — Composition, Inheritance, and Instancing"
-        - "IFC5-011 — Document-Level Structure"
-        - "IFC5-012 — Modular Schema Imports"
-        - "IFC5-013 — Property Sets and Properties"
-        - "IFC5-014 — Geometry Architecture"
-        - "IFC5-015 — OpenUSD Alignment"
-        - "IFC5-016 — Spatial Structure and Decomposition"
-        - "IFC5-017 — Material Modeling"
-        - "IFC5-018 — Backward Compatibility and Round-Tripping"
-        - "IFC5-019 — Validation Framework"
-        - "IFC5-020 — Model Views and Exchange Requirements"
-        - "IFC5-021 — Federation and External References"
-        - "IFC5-022 — Versioning and Schema Evolution"
-        - "IFC5-023 — Attribute Representation"
-        - "IFC5-024 — Type System, Primitives, Enumerations, SELECTs"
-        - "IFC5-025 — Collections and Cardinality"
-        - "IFC5-026 — Openings, Voids, and Fillings"
-        - "IFC5-027 — Classification and External Dictionaries"
-        - "IFC5-028 — Units and Measures"
-        - "IFC5-029 — Presentation and Appearance"
-        - "IFC5-030 — Space Boundaries and Topology"
-        - "IFC5-031 — Metadata and Custom Data"
-        - "IFC5-032 — Extensibility"
-        - "IFC5-033 — Change, Transactions, and Collaboration"
-        - "IFC5-034 — Performance, Scale, and Database Implications"
-        - "IFC5-035 — Web and Linked-Data Alignment"
-        - "IFC5-036 — AI and Machine-Readability"
-        - "IFC5-037 — Security and Trust"
-        - "IFC5-038 — Governance, Conformance, and Interoperability Testing"
-    validations:
-      required: true
+        ### RFC
 
-  - type: dropdown
-    id: comment-type
-    attributes:
-      label: Comment type
-      description: Classify your comment so the RFC author can triage it efficiently.
-      options:
-        - "Editorial — grammar or clarity, no technical impact"
-        - "Technical Defect — error of fact or logic"
-        - "Semantic Concern — proposal may not mean what the author intends"
-        - "Compatibility Concern — conflicts with IFC4.x or existing tooling"
-        - "Alternative Proposal — a different approach not in the RFC"
-        - "Evidence — data, examples, or prototypes relevant to the decision"
-        - "Blocking Objection — RFC cannot advance as written"
-        - "General Support — I support the recommendation"
-    validations:
-      required: true
+        <!-- Which RFC does this feedback relate to? -->
+        **RFC ID:** IFC5-XXX — *(title)*
 
-  - type: textarea
-    id: feedback
-    attributes:
-      label: Feedback
-      description: Your comment. Be as specific as possible — reference section numbers or quote RFC text where relevant.
-      placeholder: "My feedback on this RFC is..."
-    validations:
-      required: true
+        ---
 
-  - type: textarea
-    id: evidence
-    attributes:
-      label: Supporting evidence or examples
-      description: Optional. Include links, code, schema examples, or prior art that supports your comment.
-      placeholder: "Links, examples, or references..."
+        ### Comment type
 
-  - type: textarea
-    id: open-questions
-    attributes:
-      label: Questions for the working group
-      description: Optional. Number any questions you want the group to address (Q1, Q2, etc.).
-      placeholder: "Q1. ..."
+        <!-- Mark one with an X -->
+        - [ ] **Editorial** — grammar or clarity, no technical impact
+        - [ ] **Technical Defect** — error of fact or logic
+        - [ ] **Semantic Concern** — proposal may not mean what the author intends
+        - [ ] **Compatibility Concern** — conflicts with IFC4.x or existing tooling
+        - [ ] **Alternative Proposal** — a different approach not in the RFC
+        - [ ] **Evidence** — data, examples, or prototypes relevant to the decision
+        - [ ] **Blocking Objection** — RFC cannot advance as written
+        - [ ] **General Support** — I support the recommendation
+
+        ---
+
+        ### Feedback
+
+        <!-- Be specific — reference section numbers or quote RFC text where relevant -->
+
+
+        ---
+
+        ### Supporting evidence or examples
+
+        <!-- Optional: links, code, schema examples, prior art -->
+
+
+        ---
+
+        ### Questions for the working group
+
+        <!-- Optional: number each question Q1, Q2, ... -->
+

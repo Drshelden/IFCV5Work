@@ -6,112 +6,86 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template to share your prioritization input on the RFC list.
+        Share your prioritization input on the RFC list. Review the [RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md) first.
+        You don't need to address every RFC — focus on the ones you have a strong view on.
 
-        Review the [RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md) before filling this in.
-        You do not need to address every RFC — focus on the ones you have a strong view on.
+        **Add your name to the title** before posting.
 
-  - type: markdown
-    attributes:
-      value: "### Tier 1 — Foundational"
+        ---
 
-  - type: checkboxes
-    id: tier1-focus
-    attributes:
-      label: Focus now (Tier 1)
-      options:
-        - label: "IFC5-001 — Strategic Architecture Mode"
-        - label: "IFC5-002 — Normative Information Model Formalism"
-        - label: "IFC5-003 — Identity Model"
-        - label: "IFC5-004 — Path Model and Addressing"
-        - label: "IFC5-005 — Namespace and Qualified Names"
-        - label: "IFC5-006 — Serialization and Encoding"
+        ### Focus now — which RFCs should we tackle first?
 
-  - type: markdown
-    attributes:
-      value: "### Tier 2 — Core Architecture"
+        <!-- Mark each with [x] that you want prioritized -->
 
-  - type: checkboxes
-    id: tier2-focus
-    attributes:
-      label: Focus now (Tier 2)
-      options:
-        - label: "IFC5-007 — Scene Graph vs. ECS vs. Hybrid Architecture"
-        - label: "IFC5-008 — Relationship Modeling Strategy"
-        - label: "IFC5-009 — Class and Type Representation"
-        - label: "IFC5-010 — Composition, Inheritance, and Instancing"
-        - label: "IFC5-011 — Document-Level Structure"
-        - label: "IFC5-012 — Modular Schema Imports"
-        - label: "IFC5-023 — Attribute Representation"
-        - label: "IFC5-024 — Type System, Primitives, Enumerations, SELECTs"
-        - label: "IFC5-025 — Collections and Cardinality"
+        **Tier 1 — Foundational**
+        - [ ] IFC5-001 — Strategic Architecture Mode
+        - [ ] IFC5-002 — Normative Information Model Formalism
+        - [ ] IFC5-003 — Identity Model
+        - [ ] IFC5-004 — Path Model and Addressing
+        - [ ] IFC5-005 — Namespace and Qualified Names
+        - [ ] IFC5-006 — Serialization and Encoding
 
-  - type: markdown
-    attributes:
-      value: "### Tier 3 — Domain Modeling"
+        **Tier 2 — Core Architecture**
+        - [ ] IFC5-007 — Scene Graph vs. ECS vs. Hybrid Architecture
+        - [ ] IFC5-008 — Relationship Modeling Strategy
+        - [ ] IFC5-009 — Class and Type Representation
+        - [ ] IFC5-010 — Composition, Inheritance, and Instancing
+        - [ ] IFC5-011 — Document-Level Structure
+        - [ ] IFC5-012 — Modular Schema Imports
+        - [ ] IFC5-023 — Attribute Representation
+        - [ ] IFC5-024 — Type System, Primitives, Enumerations, SELECTs
+        - [ ] IFC5-025 — Collections and Cardinality
 
-  - type: checkboxes
-    id: tier3-focus
-    attributes:
-      label: Focus now (Tier 3)
-      options:
-        - label: "IFC5-013 — Property Sets and Properties"
-        - label: "IFC5-014 — Geometry Architecture"
-        - label: "IFC5-015 — OpenUSD Alignment"
-        - label: "IFC5-016 — Spatial Structure and Decomposition"
-        - label: "IFC5-017 — Material Modeling"
-        - label: "IFC5-026 — Openings, Voids, and Fillings"
-        - label: "IFC5-027 — Classification and External Dictionaries"
-        - label: "IFC5-028 — Units and Measures"
-        - label: "IFC5-029 — Presentation and Appearance"
-        - label: "IFC5-030 — Space Boundaries and Topology"
-        - label: "IFC5-031 — Metadata and Custom Data"
+        **Tier 3 — Domain Modeling**
+        - [ ] IFC5-013 — Property Sets and Properties
+        - [ ] IFC5-014 — Geometry Architecture
+        - [ ] IFC5-015 — OpenUSD Alignment
+        - [ ] IFC5-016 — Spatial Structure and Decomposition
+        - [ ] IFC5-017 — Material Modeling
+        - [ ] IFC5-026 — Openings, Voids, and Fillings
+        - [ ] IFC5-027 — Classification and External Dictionaries
+        - [ ] IFC5-028 — Units and Measures
+        - [ ] IFC5-029 — Presentation and Appearance
+        - [ ] IFC5-030 — Space Boundaries and Topology
+        - [ ] IFC5-031 — Metadata and Custom Data
 
-  - type: markdown
-    attributes:
-      value: "### Tier 4 — Process & Governance"
+        **Tier 4 — Process & Governance**
+        - [ ] IFC5-018 — Backward Compatibility and Round-Tripping
+        - [ ] IFC5-019 — Validation Framework
+        - [ ] IFC5-020 — Model Views and Exchange Requirements
+        - [ ] IFC5-021 — Federation and External References
+        - [ ] IFC5-022 — Versioning and Schema Evolution
+        - [ ] IFC5-032 — Extensibility
+        - [ ] IFC5-033 — Change, Transactions, and Collaboration
+        - [ ] IFC5-034 — Performance, Scale, and Database Implications
+        - [ ] IFC5-035 — Web and Linked-Data Alignment
+        - [ ] IFC5-036 — AI and Machine-Readability
+        - [ ] IFC5-037 — Security and Trust
+        - [ ] IFC5-038 — Governance, Conformance, and Interoperability Testing
 
-  - type: checkboxes
-    id: tier4-focus
-    attributes:
-      label: Focus now (Tier 4)
-      options:
-        - label: "IFC5-018 — Backward Compatibility and Round-Tripping"
-        - label: "IFC5-019 — Validation Framework"
-        - label: "IFC5-020 — Model Views and Exchange Requirements"
-        - label: "IFC5-021 — Federation and External References"
-        - label: "IFC5-022 — Versioning and Schema Evolution"
-        - label: "IFC5-032 — Extensibility"
-        - label: "IFC5-033 — Change, Transactions, and Collaboration"
-        - label: "IFC5-034 — Performance, Scale, and Database Implications"
-        - label: "IFC5-035 — Web and Linked-Data Alignment"
-        - label: "IFC5-036 — AI and Machine-Readability"
-        - label: "IFC5-037 — Security and Trust"
-        - label: "IFC5-038 — Governance, Conformance, and Interoperability Testing"
+        ---
 
-  - type: textarea
-    id: defer
-    attributes:
-      label: RFCs to defer (too detailed or premature for now)
-      description: List any RFC IDs you think should wait. Briefly explain why.
-      placeholder: "e.g. IFC5-036 — too early to address AI readability before core model is settled"
+        ### RFCs to defer
 
-  - type: textarea
-    id: drop-merge
-    attributes:
-      label: RFCs to drop or merge
-      description: List any RFC IDs you think are out of scope or should be absorbed into another RFC.
-      placeholder: "e.g. IFC5-031 should be merged into IFC5-013"
+        <!-- Too detailed or premature for now? List RFC IDs and briefly explain why -->
 
-  - type: textarea
-    id: missing
-    attributes:
-      label: Missing RFCs
-      description: Are there important architectural decisions not covered by the current 38 RFCs?
-      placeholder: "e.g. We need an RFC on versioning of individual entities, not just schemas"
 
-  - type: textarea
-    id: general
-    attributes:
-      label: Any other comments
-      placeholder: "General thoughts on the RFC list or the initiative..."
+        ---
+
+        ### RFCs to drop or merge
+
+        <!-- Out of scope, or should be absorbed into another RFC? -->
+
+
+        ---
+
+        ### Missing RFCs
+
+        <!-- Important decisions not covered by the current 38? -->
+
+
+        ---
+
+        ### Any other comments
+
+
