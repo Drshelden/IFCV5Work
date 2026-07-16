@@ -6,9 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template to propose a new RFC. Review the [RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md) first to confirm the topic isn't already covered.
+        **Fill in each field below.** Check the [RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md) first to confirm the topic isn't already covered by an existing RFC.
 
-        A maintainer will review this proposal, assign an RFC ID if accepted, and add it to the Decision Register.
+        If accepted, a maintainer will assign an RFC ID and add it to the Decision Register.
 
   - type: textarea
     id: problem

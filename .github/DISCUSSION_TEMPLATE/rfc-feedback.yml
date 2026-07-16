@@ -4,10 +4,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template to give feedback on a specific RFC. Before posting:
-        - Read the RFC file in [`02 RFCs/`](https://github.com/Drshelden/IFCV5Work/tree/master/02%20RFCs)
-        - Apply the correct **RFC label** (e.g. `IFC5-007`) and **tier label** using the Labels gear in the sidebar
-        - Replace `IFC5-XXX` in the title with the RFC ID
+        **Fill in each field below.** Update the title to include the RFC ID and a short description of your comment (e.g. `[RFC Feedback] IFC5-007 — Alternative graph model`).
+
+        After posting, apply the matching **RFC label** (e.g. `IFC5-007`) using the Labels gear in the sidebar so this discussion is findable.
 
   - type: dropdown
     id: rfc-id
