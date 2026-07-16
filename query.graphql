@@ -1,0 +1,1 @@
+{"query": "{ repository(owner: \"Drshelden\", name: \"IFCV5Work\") { discussionCategories(first: 20) { nodes { name slug } } } }"}
