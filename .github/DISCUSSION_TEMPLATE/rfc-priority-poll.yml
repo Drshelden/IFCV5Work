@@ -1,3 +1,5 @@
+name: RFC Priority Poll
+description: Input on which RFCs to prioritize, defer, or drop
 title: "[Priority] RFC prioritization input from "
 labels: ["rfc-priority-poll"]
 body:

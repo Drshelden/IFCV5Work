@@ -1,3 +1,5 @@
+name: RFC Feedback
+description: Give structured feedback on a specific RFC
 title: "[RFC Feedback] IFC5-XXX — "
 labels: []
 body:
