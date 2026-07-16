@@ -1,0 +1,84 @@
+# RFC-IFC5-035: Web and Linked-Data Alignment
+
+| Field | Value |
+|---|---|
+| **Decision ID** | IFC5-035 |
+| **Status** | Idea |
+| **Tier** | 4 — Process & Governance |
+| **Owner** | TBD |
+| **Dependencies** | IFC5-003, IFC5-005 |
+| **Prototype Required** | No |
+| **Source Topics** | Topic 49 |
+
+---
+
+## 1. Problem Statement
+
+IFC4.x has no formal linked-data alignment. The IFC ontology (ifcOWL) exists as a community effort but is not normative. IFCX's `code`/`uri` pattern and namespace system open the possibility of linked-data-compatible IFC5. This RFC asks how far IFC5 should go: is it URI-aware, JSON-LD compatible, or explicitly a linked-data format?
+
+## 2. Background
+
+JSON-LD can make any JSON document linked-data-compatible by adding an `@context` that maps keys to URIs. IFC5's `::` namespace system bears structural similarity to JSON-LD prefixes. The bSDD URI pattern already provides persistent identifiers for IFC classes and properties. A small design commitment now could enable SPARQL queries over IFC5 data without a separate RDF conversion step.
+
+## 3. Existing IFC4.x Convention
+
+- No linked-data alignment in the standard
+- ifcOWL: community-driven RDF mapping (not normative)
+- IFC SPARQL queries require conversion via external tools
+
+## 4. Proposed Approaches
+
+### 4.1 URI-aware but not linked-data-native
+
+IFC5 uses URIs as identifiers (code/URI pairs, namespace URIs) but is not a linked-data format. A separate, normative RDF mapping specification is published alongside IFC5.
+
+### 4.2 JSON-LD compatible
+
+IFC5 files include or reference a JSON-LD `@context` that maps IFC5 attributes to URIs. No changes to the core format needed; linked-data tooling works without conversion.
+
+### 4.3 Explicit RDF representation as an alternative serialization
+
+IFC5 defines a normative RDF/Turtle serialization alongside JSON. Both carry equivalent semantics. Implementers choose based on use case.
+
+### 4.4 Full linked-data-first design
+
+IFC5 is designed from the ground up as a linked-data format. Every object and attribute is a URI node in a graph. JSON is a serialization of the graph. Highest semantic web compatibility; highest complexity.
+
+## 5. Tradeoffs
+
+| Dimension | URI-aware | JSON-LD | RDF serialization | Linked-data-first |
+|---|---|---|---|---|
+| Semantic web integration | Low | High | High | Full |
+| Implementation complexity | Low | Low | Moderate | High |
+| File format simplicity | High | High | Moderate | Low |
+| bSDD / vocabulary alignment | Partial | High | High | Full |
+
+## 6. Recommendation
+
+*To be filled in after committee discussion.*
+
+## 7. Open Questions
+
+**Q1.** Can the `::` namespace system be mapped deterministically to IRIs without any additional design work?
+
+**Q2.** Is JSON-LD `@context` compatibility a free benefit of the namespace system, or does it require explicit design choices?
+
+**Q3.** Must the RDF mapping be normative (testable for conformance) or informative?
+
+**Q4.** Are there use cases — web publishing, regulatory reporting, AI reasoning — that require linked-data compatibility as a hard requirement?
+
+## 8. Prototype
+
+- **Required:** No
+
+## 9. Consequences
+
+- Tied to namespace and identity decisions (IFC5-003, IFC5-005)
+- Informs classification encoding (IFC5-027)
+- May constrain URI persistence requirements in versioning (IFC5-022)
+
+## 10. References
+
+- JSON-LD 1.1: https://www.w3.org/TR/json-ld11/
+- ifcOWL: https://technical.buildingsmart.org/resources/ifcowl/
+- bSDD URI patterns
