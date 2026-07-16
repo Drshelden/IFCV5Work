@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-037 — Security and Trust** · Tier 4 — Governance
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-037) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-037+%E2%80%94+&labels=IFC5-037)
+
 # RFC-IFC5-037: Security and Trust
 
 | Field | Value |
@@ -85,3 +90,11 @@ Core IFC5 schema is always bundled with the validator. Extensions are distribute
 - OWASP: Remote code execution via deserialization
 - W3C Content Security Policy
 - npm package integrity (lock files, signatures)
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-037) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-037+%E2%80%94+&labels=IFC5-037)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

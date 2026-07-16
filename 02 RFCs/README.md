@@ -7,61 +7,61 @@
 ## Tier 1 — Foundational
 *Resolve these before anything else. All downstream RFCs depend on them.*
 
-| ID | Title | Prototype Required? |
-|---|---|---|
-| IFC5-001 | Strategic Architecture Mode | No |
-| IFC5-002 | Normative Information Model Formalism | No |
-| IFC5-003 | Identity Model | Yes |
-| IFC5-004 | Path Model and Addressing | Yes |
-| IFC5-005 | Namespace and Qualified Names | No |
-| IFC5-006 | Serialization and Encoding | No |
+| ID | Title | Prototype Required? | Discuss |
+|---|---|---|---|
+| [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md) | Strategic Architecture Mode | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-001) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-001+%E2%80%94+&labels=IFC5-001) |
+| [IFC5-002](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-002-normative-model-formalism.md) | Normative Information Model Formalism | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-002) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-002+%E2%80%94+&labels=IFC5-002) |
+| [IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md) | Identity Model | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-003) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-003+%E2%80%94+&labels=IFC5-003) |
+| [IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md) | Path Model and Addressing | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-004) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-004+%E2%80%94+&labels=IFC5-004) |
+| [IFC5-005](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-005-namespaces.md) | Namespace and Qualified Names | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-005) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-005+%E2%80%94+&labels=IFC5-005) |
+| [IFC5-006](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-006-serialization-encoding.md) | Serialization and Encoding | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-006) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-006+%E2%80%94+&labels=IFC5-006) |
 
 ## Tier 2 — Core Architecture
 *Major structural decisions. Depend on Tier 1.*
 
-| ID | Title | Prototype Required? |
-|---|---|---|
-| IFC5-007 | Scene Graph vs. ECS vs. Hybrid Architecture | Yes |
-| IFC5-008 | Relationship Modeling Strategy | Yes |
-| IFC5-009 | Class and Type Representation | No |
-| IFC5-010 | Composition, Inheritance, and Instancing | Yes |
-| IFC5-011 | Document-Level Structure | No |
-| IFC5-012 | Modular Schema Imports | No |
-| IFC5-023 | Attribute Representation | No |
-| IFC5-024 | Type System, Primitives, Enumerations, SELECTs | No |
-| IFC5-025 | Collections and Cardinality | No |
+| ID | Title | Prototype Required? | Discuss |
+|---|---|---|---|
+| [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) | Scene Graph vs. ECS vs. Hybrid Architecture | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-007) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-007+%E2%80%94+&labels=IFC5-007) |
+| [IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md) | Relationship Modeling Strategy | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-008) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-008+%E2%80%94+&labels=IFC5-008) |
+| [IFC5-009](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md) | Class and Type Representation | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-009) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-009+%E2%80%94+&labels=IFC5-009) |
+| [IFC5-010](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-010-composition-inheritance.md) | Composition, Inheritance, and Instancing | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-010) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-010+%E2%80%94+&labels=IFC5-010) |
+| [IFC5-011](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md) | Document-Level Structure | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-011) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-011+%E2%80%94+&labels=IFC5-011) |
+| [IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md) | Modular Schema Imports | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-012) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-012+%E2%80%94+&labels=IFC5-012) |
+| [IFC5-023](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-023-attribute-representation.md) | Attribute Representation | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-023) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-023+%E2%80%94+&labels=IFC5-023) |
+| [IFC5-024](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-024-type-system-primitives.md) | Type System, Primitives, Enumerations, SELECTs | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-024) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-024+%E2%80%94+&labels=IFC5-024) |
+| [IFC5-025](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-025-collections-cardinality.md) | Collections and Cardinality | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-025) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-025+%E2%80%94+&labels=IFC5-025) |
 
 ## Tier 3 — Domain Modeling
 *Domain-specific decisions. Depend on Tier 2.*
 
-| ID | Title | Prototype Required? |
-|---|---|---|
-| IFC5-013 | Property Sets and Properties | Yes |
-| IFC5-014 | Geometry Architecture | Yes |
-| IFC5-015 | OpenUSD Alignment | Yes |
-| IFC5-016 | Spatial Structure and Decomposition | No |
-| IFC5-017 | Material Modeling | No |
-| IFC5-026 | Openings, Voids, and Fillings | Yes |
-| IFC5-027 | Classification and External Dictionaries | No |
-| IFC5-028 | Units and Measures | No |
-| IFC5-029 | Presentation and Appearance | No |
-| IFC5-030 | Space Boundaries and Topology | No |
-| IFC5-031 | Metadata and Custom Data | No |
+| ID | Title | Prototype Required? | Discuss |
+|---|---|---|---|
+| [IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md) | Property Sets and Properties | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-013) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-013+%E2%80%94+&labels=IFC5-013) |
+| [IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md) | Geometry Architecture | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-014) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-014+%E2%80%94+&labels=IFC5-014) |
+| [IFC5-015](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-015-openusd-alignment.md) | OpenUSD Alignment | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-015) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-015+%E2%80%94+&labels=IFC5-015) |
+| [IFC5-016](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-016-spatial-structure.md) | Spatial Structure and Decomposition | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-016) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-016+%E2%80%94+&labels=IFC5-016) |
+| [IFC5-017](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-017-material-modeling.md) | Material Modeling | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-017) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-017+%E2%80%94+&labels=IFC5-017) |
+| [IFC5-026](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-026-openings-voids-fillings.md) | Openings, Voids, and Fillings | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-026) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-026+%E2%80%94+&labels=IFC5-026) |
+| [IFC5-027](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-027-classification-external-dictionaries.md) | Classification and External Dictionaries | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-027) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-027+%E2%80%94+&labels=IFC5-027) |
+| [IFC5-028](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-028-units-measures.md) | Units and Measures | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-028) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-028+%E2%80%94+&labels=IFC5-028) |
+| [IFC5-029](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-029-presentation-appearance.md) | Presentation and Appearance | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-029) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-029+%E2%80%94+&labels=IFC5-029) |
+| [IFC5-030](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-030-space-boundaries.md) | Space Boundaries and Topology | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-030) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-030+%E2%80%94+&labels=IFC5-030) |
+| [IFC5-031](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-031-metadata-custom-data.md) | Metadata and Custom Data | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-031) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-031+%E2%80%94+&labels=IFC5-031) |
 
 ## Tier 4 — Process & Governance
 *Conformance, versioning, federation, and cross-cutting concerns.*
 
-| ID | Title | Prototype Required? |
-|---|---|---|
-| IFC5-018 | Backward Compatibility and Round-Tripping | Yes |
-| IFC5-019 | Validation Framework | No |
-| IFC5-020 | Model Views and Exchange Requirements | No |
-| IFC5-021 | Federation and External References | No |
-| IFC5-022 | Versioning and Schema Evolution | No |
-| IFC5-032 | Extensibility | No |
-| IFC5-033 | Change, Transactions, and Collaboration | No |
-| IFC5-034 | Performance, Scale, and Database Implications | Yes |
-| IFC5-035 | Web and Linked-Data Alignment | No |
-| IFC5-036 | AI and Machine-Readability | No |
-| IFC5-037 | Security and Trust | No |
-| IFC5-038 | Governance, Conformance, and Interoperability Testing | No |
+| ID | Title | Prototype Required? | Discuss |
+|---|---|---|---|
+| [IFC5-018](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-018-backward-compatibility.md) | Backward Compatibility and Round-Tripping | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-018) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-018+%E2%80%94+&labels=IFC5-018) |
+| [IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md) | Validation Framework | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-019) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-019+%E2%80%94+&labels=IFC5-019) |
+| [IFC5-020](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-020-model-views-exchange.md) | Model Views and Exchange Requirements | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-020) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-020+%E2%80%94+&labels=IFC5-020) |
+| [IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md) | Federation and External References | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-021) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-021+%E2%80%94+&labels=IFC5-021) |
+| [IFC5-022](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-022-versioning-schema-evolution.md) | Versioning and Schema Evolution | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-022) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-022+%E2%80%94+&labels=IFC5-022) |
+| [IFC5-032](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-032-extensibility.md) | Extensibility | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-032) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-032+%E2%80%94+&labels=IFC5-032) |
+| [IFC5-033](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-033-change-collaboration.md) | Change, Transactions, and Collaboration | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-033) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-033+%E2%80%94+&labels=IFC5-033) |
+| [IFC5-034](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-034-performance-scale-database.md) | Performance, Scale, and Database Implications | Yes | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-034) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-034+%E2%80%94+&labels=IFC5-034) |
+| [IFC5-035](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-035-web-linked-data.md) | Web and Linked-Data Alignment | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-035) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-035+%E2%80%94+&labels=IFC5-035) |
+| [IFC5-036](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-036-ai-machine-readability.md) | AI and Machine-Readability | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-036) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-036+%E2%80%94+&labels=IFC5-036) |
+| [IFC5-037](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-037-security-trust.md) | Security and Trust | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-037) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-037+%E2%80%94+&labels=IFC5-037) |
+| [IFC5-038](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-038-governance-conformance.md) | Governance, Conformance, and Interoperability Testing | No | [💬 view](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-038) · [+ new](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-038+%E2%80%94+&labels=IFC5-038) |

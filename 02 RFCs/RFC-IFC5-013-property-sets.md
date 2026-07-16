@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-013 — Property Sets and Properties** · Tier 3 — Domain Modeling
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-013) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-013+%E2%80%94+&labels=IFC5-013)
+
 # RFC-IFC5-013: Property Sets and Properties
 
 | Field | Value |
@@ -86,3 +91,11 @@ Standard buildingSMART property sets (Pset_WallCommon, etc.) become namespaced a
 
 - buildingSMART Property Sets: https://github.com/buildingSMART/IFC4.3-html
 - bSDD: https://search.bsdd.buildingsmart.org
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-013) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-013+%E2%80%94+&labels=IFC5-013)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

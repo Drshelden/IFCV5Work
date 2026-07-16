@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-030 — Space Boundaries and Topology** · Tier 3 — Domain Modeling
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-030) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-030+%E2%80%94+&labels=IFC5-030)
+
 # RFC-IFC5-030: Space Boundaries and Topology
 
 | Field | Value |
@@ -85,3 +90,11 @@ Core IFC5 does not include space boundary encoding. Energy analysis exchanges us
 
 - IFC4 IfcRelSpaceBoundary schema
 - buildingSMART Space Boundary Add-on View
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-030) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-030+%E2%80%94+&labels=IFC5-030)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-014 — Geometry Architecture** · Tier 3 — Domain Modeling
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-014) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-014+%E2%80%94+&labels=IFC5-014)
+
 # RFC-IFC5-014: Geometry Architecture
 
 | Field | Value |
@@ -87,3 +92,11 @@ Geometry is not embedded in IFCX files. It is referenced by URI to external asse
 - IFC4 geometry schema (IfcGeometricModelResource)
 - OpenUSD UsdGeomMesh schema
 - glTF 2.0 specification
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-014) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-014+%E2%80%94+&labels=IFC5-014)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

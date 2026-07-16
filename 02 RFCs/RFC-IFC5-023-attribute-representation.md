@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-023 — Attribute Representation** · Tier 2 — Core Architecture
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-023) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-023+%E2%80%94+&labels=IFC5-023)
+
 # RFC-IFC5-023: Attribute Representation
 
 | Field | Value |
@@ -85,3 +90,11 @@ Values that require type disambiguation use wrapper objects: `{"type": "IfcLabel
 
 - IFC4 EXPRESS schema attribute conventions
 - JSON Schema null vs. absent distinction
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-023) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-023+%E2%80%94+&labels=IFC5-023)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-024 — Type System, Primitives, Enumerations, SELECTs** · Tier 2 — Core Architecture
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-024) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-024+%E2%80%94+&labels=IFC5-024)
+
 # RFC-IFC5-024: Type System, Primitives, Enumerations, and SELECT Types
 
 | Field | Value |
@@ -84,3 +89,11 @@ Bare JSON primitives for simple types; a `componentType`-style discriminator for
 
 - IFC4 EXPRESS type definitions
 - JSON Schema type keywords
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-024) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-024+%E2%80%94+&labels=IFC5-024)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-017 — Material Modeling** · Tier 3 — Domain Modeling
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-017) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-017+%E2%80%94+&labels=IFC5-017)
+
 # RFC-IFC5-017: Material Modeling
 
 | Field | Value |
@@ -83,3 +88,11 @@ Render/visualization materials (diffuseColor, PBR) are inline. Engineering mater
 
 - IFC4 IfcMaterialResource schema
 - USD UsdShade material binding
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-017) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-017+%E2%80%94+&labels=IFC5-017)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

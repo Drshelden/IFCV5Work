@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-033 — Change, Transactions, and Collaboration** · Tier 4 — Governance
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-033) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-033+%E2%80%94+&labels=IFC5-033)
+
 # RFC-IFC5-033: Change, Transactions, and Collaboration
 
 | Field | Value |
@@ -84,3 +89,11 @@ Change management is a platform concern. IFC5 files are snapshots. Change tracki
 - USD layer stack and composition model
 - IFC4 IfcOwnerHistory
 - Git diff semantics for text-based formats
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-033) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-033+%E2%80%94+&labels=IFC5-033)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

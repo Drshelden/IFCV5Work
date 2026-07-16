@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-001 — Strategic Architecture Mode** · Tier 1 — Foundational
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-001) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-001+%E2%80%94+&labels=IFC5-001)
+
 # RFC-IFC5-001: Strategic Architecture Mode
 
 | Field | Value |
@@ -93,3 +98,11 @@ This decision is the root dependency for every other RFC. It directly shapes:
 - IFC5-development GitHub: https://github.com/buildingSMART/IFC5-development
 - IFC-ECS GitHub: https://github.com/Drshelden/IFC-ECS
 - Hello Wall examples (03 Reference Examples/)
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-001) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-001+%E2%80%94+&labels=IFC5-001)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

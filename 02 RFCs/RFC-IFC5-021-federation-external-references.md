@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-021 — Federation and External References** · Tier 4 — Governance
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-021) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-021+%E2%80%94+&labels=IFC5-021)
+
 # RFC-IFC5-021: Federation and External References
 
 | Field | Value |
@@ -80,3 +85,11 @@ Federation is a deployment and tooling concern. IFC5 files are self-contained. C
 
 - OpenUSD references and payloads documentation
 - IFC4 IfcExternalReference
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-021) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-021+%E2%80%94+&labels=IFC5-021)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

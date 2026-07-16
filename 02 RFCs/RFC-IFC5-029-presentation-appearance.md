@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-029 — Presentation and Appearance** · Tier 3 — Domain Modeling
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-029) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-029+%E2%80%94+&labels=IFC5-029)
+
 # RFC-IFC5-029: Presentation and Appearance
 
 | Field | Value |
@@ -86,3 +91,11 @@ Engineering material definitions (fire rating, thermal conductivity) use structu
 - IFC4 IfcPresentationResource schema
 - USD UsdShade and UsdPreviewSurface documentation
 - MaterialX specification
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-029) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-029+%E2%80%94+&labels=IFC5-029)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

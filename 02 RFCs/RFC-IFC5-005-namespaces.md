@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-005 — Namespace and Qualified Names** · Tier 1 — Foundational
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-005) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-005+%E2%80%94+&labels=IFC5-005)
+
 # RFC-IFC5-005: Namespace and Qualified Names
 
 | Field | Value |
@@ -77,3 +82,11 @@ No namespace concept. All attribute and entity names are globally unique within 
 
 - IFCX Hello Wall examples
 - JSON-LD @context specification
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-005) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-005+%E2%80%94+&labels=IFC5-005)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

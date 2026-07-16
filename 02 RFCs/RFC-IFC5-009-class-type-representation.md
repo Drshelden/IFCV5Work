@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-009 — Class and Type Representation** · Tier 2 — Core Architecture
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-009) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-009+%E2%80%94+&labels=IFC5-009)
+
 # RFC-IFC5-009: Class and Type Representation
 
 | Field | Value |
@@ -84,3 +89,11 @@ Normative schema types define the hierarchy; an attribute shorthand (`bsi::ifc::
 
 - IFC4 ADD2 TC1 entity hierarchy
 - bSDD: https://search.bsdd.buildingsmart.org
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-009) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-009+%E2%80%94+&labels=IFC5-009)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

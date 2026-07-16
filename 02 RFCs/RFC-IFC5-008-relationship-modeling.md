@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-008 — Relationship Modeling Strategy** · Tier 2 — Core Architecture
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-008) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-008+%E2%80%94+&labels=IFC5-008)
+
 # RFC-IFC5-008: Relationship Modeling Strategy
 
 | Field | Value |
@@ -85,3 +90,11 @@ Parent-child hierarchy encodes decomposition and containment. Semantic relations
 
 - IFC4 ADD2 TC1: IfcRelationship hierarchy
 - IFCX Hello Wall: `03 Reference Examples/`
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-008) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-2-core-architecture&title=%5BRFC+Feedback%5D+IFC5-008+%E2%80%94+&labels=IFC5-008)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

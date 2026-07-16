@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-038 — Governance, Conformance, and Interoperability Testing** · Tier 4 — Governance
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-038) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-038+%E2%80%94+&labels=IFC5-038)
+
 # RFC-IFC5-038: Governance, Conformance, and Interoperability Testing
 
 | Field | Value |
@@ -85,3 +90,11 @@ Instead of software certification, conformance is per-file: IFC5 files are valid
 - ISO 16739 (IFC standard)
 - ASWF governance model
 - OpenUSD governance documentation
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-038) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-4-governance&title=%5BRFC+Feedback%5D+IFC5-038+%E2%80%94+&labels=IFC5-038)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

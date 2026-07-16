@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-026 — Openings, Voids, and Fillings** · Tier 3 — Domain Modeling
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-026) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-026+%E2%80%94+&labels=IFC5-026)
+
 # RFC-IFC5-026: Openings, Voids, and Fillings
 
 | Field | Value |
@@ -90,3 +95,11 @@ IfcOpeningElement, IfcRelVoidsElement, and IfcRelFillsElement are fully preserve
 
 - IFC4 IfcOpeningElement, IfcRelVoidsElement, IfcRelFillsElement
 - Hello Wall IFC-SPF: `03 Reference Examples/hello-wall.ifc`
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-026) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-026+%E2%80%94+&labels=IFC5-026)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

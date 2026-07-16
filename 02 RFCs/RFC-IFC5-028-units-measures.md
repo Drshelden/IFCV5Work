@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-028 — Units and Measures** · Tier 3 — Domain Modeling
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-028) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-028+%E2%80%94+&labels=IFC5-028)
+
 # RFC-IFC5-028: Units and Measures
 
 | Field | Value |
@@ -84,3 +89,11 @@ Schema declares the dimension of each attribute. The document header declares th
 
 - IFC4 IfcMeasureResource schema
 - SI Brochure (BIPM)
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-028) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-3-domain-modeling&title=%5BRFC+Feedback%5D+IFC5-028+%E2%80%94+&labels=IFC5-028)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)

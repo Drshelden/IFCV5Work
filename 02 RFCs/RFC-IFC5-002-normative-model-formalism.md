@@ -1,3 +1,8 @@
+<!-- rfc-links -->
+> **IFC5-002 — Normative Information Model Formalism** · Tier 1 — Foundational
+> 
+> 💬 [View all discussions on this RFC](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-002) &nbsp;|&nbsp; [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-002+%E2%80%94+&labels=IFC5-002)
+
 # RFC-IFC5-002: Normative Information Model Formalism
 
 | Field | Value |
@@ -85,3 +90,11 @@ An ontological formalism aligned with linked-data principles. Enables SPARQL que
 
 - JSON Schema: https://json-schema.org
 - EXPRESS / ISO 10303-11
+
+
+---
+
+<!-- rfc-links -->
+💬 **Discuss this RFC:** [View existing discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-002) &nbsp;|&nbsp; [Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-002+%E2%80%94+&labels=IFC5-002)
+
+← [Back to RFC Index](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)
