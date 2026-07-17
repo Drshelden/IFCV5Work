@@ -6,6 +6,19 @@
 
 ---
 
+## Quick Links
+
+| Resource | Link |
+|---|---|
+| **GitHub Repository** | [github.com/Drshelden/IFCV5Work](https://github.com/Drshelden/IFCV5Work) |
+| **RFC Index** | [GitHub](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md) · [Google Doc](https://docs.google.com/document/d/1L4wD92OdDVGm5cvcPiAGYWQBF9pDHbHXni6ohOS5rKE/edit) |
+| **Decision Register** | [GitHub CSV](https://github.com/Drshelden/IFCV5Work/blob/master/01%20Decision%20Register/IFC5_Decision_Register.csv) |
+| **RFC Priority Survey** | [📋 Take the survey](https://docs.google.com/forms/d/e/1FAIpQLScHN9SiU64axXxosFmZNlEc7D9v1hzjlfXAHl00uxd6HCl4jw/viewform) |
+| **GitHub Discussions** | [View all discussions](https://github.com/Drshelden/IFCV5Work/discussions) |
+| **Individual RFC Feedback Forms** | Links in the header/footer of each RFC |
+
+---
+
 ## What This Initiative Is
 
 The IFC5 Architecture Initiative is a structured effort to develop the architectural foundations of IFC5 through transparent, evidence-based decision-making. Rather than writing a complete specification upfront, we first capture the reasoning, alternatives, and consensus behind each major architectural decision. Once decisions mature, they are promoted into normative specification text with minimal additional work.
@@ -27,7 +40,7 @@ The initiative is organized around **architectural decisions**, not files or Git
 
 ## The Folder Structure
 
-This Google Drive folder is the authoritative home for architecture work. GitHub remains the home for implementations, validators, example files, and specification source.
+This [Google Drive folder](https://drive.google.com/drive/folders/1U9J-6hAr5pM_Q28JChDcistHsAHgi33y) is the authoritative home for architecture work. [GitHub](https://github.com/Drshelden/IFCV5Work) remains the home for implementations, validators, example files, and specification source.
 
 | Folder | Contents |
 |---|---|
@@ -115,7 +128,7 @@ When you review an RFC, classify every comment using one of the following types.
 | **Blocking Objection** | You believe the RFC cannot be accepted as written |
 | **General Support** | You support the recommendation |
 
-Where possible, submit feedback via the structured Google Form linked in each RFC. For detailed technical comments, annotate the document directly and share with the group.
+Submit feedback via the **structured Google Form linked in the header and footer of each RFC** — this is the fastest path. For detailed technical comments, annotate the Google Doc directly. For broader discussion, open a [GitHub Discussion](https://github.com/Drshelden/IFCV5Work/discussions).
 
 ---
 
@@ -125,10 +138,12 @@ This initiative deliberately separates **architecture** from **implementation**.
 
 | Work Type | Home |
 |---|---|
-| Architectural discussion, RFCs, decisions | This Google Drive folder |
+| Architectural discussion, RFCs, decisions | [Google Drive](https://drive.google.com/drive/folders/1U9J-6hAr5pM_Q28JChDcistHsAHgi33y) |
 | Prototypes, schemas, validators, example files | GitHub (`buildingSMART/IFC5-development`, `Drshelden/IFC-ECS`) |
-| Specification source (normative text) | GitHub (Markdown, after decisions are Accepted) |
-| Bug reports, implementation issues | GitHub Issues |
+| Specification source (normative text) | [GitHub](https://github.com/Drshelden/IFCV5Work) (Markdown, after decisions are Accepted) |
+| Bug reports, implementation issues | [GitHub Issues](https://github.com/Drshelden/IFCV5Work/issues) |
+| Structured RFC feedback | Google Forms (linked in each RFC) |
+| Broader discussion | [GitHub Discussions](https://github.com/Drshelden/IFCV5Work/discussions) |
 
 Do not use GitHub Issues as the primary vehicle for architectural decisions. Discussion fragments across issues, context is lost, and it becomes very difficult to reach and record consensus. Large architectural questions belong in an RFC.
 
