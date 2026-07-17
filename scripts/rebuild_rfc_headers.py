@@ -92,6 +92,8 @@ RFCS = [
     ("IFC5-036","RFC-IFC5-036-ai-machine-readability",            "-tier-4-governance"),
     ("IFC5-037","RFC-IFC5-037-security-trust",                    "-tier-4-governance"),
     ("IFC5-038","RFC-IFC5-038-governance-conformance",            "-tier-4-governance"),
+    ("IFC5-039","RFC-IFC5-039-foundational-json-data-model",      "-tier-1-foundational"),
+    ("IFC5-040","RFC-IFC5-040-archetypes-templates-overrides",    "-tier-2-core-architecture"),
 ]
 
 SENTINEL_LINKS = "<!-- rfc-links -->"
@@ -190,4 +192,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit

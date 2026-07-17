@@ -46,7 +46,15 @@ SYNC_FOLDERS = [
     "02 RFCs",
 ]
 
+# Folders synced recursively as raw binary files (not converted to Google Docs)
+BINARY_SYNC_FOLDERS = [
+    "03 Reference Examples",
+]
+
 ALLOWED_EXTENSIONS = {".md"}
+
+# Extensions uploaded as raw binary files (not converted to Google Docs)
+BINARY_EXTENSIONS = {".ifc", ".ifcx", ".json", ".csv", ".txt", ".xml"}
 
 GDOC_MIME   = "application/vnd.google-apps.document"
 DOCX_MIME   = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -173,6 +181,64 @@ def update_gdoc(service, file_id, docx_bytes):
         supportsAllDrives=True,
     ).execute()
 
+
+def guess_mime(path):
+    """Return a MIME type for common binary extensions."""
+    ext = path.suffix.lower()
+    return {
+        ".json":  "application/json",
+        ".ifc":   "application/octet-stream",
+        ".ifcx":  "application/octet-stream",
+        ".csv":   "text/csv",
+        ".txt":   "text/plain",
+        ".xml":   "application/xml",
+    }.get(ext, "application/octet-stream")
+
+
+def create_binary_file(service, name, data, parent_id, mime):
+    """Upload raw bytes as a new Drive file (not converted). Returns file ID."""
+    from googleapiclient.http import MediaInMemoryUpload
+
+    media = MediaInMemoryUpload(data, mimetype=mime, resumable=False)
+    meta  = {"name": name, "parents": [parent_id]}
+    result = service.files().create(
+        body=meta,
+        media_body=media,
+        fields="id",
+        supportsAllDrives=True,
+    ).execute()
+    return result["id"]
+
+
+def update_binary_file(service, file_id, data, mime):
+    """Replace content of an existing Drive binary file."""
+    from googleapiclient.http import MediaInMemoryUpload
+
+    media = MediaInMemoryUpload(data, mimetype=mime, resumable=False)
+    service.files().update(
+        fileId=file_id,
+        media_body=media,
+        supportsAllDrives=True,
+    ).execute()
+
+
+def sync_binary_file(service, file_path, folder_id, index, dry_run):
+    """Sync one binary (non-md) file to Google Drive as a raw file."""
+    rel_key = str(file_path.relative_to(WORK_DIR))
+    mime    = guess_mime(file_path)
+    data    = file_path.read_bytes()
+
+    if rel_key in index:
+        file_id = index[rel_key]
+        if not dry_run:
+            update_binary_file(service, file_id, data, mime)
+        print(f"  [UPDATE] {file_path.name}")
+    else:
+        if not dry_run:
+            file_id = create_binary_file(service, file_path.name, data, folder_id, mime)
+            index[rel_key] = file_id
+        print(f"  [CREATE] {file_path.name}")
+
 # ── Index helpers ──────────────────────────────────────────────────────────────
 
 def load_index():
@@ -243,6 +309,30 @@ def main():
 
         for md_path in sorted(src_dir.glob("*.md")):
             sync_file(service, md_path, drive_folder_id, index, dry_run=args.dry_run, pandoc_bin=pandoc_bin)
+
+    for folder_name in BINARY_SYNC_FOLDERS:
+        src_dir = WORK_DIR / folder_name
+        if not src_dir.exists():
+            print(f"  [SKIP] {folder_name} — not found locally")
+            continue
+
+        print(f"\n{folder_name}")
+        root_folder_id = get_or_create_folder(service, folder_name, ROOT_FOLDER_ID)
+
+        # Walk subdirectories recursively
+        for file_path in sorted(src_dir.rglob("*")):
+            if not file_path.is_file():
+                continue
+            if file_path.suffix.lower() not in BINARY_EXTENSIONS:
+                continue
+
+            # Ensure parent folder exists on Drive
+            rel_parts = file_path.relative_to(src_dir).parts
+            parent_id = root_folder_id
+            for part in rel_parts[:-1]:  # subdirs only, not filename
+                parent_id = get_or_create_folder(service, part, parent_id)
+
+            sync_binary_file(service, file_path, parent_id, index, dry_run=args.dry_run)
 
     if not args.dry_run:
         save_index(index)
