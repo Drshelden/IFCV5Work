@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-002](https://docs.google.com/forms/d/e/1FAIpQLScKm2zILtLbxvgd7xLqQVyIiq54gULEy9T6cl56OGP6qGaFUQ/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-002-normative-model-formalism.md">📄 GitHub MD</a></td>

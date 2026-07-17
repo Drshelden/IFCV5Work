@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-027](https://docs.google.com/forms/d/e/1FAIpQLSffQxUFw_E_Qb9rZjJwp-VYFujp4GOoDvir3w7nrIuaiKnuyQ/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-027-classification-external-dictionaries.md">📄 GitHub MD</a></td>

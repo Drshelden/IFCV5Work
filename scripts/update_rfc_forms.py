@@ -24,8 +24,11 @@ SCRIPT_DIR   = Path(__file__).resolve().parent
 WORK_DIR     = SCRIPT_DIR.parent
 RFC_DIR      = WORK_DIR / "02 RFCs"
 FORMS_INDEX  = SCRIPT_DIR / "forms_index.json"
+DRIVE_INDEX  = SCRIPT_DIR / "drive_index.json"
 OAUTH_FILE   = SCRIPT_DIR / "oauth_client_secret.json"
 TOKEN_FILE   = SCRIPT_DIR / "oauth_token.json"
+
+REPO = "https://github.com/Drshelden/IFCV5Work"
 
 SCOPES = [
     "https://www.googleapis.com/auth/drive",
@@ -33,44 +36,44 @@ SCOPES = [
 ]
 
 RFCS = [
-    ("IFC5-001", "RFC-IFC5-001-strategic-architecture-mode"),
-    ("IFC5-002", "RFC-IFC5-002-normative-model-formalism"),
-    ("IFC5-003", "RFC-IFC5-003-identity-model"),
-    ("IFC5-004", "RFC-IFC5-004-path-model"),
-    ("IFC5-005", "RFC-IFC5-005-namespaces"),
-    ("IFC5-006", "RFC-IFC5-006-serialization-encoding"),
-    ("IFC5-007", "RFC-IFC5-007-scene-graph-vs-ecs"),
-    ("IFC5-008", "RFC-IFC5-008-relationship-modeling"),
-    ("IFC5-009", "RFC-IFC5-009-class-type-representation"),
-    ("IFC5-010", "RFC-IFC5-010-composition-inheritance"),
-    ("IFC5-011", "RFC-IFC5-011-document-structure"),
-    ("IFC5-012", "RFC-IFC5-012-modular-schema-imports"),
-    ("IFC5-013", "RFC-IFC5-013-property-sets"),
-    ("IFC5-014", "RFC-IFC5-014-geometry-architecture"),
-    ("IFC5-015", "RFC-IFC5-015-openusd-alignment"),
-    ("IFC5-016", "RFC-IFC5-016-spatial-structure"),
-    ("IFC5-017", "RFC-IFC5-017-material-modeling"),
-    ("IFC5-018", "RFC-IFC5-018-backward-compatibility"),
-    ("IFC5-019", "RFC-IFC5-019-validation-framework"),
-    ("IFC5-020", "RFC-IFC5-020-model-views-exchange"),
-    ("IFC5-021", "RFC-IFC5-021-federation-external-references"),
-    ("IFC5-022", "RFC-IFC5-022-versioning-schema-evolution"),
-    ("IFC5-023", "RFC-IFC5-023-attribute-representation"),
-    ("IFC5-024", "RFC-IFC5-024-type-system-primitives"),
-    ("IFC5-025", "RFC-IFC5-025-collections-cardinality"),
-    ("IFC5-026", "RFC-IFC5-026-openings-voids-fillings"),
-    ("IFC5-027", "RFC-IFC5-027-classification-external-dictionaries"),
-    ("IFC5-028", "RFC-IFC5-028-units-measures"),
-    ("IFC5-029", "RFC-IFC5-029-presentation-appearance"),
-    ("IFC5-030", "RFC-IFC5-030-space-boundaries"),
-    ("IFC5-031", "RFC-IFC5-031-metadata-custom-data"),
-    ("IFC5-032", "RFC-IFC5-032-extensibility"),
-    ("IFC5-033", "RFC-IFC5-033-change-collaboration"),
-    ("IFC5-034", "RFC-IFC5-034-performance-scale-database"),
-    ("IFC5-035", "RFC-IFC5-035-web-linked-data"),
-    ("IFC5-036", "RFC-IFC5-036-ai-machine-readability"),
-    ("IFC5-037", "RFC-IFC5-037-security-trust"),
-    ("IFC5-038", "RFC-IFC5-038-governance-conformance"),
+    ("IFC5-001","RFC-IFC5-001-strategic-architecture-mode",        "-tier-1-foundational"),
+    ("IFC5-002","RFC-IFC5-002-normative-model-formalism",          "-tier-1-foundational"),
+    ("IFC5-003","RFC-IFC5-003-identity-model",                     "-tier-1-foundational"),
+    ("IFC5-004","RFC-IFC5-004-path-model",                         "-tier-1-foundational"),
+    ("IFC5-005","RFC-IFC5-005-namespaces",                         "-tier-1-foundational"),
+    ("IFC5-006","RFC-IFC5-006-serialization-encoding",             "-tier-1-foundational"),
+    ("IFC5-007","RFC-IFC5-007-scene-graph-vs-ecs",                 "-tier-2-core-architecture"),
+    ("IFC5-008","RFC-IFC5-008-relationship-modeling",              "-tier-2-core-architecture"),
+    ("IFC5-009","RFC-IFC5-009-class-type-representation",          "-tier-2-core-architecture"),
+    ("IFC5-010","RFC-IFC5-010-composition-inheritance",            "-tier-2-core-architecture"),
+    ("IFC5-011","RFC-IFC5-011-document-structure",                 "-tier-2-core-architecture"),
+    ("IFC5-012","RFC-IFC5-012-modular-schema-imports",             "-tier-2-core-architecture"),
+    ("IFC5-013","RFC-IFC5-013-property-sets",                      "-tier-3-domain-modeling"),
+    ("IFC5-014","RFC-IFC5-014-geometry-architecture",              "-tier-3-domain-modeling"),
+    ("IFC5-015","RFC-IFC5-015-openusd-alignment",                  "-tier-3-domain-modeling"),
+    ("IFC5-016","RFC-IFC5-016-spatial-structure",                  "-tier-3-domain-modeling"),
+    ("IFC5-017","RFC-IFC5-017-material-modeling",                  "-tier-3-domain-modeling"),
+    ("IFC5-018","RFC-IFC5-018-backward-compatibility",             "-tier-4-governance"),
+    ("IFC5-019","RFC-IFC5-019-validation-framework",               "-tier-4-governance"),
+    ("IFC5-020","RFC-IFC5-020-model-views-exchange",               "-tier-4-governance"),
+    ("IFC5-021","RFC-IFC5-021-federation-external-references",     "-tier-4-governance"),
+    ("IFC5-022","RFC-IFC5-022-versioning-schema-evolution",        "-tier-4-governance"),
+    ("IFC5-023","RFC-IFC5-023-attribute-representation",           "-tier-2-core-architecture"),
+    ("IFC5-024","RFC-IFC5-024-type-system-primitives",             "-tier-2-core-architecture"),
+    ("IFC5-025","RFC-IFC5-025-collections-cardinality",            "-tier-2-core-architecture"),
+    ("IFC5-026","RFC-IFC5-026-openings-voids-fillings",            "-tier-3-domain-modeling"),
+    ("IFC5-027","RFC-IFC5-027-classification-external-dictionaries","-tier-3-domain-modeling"),
+    ("IFC5-028","RFC-IFC5-028-units-measures",                     "-tier-3-domain-modeling"),
+    ("IFC5-029","RFC-IFC5-029-presentation-appearance",            "-tier-3-domain-modeling"),
+    ("IFC5-030","RFC-IFC5-030-space-boundaries",                   "-tier-3-domain-modeling"),
+    ("IFC5-031","RFC-IFC5-031-metadata-custom-data",               "-tier-3-domain-modeling"),
+    ("IFC5-032","RFC-IFC5-032-extensibility",                      "-tier-4-governance"),
+    ("IFC5-033","RFC-IFC5-033-change-collaboration",               "-tier-4-governance"),
+    ("IFC5-034","RFC-IFC5-034-performance-scale-database",         "-tier-4-governance"),
+    ("IFC5-035","RFC-IFC5-035-web-linked-data",                    "-tier-4-governance"),
+    ("IFC5-036","RFC-IFC5-036-ai-machine-readability",             "-tier-4-governance"),
+    ("IFC5-037","RFC-IFC5-037-security-trust",                     "-tier-4-governance"),
+    ("IFC5-038","RFC-IFC5-038-governance-conformance",             "-tier-4-governance"),
 ]
 
 # ── Auth ───────────────────────────────────────────────────────────────────────
@@ -155,11 +158,13 @@ def clear_form_items(forms_service, form_id):
     ).execute()
 
 
-def rebuild_form(forms_service, form_id, rfc_id, title, approaches, questions, dry_run):
+def rebuild_form(forms_service, form_id, rfc_id, title, approaches, questions, links, dry_run):
     """Clear and rebuild a form with the new structure."""
     if dry_run:
         print(f"  [DRY] Would rebuild: {len(approaches)} approaches, {len(questions)} questions")
         return
+
+    github_url, gdoc_url, list_url, new_url, form_url = links
 
     # 1. Clear existing items
     clear_form_items(forms_service, form_id)
@@ -267,6 +272,25 @@ def rebuild_form(forms_service, form_id, rfc_id, title, approaches, questions, d
         })
         idx += 1
 
+    # Links section (last item)
+    links_text = (
+        f"📄 GitHub MD: {github_url}\n"
+        f"📝 Google Doc: {gdoc_url}\n"
+        f"💬 View all discussions: {list_url}\n"
+        f"+ New discussion: {new_url}\n"
+        f"📋 Take this feedback form: {form_url}"
+    )
+    requests.append({
+        "createItem": {
+            "item": {
+                "title": "Links for this RFC",
+                "description": links_text,
+                "textItem": {},
+            },
+            "location": {"index": idx},
+        }
+    })
+
     if requests:
         forms_service.forms().batchUpdate(
             formId=form_id,
@@ -288,9 +312,10 @@ def main():
         sys.exit(1)
 
     forms_index = json.loads(FORMS_INDEX.read_text(encoding="utf-8"))
+    drive_index = json.loads(DRIVE_INDEX.read_text(encoding="utf-8")) if DRIVE_INDEX.exists() else {}
     forms_service = get_forms_service()
 
-    for rfc_id, slug in RFCS:
+    for rfc_id, slug, tier_slug in RFCS:
         md_path = RFC_DIR / f"{slug}.md"
         if not md_path.exists():
             print(f"  [WARN] {rfc_id}: MD file not found")
@@ -300,16 +325,31 @@ def main():
             print(f"  [SKIP] {rfc_id}: not in forms_index — run create_rfc_forms.py first")
             continue
 
-        form_id   = forms_index[rfc_id]["id"]
-        title     = extract_title(md_path)
+        form_id    = forms_index[rfc_id]["id"]
+        form_url   = forms_index[rfc_id].get("url", "#")
+        title      = extract_title(md_path)
         approaches = extract_approaches(md_path)
         questions  = extract_questions(md_path)
+
+        drive_key = f"02 RFCs\\{slug}.md"
+        doc_id    = drive_index.get(drive_key) or drive_index.get(drive_key.replace("\\", "/"))
+        gdoc_url  = f"https://docs.google.com/document/d/{doc_id}/edit" if doc_id else "#"
+
+        github_url = f"{REPO}/blob/master/02%20RFCs/{slug}.md"
+        list_url   = f"{REPO}/discussions?discussions_q=label%3A{rfc_id}"
+        new_url    = (
+            f"{REPO}/discussions/new"
+            f"?category={tier_slug}"
+            f"&title=%5BRFC+Feedback%5D+{rfc_id}+%E2%80%94+"
+            f"&labels={rfc_id}"
+        )
+        links = (github_url, gdoc_url, list_url, new_url, form_url)
 
         print(f"{rfc_id} — {title}")
         print(f"  approaches={len(approaches)}, questions={len(questions)}")
 
         try:
-            rebuild_form(forms_service, form_id, rfc_id, title, approaches, questions, args.dry_run)
+            rebuild_form(forms_service, form_id, rfc_id, title, approaches, questions, links, args.dry_run)
             print(f"  [OK]")
         except Exception as e:
             print(f"  [ERROR] {e}")

@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-016](https://docs.google.com/forms/d/e/1FAIpQLSdbV-KqEX8Xmiwc3d_R3RHuXS6mko2uBygFdM71plgWptHZrQ/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-016-spatial-structure.md">📄 GitHub MD</a></td>

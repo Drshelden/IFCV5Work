@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-010](https://docs.google.com/forms/d/e/1FAIpQLSfgrDV6sCT6h2s7BSgL0CEOK2jy1QpuiH2ZOHW15mvbjeh7tA/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-010-composition-inheritance.md">📄 GitHub MD</a></td>

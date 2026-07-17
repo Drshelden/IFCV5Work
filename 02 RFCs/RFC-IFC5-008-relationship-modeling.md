@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-008](https://docs.google.com/forms/d/e/1FAIpQLSc0iFmef1L58lI8oNsevUrGkrnIg8rWzkbnwip8ivzbW-j1Tw/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md">📄 GitHub MD</a></td>

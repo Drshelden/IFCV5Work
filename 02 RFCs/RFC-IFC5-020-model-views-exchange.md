@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-020](https://docs.google.com/forms/d/e/1FAIpQLSetCodkSRz0KLo7lwOBCVfgvFqG48GPZrVgfZG5KsKbe-v2oA/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-020-model-views-exchange.md">📄 GitHub MD</a></td>

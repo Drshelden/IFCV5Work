@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-004](https://docs.google.com/forms/d/e/1FAIpQLSfDHMqhIcI00IVfEHG9tAuxbEeahzkNHuRtW12PeneYAp1qyg/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md">📄 GitHub MD</a></td>

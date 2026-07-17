@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-025](https://docs.google.com/forms/d/e/1FAIpQLSeve6z8DJ6B3AxXwBEjG1j4Fk45BaskT30bm30cLj10lLtefA/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-025-collections-cardinality.md">📄 GitHub MD</a></td>

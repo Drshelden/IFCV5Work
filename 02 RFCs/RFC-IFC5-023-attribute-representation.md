@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-023](https://docs.google.com/forms/d/e/1FAIpQLSe1xMIjYM-GKFaal17f_mzBP9j90TCq58f6M9Cv4_icKUjRpw/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-023-attribute-representation.md">📄 GitHub MD</a></td>

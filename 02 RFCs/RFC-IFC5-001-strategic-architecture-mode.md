@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-001](https://docs.google.com/forms/d/e/1FAIpQLSeHhF59vcXMEqfdsz25qyfV6QgrzLjcafg92FzbeZXwuw9vWA/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md">📄 GitHub MD</a></td>

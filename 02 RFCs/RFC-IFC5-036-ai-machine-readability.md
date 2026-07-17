@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-036](https://docs.google.com/forms/d/e/1FAIpQLSdphGuPq8vyYNvh1YLuejkorRr4Bxs88coC-rsUSxJMJ-ifUA/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-036-ai-machine-readability.md">📄 GitHub MD</a></td>

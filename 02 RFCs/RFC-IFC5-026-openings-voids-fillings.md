@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-026](https://docs.google.com/forms/d/e/1FAIpQLSeE0p-ic000wKBiTR15HoycvbH2O39h6cWbYZNh62qyArQX5w/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-026-openings-voids-fillings.md">📄 GitHub MD</a></td>

@@ -1,3 +1,6 @@
+
+<!-- rfc-form -->
+📋 **[Take the feedback form for IFC5-009](https://docs.google.com/forms/d/e/1FAIpQLSeBGI1FYTPy5FytaQWIW-oWbOsSQaeoiJlaaTqNe_6QNV_jhw/viewform)** — answer the open questions and leave comments directly.
 <!-- rfc-nav -->
 <table><tr>
 <td><a href="https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md">📄 GitHub MD</a></td>
