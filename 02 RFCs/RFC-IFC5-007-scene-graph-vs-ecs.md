@@ -27,8 +27,39 @@ This RFC asks: what is the primary structural organization of an IFC5 model?
 
 ## 2. Background
 
-- **IFCX**: Hierarchical `children` tree; `inherits` for prototype composition; attributes under `attributes`; namespaced. Scene-graph oriented. Close to OpenUSD.
-- **IFC-ECS**: Flat array of components; each component has `entityGuid`, `componentGuid`, `componentType`. No hierarchy. Runtime/database oriented.
+Both proposals share a common JSON substrate (see IFC5-039) and the concept of a "component" as a dictionary carrying semantic data. The structural differences are significant:
+
+**IFCX component structure:**
+```json
+{
+  "path": "/IfcProject/Site/Building/Wall-001",
+  "attributes": {
+    "ifc:Name": { "type": "IfcLabel", "value": "Wall-001" },
+    "ifc:IsExternal": { "type": "IfcBoolean", "value": false }
+  },
+  "children": {
+    "Geometry": { "path": "/IfcProject/Site/Building/Wall-001/Geometry", "attributes": { ... } }
+  },
+  "inherits": "/Templates/StandardWall"
+}
+```
+Key structural fields: `path` (entity reference and address), `attributes`, optional `children`, optional `inherits`. No explicit component identity or component type beyond namespace conventions in attribute keys.
+
+**IFC-ECS component structure:**
+```json
+{
+  "entityGuid": "14adb22b-d474-48a2-8e8f-6d4c067c1953",
+  "componentGuid": "5e3f2a1c-8b9d-4a3e-b2f7-9c1d0e4f6a8b",
+  "componentType": "IfcWallIdentity",
+  "attributes": {
+    "Name": "Wall-001",
+    "IsExternal": false
+  }
+}
+```
+Key structural fields: `entityGuid` (entity reference), `componentGuid` (component identity), `componentType` (semantic role), `attributes`. No hierarchy. Multiple components per entity aggregated at query time by matching `entityGuid`.
+
+**Convergence point:** Both treat a component as a dict with an entity reference field and an attributes payload. This common structure is made explicit in IFC5-039. The divergence is in: (a) whether entity reference is path-based or GUID-based, (b) whether hierarchy is explicit or absent, (c) whether component identity is tracked, and (d) whether component type is a field or a namespace prefix.
 
 Both have Hello Wall examples in `03 Reference Examples/`.
 
@@ -54,16 +85,23 @@ The top-level structure is a scene graph for navigation and hierarchy. Semantic 
 
 IFC5 normatively defines both representations with a lossless mapping between them. Files declare which representation they use.
 
+### 4.5 Common component primitive with profile-specific organization
+
+IFC5 defines a shared component structure (see IFC5-039): a dict with an entity reference, an optional component type, optional component identity, and an attributes payload. Files organized as a scene graph place these components on hierarchy nodes; files organized as ECS collect them in a flat array. The same component dict structure is valid in both. Profile is declared at the document level.
+
+This approach makes the scene-graph vs. ECS distinction a document-level organizational choice rather than a data model difference. The component is the fundamental unit; how components are organized is the profile.
+
 ## 5. Tradeoffs
 
-| Dimension | Scene graph | Flat ECS | Hybrid | Dual rep |
-|---|---|---|---|---|
-| USD alignment | High | Low | Moderate | Partial |
-| Runtime query performance | Moderate | High | Moderate | High |
-| IFC4.x round-trip | Moderate | Low | Moderate | High |
-| Authoring tool integration | High | Low | Moderate | Low |
-| File size / redundancy | Moderate | Low | Moderate | High |
-| Conceptual simplicity | Moderate | High | Low | Low |
+| Dimension | Scene graph | Flat ECS | Hybrid | Dual rep | Common primitive |
+|---|---|---|---|---|---|
+| USD alignment | High | Low | Moderate | Partial | Moderate |
+| Runtime query performance | Moderate | High | Moderate | High | High (ECS side) |
+| IFC4.x round-trip | Moderate | Low | Moderate | High | Moderate |
+| Authoring tool integration | High | Low | Moderate | Low | Moderate |
+| File size / redundancy | Moderate | Low | Moderate | High | Low |
+| Conceptual simplicity | Moderate | High | Low | Low | High |
+| Override / archetype support | High (path-based) | Low | Moderate | High | Moderate |
 
 ## 6. Recommendation
 
@@ -79,6 +117,12 @@ IFC5 normatively defines both representations with a lossless mapping between th
 
 **Q4.** Should a wall with multiple semantic relationships (spatial containment, material association, type definition) appear in the hierarchy once, multiple times, or be addressed by multiple paths?
 
+**Q5.** Should components have a **required minimum field set** regardless of architectural approach — e.g., an entity reference (GUID or path), an optional component type, and an attributes payload — so that cross-profile tools can process IFC5 data without knowing the full architectural mode?
+
+**Q6.** In the ECS model, components associated with a specific entity must be aggregated at runtime by matching `entityGuid`. Should this aggregation behavior be **normatively specified** (including ordering and conflict resolution rules), or left to implementation? Does the scene graph model have an equivalent aggregation step?
+
+**Q7.** IFCX's `path` field serves simultaneously as an entity identity and a structural address. IFC-ECS's `entityGuid` is purely an identity. Are these semantically equivalent, or does the path-as-address create a dependency on the parent hierarchy that GUID does not? (See also IFC5-003, IFC5-004.)
+
 ## 8. Prototype
 
 - **Required:** Yes
@@ -92,6 +136,8 @@ This is the highest-dependency RFC after IFC5-001. It directly shapes:
 - Spatial structure (IFC5-016)
 - Geometry architecture (IFC5-014)
 - Property sets (IFC5-013)
+- Archetype and override mechanisms (IFC5-040) — the feasibility of GUID-based overrides vs. path-based overrides depends critically on which architecture is chosen
+- Foundational component primitive definition (IFC5-039)
 
 ## 11. Absorbed Topic: Architectural Ambiguities (Topic 58)
 

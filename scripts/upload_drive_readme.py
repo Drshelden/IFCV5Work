@@ -41,26 +41,15 @@ This is the working home for the IFC5 Architecture Initiative — a structured e
 
 ## Quick Links
 
-| Resource | GitHub | Google Drive |
-|---|---|---|
-| README (this document) | GitHub | Google Doc |
-| Process Guide | GitHub MD | Google Doc |
-| RFC Index | GitHub MD | Google Doc |
-| Decision Register | CSV | — |
-| RFC Priority Survey | — | Take the survey: https://forms.gle/vgu13dUKTpaqWEaE9 |
-| All Discussions | View / Start new: https://github.com/Drshelden/IFCV5Work/discussions | — |
-| Individual RFC Forms | Links in each RFC header | forms/ folder in this Drive |
-
-Full URLs:
-- README Google Doc: https://docs.google.com/document/d/1voB1u9RWjZ_u2XLjjl9GTpD_Z0SqyiJDHP5kYjd2dt4/edit
-- README GitHub: https://github.com/Drshelden/IFCV5Work/blob/master/README.md
-- Process Guide Google Doc: https://docs.google.com/document/d/1SA5Sg1RbKZT3z3vmYykf6P_DSly2pNG3ac9cET4RTCI/edit
-- Process Guide GitHub: https://github.com/Drshelden/IFCV5Work/blob/master/00%20Architecture%20Overview/IFC5_Process_Guide.md
-- RFC Index Google Doc: https://docs.google.com/document/d/1L4wD92OdDVGm5cvcPiAGYWQBF9pDHbHXni6ohOS5rKE/edit
-- RFC Index GitHub: https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md
-- Decision Register: https://github.com/Drshelden/IFCV5Work/blob/master/01%20Decision%20Register/IFC5_Decision_Register.csv
-- GitHub repository root: https://github.com/Drshelden/IFCV5Work
-- Google Drive folder root: https://drive.google.com/drive/folders/1U9J-6hAr5pM_Q28JChDcistHsAHgi33y
+- [README — Google Drive (this document)](https://docs.google.com/document/d/1voB1u9RWjZ_u2XLjjl9GTpD_Z0SqyiJDHP5kYjd2dt4/edit) · [README — GitHub](https://github.com/Drshelden/IFCV5Work/blob/master/README.md)
+- [Process Guide — Google Doc](https://docs.google.com/document/d/1SA5Sg1RbKZT3z3vmYykf6P_DSly2pNG3ac9cET4RTCI/edit) · [Process Guide — GitHub](https://github.com/Drshelden/IFCV5Work/blob/master/00%20Architecture%20Overview/IFC5_Process_Guide.md)
+- [RFC Index — Google Doc](https://docs.google.com/document/d/1L4wD92OdDVGm5cvcPiAGYWQBF9pDHbHXni6ohOS5rKE/edit) · [RFC Index — GitHub](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md)
+- [Decision Register (CSV)](https://github.com/Drshelden/IFCV5Work/blob/master/01%20Decision%20Register/IFC5_Decision_Register.csv)
+- [📋 RFC Priority Survey](https://forms.gle/vgu13dUKTpaqWEaE9)
+- [💬 View all GitHub Discussions](https://github.com/Drshelden/IFCV5Work/discussions) · [+ Start a new discussion](https://github.com/Drshelden/IFCV5Work/discussions/new)
+- [GitHub repository root](https://github.com/Drshelden/IFCV5Work)
+- [Google Drive folder root](https://drive.google.com/drive/folders/1U9J-6hAr5pM_Q28JChDcistHsAHgi33y)
+- Individual RFC feedback forms: linked in the header and footer of each RFC, or browse the [forms/ folder](https://drive.google.com/drive/folders/1U9J-6hAr5pM_Q28JChDcistHsAHgi33y)
 
 ---
 
@@ -96,11 +85,8 @@ The 02 RFCs/ folder contains 38 structured documents, one per architectural deci
 
 Every RFC exists in both places:
 
-| | GitHub | Google Drive |
-|---|---|---|
-| Format | Markdown (.md) | Google Doc |
-| Best for | Reading, version history, pull requests | Commenting, suggesting edits |
-| Feedback | GitHub Discussions (tagged by RFC ID) | Google Docs comments + RFC form |
+- [GitHub (Markdown)](https://github.com/Drshelden/IFCV5Work/tree/master/02%20RFCs) — best for reading, version history, and pull requests. Feedback via GitHub Discussions tagged with the RFC ID.
+- [Google Drive (Google Docs)](https://drive.google.com/drive/folders/1U9J-6hAr5pM_Q28JChDcistHsAHgi33y) — best for inline comments and suggested edits. Feedback via Google Docs comments or the RFC's individual form.
 
 Each RFC's header and footer contains direct links to its counterpart, its discussion thread, and its individual feedback form.
 

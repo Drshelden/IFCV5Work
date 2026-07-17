@@ -57,15 +57,28 @@ IFC5 defines a runtime-oriented component model. The serialization format is a p
 
 IFC5 defines a core data model that can be serialized to multiple profiles (exchange, runtime, scene description), each with defined conformance requirements.
 
+### 4.5 Atomic data architecture as a cross-cutting strategic requirement
+
+Regardless of which architectural mode is chosen, IFC5 commits to an **atomic data standard**: a minimum unit of data that is typed, named, uniquely identified, and capable of referencing other objects by stable identifier. This atomic unit is:
+
+- A **dictionary** with standardized structural keys (entity reference, type declaration, attributes payload)
+- **Data-typed** attributes — every attribute declares its type, no positional interpretation
+- **Reference-capable** — objects can be linked by stable ID (`{"ref": "uuid"}`) rather than requiring inline embedding
+
+This is not a separate serialization format — it is a constraint that applies to all profiles. It ensures that every IFC5 document is machine-readable, AI-processable, and queryable without full schema knowledge.
+
+The open question is whether this atomic standard is a **design constraint** (a requirement every architectural approach must satisfy) or a **profile** (one option among several). This RFC proposes it be treated as a constraint — a floor, not a choice.
+
 ## 5. Tradeoffs
 
-| Dimension | Exchange-first | Scene-first | ECS-first | Hybrid |
-|---|---|---|---|---|
-| IFC4.x round-trip | Strong | Migration required | Major redesign | Profile-dependent |
-| USD compatibility | Weak | Strong | Weak | Partial |
-| Runtime performance | Weak | Moderate | Strong | Profile-dependent |
-| Tooling complexity | Low (existing tools) | Moderate | High | High |
-| Community readiness | High | Moderate | Low | Low |
+| Dimension | Exchange-first | Scene-first | ECS-first | Hybrid | Atomic constraint |
+|---|---|---|---|---|---|
+| IFC4.x round-trip | Strong | Migration required | Major redesign | Profile-dependent | Compatible |
+| USD compatibility | Weak | Strong | Weak | Partial | Compatible |
+| Runtime performance | Weak | Moderate | Strong | Profile-dependent | Compatible |
+| Tooling complexity | Low (existing tools) | Moderate | High | High | Low overhead |
+| Community readiness | High | Moderate | Low | Low | Medium |
+| AI / machine-readability | Low | Moderate | High | Moderate | High |
 
 ## 6. Recommendation
 
@@ -81,6 +94,10 @@ IFC5 defines a core data model that can be serialized to multiple profiles (exch
 
 **Q4.** Is it architecturally feasible to serve all objectives from one format, or must IFC5 define explicit profiles?
 
+**Q5.** Should IFC5 commit to an **atomic data requirement** — that every data object be typed, named, uniquely identified, and reference-capable — as a cross-cutting constraint that applies regardless of which architectural mode (exchange, scene, ECS, hybrid) is selected?
+
+**Q6.** What is the minimum set of structural fields that defines an "atomic data unit" in IFC5? Is it: `{type, id, attributes}`, `{entityRef, componentType, attributes}`, or something else? Should this be normatively specified at the strategic level or deferred to RFC-IFC5-039?
+
 ## 8. Prototype
 
 - **Required:** No
@@ -93,6 +110,8 @@ This decision is the root dependency for every other RFC. It directly shapes:
 - Whether relationships remain first-class (IFC5-008)
 - Whether the scene graph replaces IFC spatial structure (IFC5-016)
 - Whether round-tripping is a hard requirement (IFC5-018)
+- The foundational JSON data model and atomic data primitives (IFC5-039)
+- Archetype and template mechanisms, which differ significantly across architectural modes (IFC5-040)
 
 ## 10. References
 

@@ -52,14 +52,30 @@ Where format decisions are equivalent from an engineering standpoint, the normal
 
 A named AI-readability profile defines which IFC5 features must be present for files intended for ML consumption: stable IDs, named attributes, semantic URIs, no embedding of binary blobs in semantic fields.
 
+### 4.5 Atomic data standard as the AI readability foundation
+
+AI readability is most reliably achieved not through a separate profile, but through a foundational requirement on the data primitive itself: every object in IFC5 must be a **typed, named, uniquely identified dictionary**. Specifically:
+
+- Every semantic object has a declared type (not inferred from position or context)
+- Every attribute is named (not positional)
+- Every object is uniquely identifiable by a stable ID (GUID, path, or URI) that is stable across exports
+- Object relationships are expressed as references to those stable IDs, not by embedding
+
+This is the "atomic data standard" concept described in IFC5-001 and IFC5-039. From an AI perspective, this atomic standard means:
+- Any IFC5 document can be parsed into a consistent `{id, type, attributes, references}` structure without schema knowledge
+- Training datasets are consistent across different authors and tools
+- Graph construction (for graph neural networks) requires only the reference links, not schema traversal
+
+This approach argues that AI readability is not a profile to be layered on top — it is a consequence of correctly specifying the data model at the foundational level.
+
 ## 5. Tradeoffs
 
-| Dimension | Named attrs baseline | Provenance metadata | Normalized pref | AI profile |
-|---|---|---|---|---|
-| Design effort | Low | Moderate | Low | Moderate |
-| Authoring tool burden | Low | Optional | Low | Optional |
-| AI system benefit | Foundational | High | High | High |
-| File verbosity | None | Low–moderate | Low | Low |
+| Dimension | Named attrs baseline | Provenance metadata | Normalized pref | AI profile | Atomic data standard |
+|---|---|---|---|---|---|
+| Design effort | Low | Moderate | Low | Moderate | Low (if foundational) |
+| Authoring tool burden | Low | Optional | Low | Optional | Low |
+| AI system benefit | Foundational | High | High | High | Very high |
+| File verbosity | None | Low–moderate | Low | Low | None |
 
 ## 6. Recommendation
 
@@ -69,11 +85,15 @@ A named AI-readability profile defines which IFC5 features must be present for f
 
 **Q1.** Should IFC5 explicitly distinguish machine-generated attributes (from AI tools, sensors, or simulation) from human-authored ones?
 
-**Q2.** Are there specific IFC5 design choices — e.g., between scene graph and ECS, or between inline and external geometry — that make a material difference to AI use cases?
+**Q2.** Are there specific IFC5 design choices — e.g., between scene graph and ECS, or between inline and external geometry — that make a material difference to AI use cases? In particular: is a flat, normalized, component-oriented representation (ECS-style) intrinsically more AI-readable than a hierarchical scene graph?
 
 **Q3.** Is the graph extractability of IFC5 (for graph neural network use cases) a design constraint?
 
 **Q4.** Should IFC5 include fields for semantic embeddings or ML model references, or is this out of scope?
+
+**Q5.** Should IFC5 specify a **minimal atomic data unit** — a typed, identified, reference-capable dictionary — as a requirement for the AI-readability conformance profile? Or is the atomic data standard (IFC5-039) sufficient on its own, without a named AI profile?
+
+**Q6.** If AI readability is achieved through the foundational data model (approach 4.5), what additional requirements — if any — does this RFC need to add beyond what IFC5-039 and IFC5-001 already specify? Is a separate AI-readability RFC necessary, or should its requirements be merged into the foundational RFCs?
 
 ## 8. Prototype
 
@@ -84,6 +104,7 @@ A named AI-readability profile defines which IFC5 features must be present for f
 - Provides additional design guidance for IFC5-007 (scene graph vs. ECS)
 - Shapes provenance metadata decisions (IFC5-031)
 - May reinforce normalization preferences in IFC5-013 (property sets)
+- Closely linked to IFC5-039 (foundational JSON data model) and IFC5-001 (atomic data architecture requirement)
 
 ## 10. References
 
