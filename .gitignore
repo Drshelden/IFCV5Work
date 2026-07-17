@@ -1,0 +1,11 @@
+# Local OAuth and service credentials
+scripts/oauth_client_secret.json
+scripts/oauth_token.json
+scripts/service_account.json
+
+# Local Drive sync state
+scripts/drive_index.json
+
+# Python cache artifacts
+scripts/__pycache__/
+*.pyc

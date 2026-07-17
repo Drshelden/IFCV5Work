@@ -8,8 +8,13 @@ First run: creates Google Docs and records their IDs in drive_index.json.
 Subsequent runs: updates existing docs in-place (no duplicates).
 
 Requirements:
-    pip install google-api-python-client google-auth --break-system-packages
+    pip install google-api-python-client google-auth google-auth-oauthlib --break-system-packages
     Pandoc must be installed: https://pandoc.org/installing.html
+
+OAuth setup:
+    1) Create an OAuth Desktop App client in Google Cloud Console.
+    2) Save the JSON as scripts/oauth_client_secret.json
+    3) First run will open a browser for consent and save scripts/oauth_token.json
 
 Usage:
     python sync_to_gdrive.py [--dry-run]
@@ -29,7 +34,9 @@ from pathlib import Path
 SCRIPT_DIR   = Path(__file__).resolve().parent
 WORK_DIR     = SCRIPT_DIR.parent
 INDEX_FILE   = SCRIPT_DIR / "drive_index.json"
-SA_FILE      = SCRIPT_DIR / "service_account.json"
+OAUTH_CLIENT_FILE = SCRIPT_DIR / "oauth_client_secret.json"
+TOKEN_FILE   = SCRIPT_DIR / "oauth_token.json"
+SCOPES       = ["https://www.googleapis.com/auth/drive"]
 
 ROOT_FOLDER_ID = "1U9J-6hAr5pM_Q28JChDcistHsAHgi33y"
 
@@ -70,18 +77,31 @@ def resolve_pandoc_bin():
 # ── Auth ───────────────────────────────────────────────────────────────────────
 
 def get_drive_service():
-    from google.oauth2 import service_account
+    from google.auth.transport.requests import Request
+    from google.oauth2.credentials import Credentials
     from googleapiclient.discovery import build
+    from google_auth_oauthlib.flow import InstalledAppFlow
 
-    if not SA_FILE.exists():
-        print(f"ERROR: service_account.json not found at {SA_FILE}")
-        print("Download it from Google Cloud Console → IAM → Service Accounts → Keys")
+    if not OAUTH_CLIENT_FILE.exists():
+        print(f"ERROR: OAuth client JSON not found at {OAUTH_CLIENT_FILE}")
+        print("Create a Google OAuth Desktop App client and save its JSON to that path.")
         sys.exit(1)
 
-    creds = service_account.Credentials.from_service_account_file(
-        str(SA_FILE),
-        scopes=["https://www.googleapis.com/auth/drive"],
-    )
+    creds = None
+    if TOKEN_FILE.exists():
+        try:
+            creds = Credentials.from_authorized_user_file(str(TOKEN_FILE), SCOPES)
+        except Exception:
+            creds = None
+
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(str(OAUTH_CLIENT_FILE), SCOPES)
+            creds = flow.run_local_server(port=0)
+        TOKEN_FILE.write_text(creds.to_json(), encoding="utf-8")
+
     return build("drive", "v3", credentials=creds, cache_discovery=False)
 
 # ── Drive helpers ──────────────────────────────────────────────────────────────
