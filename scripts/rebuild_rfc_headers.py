@@ -100,10 +100,9 @@ SENTINEL_NAV   = "<!-- rfc-nav -->"
 
 
 def make_grid(rfc_id, slug, tier_slug, gdoc_url, form_url):
-    title_enc = urllib.parse.quote(f"[RFC Feedback] {rfc_id} — ", safe="")
-    github_url   = f"{REPO}/blob/master/02%20RFCs/{slug}.md"
-    list_url     = f"{REPO}/discussions?discussions_q=label%3A{rfc_id}"
-    new_url      = (
+    github_url = f"{REPO}/blob/master/02%20RFCs/{slug}.md"
+    list_url   = f"{REPO}/discussions?discussions_q=label%3A{rfc_id}"
+    new_url    = (
         f"{REPO}/discussions/new"
         f"?category={tier_slug}"
         f"&title=%5BRFC+Feedback%5D+{rfc_id}+%E2%80%94+"
@@ -111,41 +110,33 @@ def make_grid(rfc_id, slug, tier_slug, gdoc_url, form_url):
         f"&body={ENCODED_BODY}"
     )
 
+    # Plain markdown links — renders on GitHub and converts to Word hyperlinks via Pandoc
     return (
         f"{SENTINEL_NAV}\n"
-        f"<table><tr>\n"
-        f'<td><a href="{github_url}">📄 GitHub MD</a></td>\n'
-        f'<td><a href="{gdoc_url}">📝 Google Doc</a></td>\n'
-        f"</tr><tr>\n"
-        f'<td><a href="{list_url}">💬 View all discussions</a></td>\n'
-        f'<td><a href="{new_url}">+ New discussion</a></td>\n'
-        f"</tr><tr>\n"
-        f'<td colspan="2" align="center"><a href="{form_url}">📋 Take the feedback form</a></td>\n'
-        f"</tr></table>\n"
+        f"[📄 GitHub MD]({github_url}) · "
+        f"[📝 Google Doc]({gdoc_url}) · "
+        f"[💬 View all discussions]({list_url}) · "
+        f"[+ New discussion]({new_url}) · "
+        f"[📋 Take the feedback form]({form_url})\n"
     )
 
 
 def strip_old_blocks(content):
     """Remove all existing sentinel-bounded link/form/nav blocks."""
-    # Remove <!-- rfc-nav -->...(next blank line or next sentinel)
+    # Remove <!-- rfc-nav --> lines (markdown link line or HTML table block)
     content = re.sub(
-        r'<!-- rfc-nav -->.*?(?=\n\n# |\n\n---|\Z)',
+        r'<!-- rfc-nav -->.*?(?=\n\n# |\n\n---|\n\n\S|\Z)',
         '', content, flags=re.DOTALL
     )
-    # Remove <!-- rfc-links --> blocks (blockquote style or inline)
-    content = re.sub(
-        r'<!-- rfc-links -->[^\n]*\n(?:>.*\n)*\n?',
-        '', content
-    )
-    content = re.sub(
-        r'<!-- rfc-links -->[^\n]*\n(?:.*\n){1,5}',
-        '', content
-    )
-    # Remove <!-- rfc-form --> blocks
-    content = re.sub(
-        r'<!-- rfc-form -->[^\n]*\n.*\n\n?',
-        '', content
-    )
+    # Remove <!-- rfc-links --> blocks
+    content = re.sub(r'<!-- rfc-links -->.*?\n\n', '', content, flags=re.DOTALL)
+    content = re.sub(r'<!-- rfc-links -->[^\n]*\n', '', content)
+    # Remove <!-- rfc-form --> line (with or without blank line after)
+    content = re.sub(r'<!-- rfc-form -->[^\n]*\n[^\n]*\n?', '', content)
+    # Remove old "💬 Discuss this RFC:" inline blocks
+    content = re.sub(r'💬 \*\*Discuss this RFC:\*\*[^\n]*\n', '', content)
+    # Remove | Source Topics | ... | rows from metadata tables
+    content = re.sub(r'\| \*\*Source Topics\*\* \|[^\n]*\n', '', content)
     # Remove trailing ---\n before cleaned footer
     content = re.sub(r'\n---\n\n$', '\n', content)
     return content.strip()
