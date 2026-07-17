@@ -13,9 +13,26 @@
 | **GitHub Repository** | [github.com/Drshelden/IFCV5Work](https://github.com/Drshelden/IFCV5Work) |
 | **RFC Index** | [GitHub](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/README.md) · [Google Doc](https://docs.google.com/document/d/1L4wD92OdDVGm5cvcPiAGYWQBF9pDHbHXni6ohOS5rKE/edit) |
 | **Decision Register** | [GitHub CSV](https://github.com/Drshelden/IFCV5Work/blob/master/01%20Decision%20Register/IFC5_Decision_Register.csv) |
-| **RFC Priority Survey** | [📋 Take the survey](https://docs.google.com/forms/d/e/1FAIpQLScHN9SiU64axXxosFmZNlEc7D9v1hzjlfXAHl00uxd6HCl4jw/viewform) |
+| **RFC Priority Survey** | [📋 Take the survey](https://forms.gle/vgu13dUKTpaqWEaE9) |
 | **GitHub Discussions** | [View all discussions](https://github.com/Drshelden/IFCV5Work/discussions) |
 | **Individual RFC Feedback Forms** | Links in the header/footer of each RFC |
+
+---
+
+## Quick Start
+
+New to the initiative? Do these three things:
+
+**1. Orient yourself (15 min)**
+Read the [RFC Index](https://docs.google.com/document/d/1L4wD92OdDVGm5cvcPiAGYWQBF9pDHbHXni6ohOS5rKE/edit) to see all 38 topics under discussion, grouped by tier. Skim two or three RFCs that look relevant to your work.
+
+**2. Vote on priorities (10 min)**
+Fill out the [RFC Priority Survey](https://forms.gle/vgu13dUKTpaqWEaE9). Rate each RFC on whether it should be resolved as part of IFC5 architecture work. This takes about 10 minutes and directly shapes what gets worked on first.
+
+**3. Give detailed feedback on one RFC (30–60 min)**
+Pick an RFC in a tier you know well. Open it via the link in the RFC Index (GitHub or Google Doc). Use the feedback form linked in the RFC header to submit structured comments — or start a [GitHub Discussion](https://github.com/Drshelden/IFCV5Work/discussions) if you prefer open-ended dialogue.
+
+That's it. The rest of this guide covers the process in detail for those who want it.
 
 ---
 
