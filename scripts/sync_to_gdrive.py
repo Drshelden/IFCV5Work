@@ -18,6 +18,7 @@ Usage:
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -42,6 +43,29 @@ ALLOWED_EXTENSIONS = {".md"}
 
 GDOC_MIME   = "application/vnd.google-apps.document"
 DOCX_MIME   = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+
+def resolve_pandoc_bin():
+    """Return a runnable pandoc executable path/name."""
+    for candidate in ("pandoc", "pandoc.exe"):
+        found = shutil.which(candidate)
+        if found:
+            return found
+
+    localappdata = os.environ.get("LOCALAPPDATA")
+    manual_candidates = []
+    if localappdata:
+        manual_candidates.append(Path(localappdata) / "Pandoc" / "pandoc.exe")
+    manual_candidates.extend([
+        Path("C:/Program Files/Pandoc/pandoc.exe"),
+        Path("C:/Program Files (x86)/Pandoc/pandoc.exe"),
+    ])
+
+    for candidate in manual_candidates:
+        if candidate.exists():
+            return str(candidate)
+
+    return None
 
 # ── Auth ───────────────────────────────────────────────────────────────────────
 
@@ -83,14 +107,14 @@ def get_or_create_folder(service, name, parent_id):
     return folder["id"]
 
 
-def md_to_docx_bytes(md_path):
+def md_to_docx_bytes(md_path, pandoc_bin):
     """Convert a markdown file to .docx bytes using Pandoc."""
     with tempfile.NamedTemporaryFile(suffix=".docx", delete=False) as tmp:
         tmp_path = tmp.name
 
     try:
         result = subprocess.run(
-            ["pandoc", str(md_path), "-o", tmp_path,
+            [pandoc_bin, str(md_path), "-o", tmp_path,
              "--from", "markdown", "--to", "docx"],
             capture_output=True, text=True
         )
@@ -142,13 +166,13 @@ def save_index(index):
 
 # ── Main sync ──────────────────────────────────────────────────────────────────
 
-def sync_file(service, md_path, folder_id, index, dry_run):
+def sync_file(service, md_path, folder_id, index, dry_run, pandoc_bin):
     """Sync one .md file to Google Drive as a Google Doc."""
     rel_key = str(md_path.relative_to(WORK_DIR))
     doc_name = md_path.stem  # filename without .md
 
     try:
-        docx_bytes = md_to_docx_bytes(md_path)
+        docx_bytes = md_to_docx_bytes(md_path, pandoc_bin)
     except Exception as e:
         print(f"  [ERROR] Pandoc failed for {md_path.name}: {e}")
         return
@@ -175,10 +199,14 @@ def main():
         print("=== DRY RUN — no changes will be made ===\n")
 
     # Verify pandoc is available
-    try:
-        subprocess.run(["pandoc", "--version"], capture_output=True, check=True)
-    except (FileNotFoundError, subprocess.CalledProcessError):
+    pandoc_bin = resolve_pandoc_bin()
+    if not pandoc_bin:
         print("ERROR: pandoc not found. Install from https://pandoc.org/installing.html")
+        sys.exit(1)
+    try:
+        subprocess.run([pandoc_bin, "--version"], capture_output=True, check=True)
+    except subprocess.CalledProcessError:
+        print("ERROR: pandoc was found but failed to run.")
         sys.exit(1)
 
     service = get_drive_service()
@@ -194,7 +222,7 @@ def main():
         drive_folder_id = get_or_create_folder(service, folder_name, ROOT_FOLDER_ID)
 
         for md_path in sorted(src_dir.glob("*.md")):
-            sync_file(service, md_path, drive_folder_id, index, dry_run=args.dry_run)
+            sync_file(service, md_path, drive_folder_id, index, dry_run=args.dry_run, pandoc_bin=pandoc_bin)
 
     if not args.dry_run:
         save_index(index)
