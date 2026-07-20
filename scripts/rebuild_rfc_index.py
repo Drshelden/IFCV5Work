@@ -1,7 +1,7 @@
 """
 rebuild_rfc_index.py
 --------------------
-Generates 02 RFCs/README.md (GitHub version) and uploads an equivalent
+Generates 03 RFCs/README.md (GitHub version) and uploads an equivalent
 Google Doc (Drive version) for the RFC Index.
 
 Each RFC entry includes:
@@ -25,7 +25,7 @@ from pathlib import Path
 
 SCRIPT_DIR   = Path(__file__).resolve().parent
 WORK_DIR     = SCRIPT_DIR.parent
-RFC_DIR      = WORK_DIR / "02 RFCs"
+RFC_DIR      = WORK_DIR / "03 RFCs"
 FORMS_INDEX  = SCRIPT_DIR / "forms_index.json"
 DRIVE_INDEX  = SCRIPT_DIR / "drive_index.json"
 OAUTH_FILE   = SCRIPT_DIR / "oauth_client_secret.json"
@@ -135,7 +135,7 @@ def rfc_urls(rfc_id, slug, tier_slug, forms_idx, drive_idx):
         f"&labels={rfc_id}"
         f"&body={ENCODED_BODY}"
     )
-    dk       = f"02 RFCs\\{slug}.md"
+    dk       = f"03 RFCs\\{slug}.md"
     doc_id   = drive_idx.get(dk) or drive_idx.get(dk.replace("\\", "/"))
     gdoc_url = f"https://docs.google.com/document/d/{doc_id}/edit" if doc_id else None
     form_url = forms_idx.get(rfc_id, {}).get("url")
