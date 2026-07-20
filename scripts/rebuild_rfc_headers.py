@@ -94,6 +94,7 @@ RFCS = [
     ("IFC5-038","RFC-IFC5-038-governance-conformance",            "-tier-4-governance"),
     ("IFC5-039","RFC-IFC5-039-foundational-json-data-model",      "-tier-1-foundational"),
     ("IFC5-040","RFC-IFC5-040-archetypes-templates-overrides",    "-tier-2-core-architecture"),
+    ("IFC5-041","RFC-IFC5-041-open-world-vs-closed-world",       "-tier-1-foundational"),
 ]
 
 SENTINEL_LINKS = "<!-- rfc-links -->"

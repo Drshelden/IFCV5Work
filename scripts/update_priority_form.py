@@ -66,10 +66,11 @@ RFCS = [
     ("IFC5-038", "Governance, Conformance, and Interoperability Testing"),
     ("IFC5-039", "Foundational JSON Data Model"),
     ("IFC5-040", "Archetypes, Type Templates, and Override Mechanisms"),
+    ("IFC5-041", "Open World vs. Closed World Assumptions"),
 ]
 
 TIER_GROUPS = [
-    ("Tier 1 — Foundational (RFCs 001–006, 039)", RFCS[0:6] + [RFCS[38]]),
+    ("Tier 1 — Foundational (RFCs 001–006, 039, 041)", RFCS[0:6] + [RFCS[38]] + [RFCS[40]]),
     ("Tier 2 — Core Architecture (RFCs 007–012, 023–025, 040)", RFCS[6:12] + RFCS[22:25] + [RFCS[39]]),
     ("Tier 3 — Domain Modeling (RFCs 013–017, 026–031)", RFCS[12:17] + RFCS[25:31]),
     ("Tier 4 — Governance & Interop (RFCs 018–022, 032–038)", RFCS[17:22] + RFCS[31:38]),
