@@ -3,6 +3,7 @@
 <!-- rfc-nav -->
 [📄 GitHub MD](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-041-open-world-vs-closed-world.md) · [📝 Google Doc](https://docs.google.com/document/d/1cbj9Jo44HECNdMTVhn_md1Q_RLjYnDzDt5EYrDidNic/edit) · [💬 View all discussions](https://github.com/Drshelden/IFCV5Work/discussions?discussions_q=label%3AIFC5-041) · [+ New discussion](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BRFC+Feedback%5D+IFC5-041+%E2%80%94+&labels=IFC5-041&body=%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20RFC%20text%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A) · [📋 Take the feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeWPRQYdUggtVVpjcKQvFOlwpG0Kwat3ubKXfyHH-_o_HKLUg/viewform)
 
+
 # RFC-IFC5-041: Open World vs. Closed World Assumptions
 
 | Field | Value |
@@ -11,223 +12,268 @@
 | **Status** | Idea |
 | **Tier** | 1 — Foundational |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-001, IFC5-003, IFC5-006, IFC5-007, IFC5-039 |
+| **Dependencies** | IFC5-001, IFC5-003, IFC5-004, IFC5-006, IFC5-007, IFC5-021, IFC5-039 |
 | **Prototype Required** | No |
-| **Logical position** | Tier 1 — prerequisite premise for IFC5-001 and all federation, identity, and extensibility RFCs |
+| **Logical position** | Tier 1 — prerequisite premise; resolves before IFC5-001 through IFC5-007 are finalized |
 
 ---
 
 ## 1. Problem Statement
 
-IFC4.x was built on an implicit **Closed World Assumption (CWA)**: if a fact is not present in the file, it is false or undefined; the file is the authoritative, complete description of the asset; and data exchange is a handover, not a continuous contribution. This assumption is never stated in the standard — it is embedded in the serialization format (STEP Physical File), the single-spatial-hierarchy model, and the schema's exhaustive prescriptive typing.
+IFC4.x was built on an implicit **Closed World Assumption (CWA)**: absent facts are false; the file is the complete, authoritative description of the asset; exchange is a finished-model handover. This was never stated — it is embedded in STEP's self-contained file format, a single privileged spatial hierarchy, and a centrally-governed prescriptive schema. The result is that many persistent IFC problems — lossy round-trips, models overwriting each other, no provenance, stale external data, schema release lag — look less like implementation bugs and more like what happens when a closed-world foundation is asked to serve an open-world domain.
 
-Both IFCX and IFC-ECS, the two leading IFC5 proposals, break from STEP but do not explicitly state which assumption they adopt. This creates a risk: downstream decisions on identity (IFC5-003), path addressing (IFC5-004), federation (IFC5-021), relationships (IFC5-008), versioning (IFC5-022), AI readability (IFC5-036), and web alignment (IFC5-035) may each make locally coherent choices that are collectively incompatible, because they implicitly assumed different worlds.
+Both current IFC5 proposals adopt JSON and move toward OWA features (GUID-based identity, component overlays, JSON references) without declaring OWA semantics. If the committee does not make the world assumption explicit, each downstream RFC will make its own implicit choice, and the decisions will be locally coherent but collectively incompatible.
 
-This RFC asks the committee to make the world assumption explicit before other Tier 1 and Tier 2 decisions are locked in.
-
----
-
-## 2. Background
-
-### 2.1 Closed World Assumption (CWA)
-
-Under CWA, a database or model is treated as complete: what is not asserted is false or non-existent. IFC4.x embodies CWA through:
-- The STEP file as a self-contained, authoritative snapshot
-- Absence of a fact meaning absence of that property (not uncertainty)
-- A single privileged spatial hierarchy (`IfcProject → IfcSite → IfcBuilding → IfcBuildingStorey`)
-- Prescriptive schema: all valid concepts are enumerated centrally
-- GUIDs that are locally unique but not globally resolvable
-
-CWA is appropriate when: one party authors the dataset, the dataset is complete before handover, and the receiver is expected to trust it in full.
-
-### 2.2 Open World Assumption (OWA)
-
-Under OWA, any dataset is a partial description of a larger reality: what is not asserted is unknown (not false); new facts may be added by any party without invalidating prior assertions; and the description is always potentially incomplete.
-
-OWA is the natural assumption for:
-- Federated datasets authored by many parties
-- Assets whose data grows continuously (design → construction → operations → demolition)
-- Systems where "as-designed," "as-built," and "as-surveyed" coexist as equally valid but distinct views
-- Linked data and semantic web systems (RDF, OWL, JSON-LD use OWA by default)
-
-### 2.3 Why the choice matters for IFC5
-
-The built environment is not, in practice, a closed world. An asset is described simultaneously by an architect, structural engineer, MEP contractor, fabricator, owner, facility manager, and regulator — each with partial, possibly contradictory, legitimately valid information. "Absent" in one party's export does not mean "false" in reality; it means "not in my scope."
-
-If IFC5 retains CWA semantics, this is a legitimate choice — but it must be made consciously, with awareness of what it forecloses. If IFC5 adopts OWA semantics, it unlocks federation, continuous data, and AI-native reasoning, but requires globally resolvable identity, additive composition, and first-class provenance — which have direct implications for at least a dozen other RFCs.
-
-### 2.4 The spectrum between CWA and OWA
-
-CWA and OWA are not binary. The practical space includes:
-
-- **Strong CWA**: the file is the truth; absence is falsity; no external references permitted.
-- **Weak CWA (within-file)**: CWA holds within a single dataset, but datasets may be federated with explicit merge semantics.
-- **Context-relative**: CWA within a named dataset/layer; OWA across dataset boundaries (the dataset is complete, the federation is not).
-- **Weak OWA**: absent facts are unknown; new assertions may be added; provenance is tracked but not required.
-- **Strong OWA**: no authoritative source; every fact is a attributed assertion; composition is always at read time; "the model" is a query result.
-
-### 2.5 What other IFC5 proposals assume
-
-The "Open World View of IFC Next" (Dennis Shelden, 2024) argues that the built environment is structurally open-world and that IFC's STEP foundation has been asked to serve an open-world domain with a closed-world tool. It identifies ten capabilities that follow from an OWA premise — federated authorship, provenance, progressive detail, multiple concurrent organizations of the same data, live continuous data, external references, gatekeeper-free extensibility, stable identity, federated query, and coexisting disagreement — and traces each to a specific limitation of IFC4.x's CWA design.
-
-Neither IFCX nor IFC-ECS explicitly addresses this question, though both lean toward OWA features (component overlays, GUID-based identity, JSON references) without declaring OWA semantics.
+The general direction of IFC5 — distributed, federated, AI-readable, extensible without a central gatekeeper — implies an **Open World Assumption**. The purpose of this RFC is not to re-litigate that direction but to work through exactly what it requires in concrete architectural and syntactic terms, and where the two current proposals (IFCX and IFC-ECS) already satisfy or fall short of those requirements.
 
 ---
 
-## 3. Existing IFC4.x Convention
+## 2. The World Assumption Spectrum (Summary)
 
-IFC4.x is implicitly **strong CWA**:
-- A STEP Physical File is a complete, self-contained snapshot
-- Absence of an attribute means it is unset or undefined (not unknown in an OWA sense)
-- The single spatial hierarchy is privileged: an element has exactly one containment parent
-- Schema is centrally governed: new concepts require a new schema release
-- GUIDs are locally unique but not globally resolvable across organizations
+OWA and CWA are endpoints of a spectrum. The realistic IFC5 positions are:
 
-IFC4.x's federation mechanism (`IfcRelReferencedInSpatialStructure`) is a CWA workaround, not an OWA feature: it allows elements from one file to appear in another, but both files are still self-contained CWA snapshots.
+| Position | What it means | Consequence |
+|---|---|---|
+| **Strong CWA** | File = truth; absence = false; one authoritative model | Preserves IFC4.x exchange patterns; forecloses federation, provenance, AI at scale |
+| **Weak CWA** | CWA within a file; explicit federation at file boundaries | Lowest disruption; federation is bolt-on, not native |
+| **Weak OWA** (recommended floor) | Absent facts unknown; assertions additive; provenance tracked | Enables multi-party authorship, federation, AI; requires identity and provenance fields |
+| **Strong OWA** | No authoritative source; "the model" is a query result assembled at read time; all facts attributed | Maximum distribution; requires full protocol layer, not just schema |
 
----
-
-## 4. Proposed Approaches
-
-### 4.1 Explicit Strong OWA
-
-IFC5 adopts OWA as a normative premise. Every fact is a provenance-tagged assertion. Absent facts are explicitly unknown. The dataset is always a partial description. "The model" does not exist — only a view assembled from distributed assertions. This requires: globally resolvable identity (IFC5-003), no single spatial hierarchy (IFC5-007), additive-only composition (IFC5-010), first-class provenance (IFC5-022, IFC5-033), and a protocol layer (IFC5-035) that specifies how endpoints interoperate.
-
-**Unlocks:** federation, continuous data, multi-party coexistence, AI-native reasoning, gatekeeper-free extensibility.  
-**Requires:** significant departure from IFC4.x exchange patterns; increases coordination cost for simple single-author use cases.
-
-### 4.2 Weak OWA (dataset-level CWA, federation-level OWA)
-
-IFC5 uses CWA within a named dataset (a single file or endpoint's publication) but OWA at the federation boundary. A dataset is complete in its own scope; combining two datasets requires explicit merge/composition semantics with provenance. This is the approach used by systems like SPARQL federated queries and OGC building block registries.
-
-**Unlocks:** most OWA benefits at federation scale while preserving simple-file semantics for single-author workflows.  
-**Requires:** explicit dataset identity and boundaries; merge/composition semantics must be normatively specified.
-
-### 4.3 CWA with Explicit OWA Extensions
-
-IFC5 retains CWA as the default. OWA features (provenance, external references, overlay layers, unknown vs. absent) are available as opt-in extensions. A file without OWA extensions behaves like IFC4.x. A file with OWA extensions declares this and introduces additional required fields.
-
-**Unlocks:** backward compatibility path; least disruption for existing toolchains.  
-**Requires:** two-tier schema conformance; risk of OWA extensions being widely ignored, leaving the standard de facto CWA.
-
-### 4.4 Context-Relative World Assumption
-
-IFC5 specifies the world assumption as a per-context declaration. A dataset declares whether it is CWA or OWA. Consuming tools apply the declared semantics. Cross-context composition is defined for CWA-to-OWA and OWA-to-OWA combinations.
-
-**Unlocks:** maximum flexibility for different use cases within one standard.  
-**Requires:** complex conformance rules; risk of interoperability gaps at context boundaries.
-
-### 4.5 Explicit Strong CWA (preserve IFC4.x semantics)
-
-IFC5 retains CWA explicitly. Files are self-contained snapshots. Absent means false or unset. The standard's scope is the exchange of complete, authoritative datasets — not federation, continuous data, or distributed assertions. Use cases requiring OWA behavior are out of scope.
-
-**Unlocks:** backward compatibility; clarity; simple toolchain expectations.  
-**Forecloses:** federated authorship, live data integration, coexisting as-designed/as-built, AI reasoning at portfolio scale, gatekeeper-free extensibility.
+The committee should decide *where on this spectrum* to commit. This RFC argues the minimum viable commitment is **weak OWA**: absent does not mean false; new assertions may be added without invalidating prior ones; and provenance is a first-class field. Strong OWA (fully protocol-based, no file exchange) is a further step that may not be necessary for IFC5 but should not be foreclosed by design decisions made now.
 
 ---
 
-## 5. Tradeoffs
+## 3. The Ten OWA Capabilities and What Each Requires
 
-| Dimension | Strong OWA | Weak OWA | CWA + Extensions | Context-relative | Strong CWA |
-|---|---|---|---|---|---|
-| IFC4.x backward compatibility | Low | Moderate | High | Moderate | High |
-| Federation support | High | High | Partial | High | None |
-| Single-author simplicity | Low | High | High | High | High |
-| Provenance / audit trail | Required | Required | Optional | Configurable | None |
-| Identity requirements | Global, resolvable URIs | Dataset-scoped + federation keys | GUIDs (current) | Declared per context | File-local GUIDs |
-| AI / query scale | High | High | Low | High | Low |
-| Protocol required | Yes | Yes | No | Yes | No |
-| Schema centralization | Decentralized | Partially decentralized | Centralized | Configurable | Centralized |
-| Spec complexity | High | Moderate | Moderate | High | Low |
+The "Open World View of IFC Next" (Shelden, 2024) identifies ten capabilities that follow from an OWA premise. This section maps each to the specific architectural or syntactic requirement it creates in IFC5, and assesses where IFCX and IFC-ECS currently stand.
+
+### 3.1 Federated Authorship
+*Many parties contribute to one description without overwriting each other.*
+
+**Required:** Assertions must be additive and attributable. A new component from a contractor must not replace an architect's component — both coexist until a consumer applies a resolution policy.
+
+**IFCX today:** The scene graph is a tree with one authoritative path per entity. A second party writing to `/Building/Wall001/Geometry` replaces the first party's value. There is no native overlay or delta mechanism. **Not OWA-compatible as-is.**
+
+**How USD differs:** USD addresses this via its **layer stack** — multiple USD files can be stacked as sublayers, each contributing "opinions" that compose in LIVRPS precedence order (Local → Inherits → Variant Sets → References → Payload → Sublayers). IFCX borrows USD's `inherits` arc but does not adopt the full composition model. An IFCX file that implemented USD sublayers would gain multi-party authorship; however, USD's layer composition always resolves to a single value (highest-strength opinion wins) — it is multi-source but not OWA. To achieve true federated authorship, IFCX would need to go beyond USD's model to preserve competing opinions rather than resolve them.
+
+**IFC-ECS today:** Multiple components of the same `componentType` on the same `entityGuid` can coexist in the flat array. Nothing in the schema prevents duplicate components. This is closer to OWA-compatible but lacks a defined resolution semantics. **Partially compatible; needs provenance + merge rules.**
+
+**What's needed:** Either IFCX gains a layer/overlay mechanism (separate from the main scene graph tree), or IFC-ECS defines explicit rules for how multiple components of the same type on the same entity are handled. Both need provenance fields.
+
+### 3.2 Provenance
+*Know who asserted each fact, when, and with what authority.*
+
+**Required:** Every assertion (component, attribute value, relationship) must carry — at minimum — an asserting party, an assertion timestamp, and an authority level. Without provenance, an AI's "best-guess classification" silently overwrites a licensed engineer's stamped value.
+
+**IFCX today:** No provenance fields in the component structure. The `attributes` dict carries values with no author or time. **Not present.**
+
+**IFC-ECS today:** No provenance fields. `componentGuid` provides identity but not attribution. **Not present.**
+
+**Minimum required addition (both proposals):**
+```json
+{
+  "assertedBy": "urn:org:arup:user:jsmith",
+  "assertedAt": "2025-04-01T09:00:00Z",
+  "authority": "design-intent"   // or "as-built", "survey", "inferred", "ai-generated"
+}
+```
+This could be a top-level field on the component, a wrapper, or a separate assertion record. The structure is open; the requirement is not.
+
+### 3.3 Progressive Detail (Unknown ≠ Absent)
+*"Not known yet" must be expressible and distinguishable from "false" or "not present."*
+
+**Required:** A tri-state system: *value present*, *explicitly unknown*, *field absent*. Under CWA, absent and unknown are the same. Under OWA they are different: a structural engineer may know a wall is load-bearing but not yet know its fire rating. The fire rating is unknown, not false.
+
+**IFCX today:** Absent attribute = not set. No way to express "unknown." **Not present.**
+
+**IFC-ECS today:** Same issue. Absent attribute = not set. **Not present.**
+
+**Minimum required addition:** A sentinel value or wrapper, such as:
+```json
+{ "FireRating": { "status": "unknown", "reason": "pending review" } }
+```
+or a convention like `null` meaning "explicitly unknown" vs. key absence meaning "out of scope." This needs to be normatively defined — ad hoc conventions will diverge across tools.
+
+### 3.4 Multiple Simultaneous Organizations of the Same Data
+*The same components seen by storey, by system, by zone, by construction sequence — without one being "real."*
+
+**Required:** No single privileged hierarchy. An entity must be addressable through multiple organizational lenses simultaneously.
+
+**IFCX today:** The scene graph is a rooted tree. Each entity has exactly one canonical path. `/Building/Wall001` is the wall's address; it cannot simultaneously be `/System/HVAC/Wall001`. Alternative views exist only as secondary relationships hanging off the primary tree. **CWA structure — single privileged hierarchy.**
+
+**How USD differs:** USD partially addresses this via **variant sets** — a prim can carry multiple named variants (e.g., `{view=spatial}`, `{view=system}`) that swap out entire subtrees. This allows one USD file to represent multiple organizational perspectives. However, USD still resolves to one active variant at a time; both organizations' views cannot be simultaneously first-class. IFCX does not implement USD variant sets. An IFCX that adopted variant sets would improve on today's position but would still not match the OWA capability that IFC-ECS's flat model provides natively.
+
+**IFC-ECS today:** The flat component array has no hierarchy at all. An entity's components are retrieved by `entityGuid`; organizing those into views is a consumer-side operation. Multiple independent grouping components (spatial, system, zone, phase) can coexist as separate components on the same entity. **OWA-compatible; multiple views are naturally first-class.**
+
+**What's needed for IFCX:** Either (a) decouple entity identity from path location (path becomes one view, not the canonical address), or (b) add a first-class "view" or "layer" mechanism that can hold alternative organizational hierarchies. This is architecturally significant and has direct implications for IFC5-004 (Path Model).
+
+### 3.5 Live Continuous Data
+*Bind to operations/IoT rather than freeze everything at handover.*
+
+**Required:** The standard must not assume data is frozen at export. Live sensor readings, occupancy data, or maintenance records should be representable as additional assertions on existing entities, without requiring a full re-export.
+
+**IFCX today:** A file is a snapshot. Incremental updates are not native. **File-based, snapshot-oriented.**
+
+**IFC-ECS today:** Same. The array is a flat snapshot. **File-based, snapshot-oriented.**
+
+**What's needed:** At minimum, an additive assertion format (a "patch" or "delta" file that adds components to existing entities without re-serializing the whole model). At maximum, a streaming API. This is a serialization concern (IFC5-006) as much as a schema concern.
+
+### 3.6 Reference to Live External Sources
+*Point at manufacturer catalogues, EPDs, and code databases instead of copying stale snapshots inward.*
+
+**Required:** A normative mechanism for external references that is not a file-local pointer. References must be resolvable, versionable, and have an explicit staleness/caching contract.
+
+**IFCX today:** Can reference external paths, but the path model is file-relative. No staleness contract. **Partial; needs URI-based resolution and caching semantics.**
+
+**IFC-ECS today:** Can embed external IDs in attributes but no normative reference mechanism. **Not present.**
+
+**Minimum required:** A typed reference object:
+```json
+{ "ref": "https://www.bsdd.buildingsmart.org/api/class/IfcWall", "fetchedAt": "2025-01-01", "version": "4.3" }
+```
+The reference syntax (`{"ref": "..."}`) discussed in IFC5-039 must support URI-based external references, not just local GUIDs.
+
+### 3.7 Extensibility Without a Central Gatekeeper
+*New domains get first-class concepts now, without a schema release cycle.*
+
+**Required:** A mechanism for any party to publish new component types, attribute names, or relationship types under their own namespace, which other tools can discover and use without waiting for a buildingSMART schema update.
+
+**IFCX today:** `componentType` and attribute names are used freely, but there is no normative namespace mechanism or discovery protocol. Custom types exist in practice but are informal. **Partially present; needs normative namespace declaration (IFC5-005).**
+
+**IFC-ECS today:** Same. `componentType` is a string; custom types are possible but informal. **Same position as IFCX.**
+
+**What's needed:** A normative namespace declaration (IFC5-005) plus a minimal discovery mechanism — at minimum, a JSON-LD `@context`-style mapping so that `"myOrg:ThermalZone"` resolves to a published schema. This connects to IFC5-035 (Web/Linked Data).
+
+### 3.8 Stable Identity Across Orgs and Decades
+*The same physical thing reliably referenced by everyone over time.*
+
+**Required:** Identifiers must be globally unique, not just locally unique within a file; persistent across organizational boundaries; and resolvable — meaning a tool can look up what the identifier refers to even if it has never seen the file that defined it.
+
+**IFCX today:** Path-based identity is file-relative and hierarchically structured. A wall at `/Building/Wall001` in File A is a different identifier from the same wall at `/Building/Wall001` in File B, even if they refer to the same physical object. Paths break when the hierarchy is refactored. **Not globally resolvable; fragile under reorganization.**
+
+**IFC-ECS today:** `entityGuid` is a UUID. UUIDs are globally unique in practice but are not resolvable — given a GUID, no tool can determine what it refers to without access to the originating dataset. **Globally unique but not resolvable.**
+
+**What's needed:** Either URI-based identifiers (HTTP URIs that can be dereferenced) or a resolution service that maps GUIDs to dataset endpoints. This is the core of IFC5-003 (Identity Model) and cannot be resolved independently of the OWA commitment.
+
+### 3.9 Query Across the Federated Dataset
+*Ask portfolio- and web-scale questions, not just "open one file at a time."*
+
+**Required:** A query model that spans multiple datasets without requiring all data to be local. At minimum, a defined query interface (SPARQL, GraphQL, OData, custom) against which a federated endpoint can respond.
+
+**IFCX today:** No query interface defined. Queries require loading a file and processing in-memory. **File-only.**
+
+**IFC-ECS today:** The flat array is more query-friendly (filter by `componentType`, aggregate by `entityGuid`) but no external query interface is defined. **Better structure for querying; no interface.**
+
+**What's needed:** This is likely a protocol concern (separate from the schema) but the schema must not make federated querying impossible. Specifically: identifiers must be resolvable (see 3.8), and the schema must not assume all related data is in one file. This connects to IFC5-035.
+
+### 3.10 Coexisting Disagreement
+*Hold as-designed, as-built, and as-surveyed together; the delta is where the value is.*
+
+**Required:** Multiple conflicting values for the same attribute on the same entity must be storable simultaneously, attributed to their respective sources, with no system-imposed resolution. Consumer tools apply their own resolution policy.
+
+**IFCX today:** One attribute value per attribute per entity at a given path. Overrides via layered composition (USD-style) exist in the archetype mechanism, but the scene graph itself does not natively support multiple simultaneous values from different parties. **Partial via layers; not native for multi-party disagreement.**
+
+**How USD differs — and why it's not enough:** USD's layer stack is explicitly a conflict *resolution* mechanism. LIVRPS defines which layer's opinion wins; the result is always a single composed value. USD does not preserve simultaneous disagreement — it eliminates it. This is the most significant divergence from the OWA requirement here: adopting USD's composition model verbatim would give IFC5 a multi-source authorship mechanism but not the ability to hold as-designed and as-built simultaneously without one overriding the other. Meeting capability 3.10 under OWA requires going beyond what USD's model provides.
+
+**IFC-ECS today:** Multiple components of the same type on the same entity can coexist. Two contractors could each contribute a `WallGeometry` component for the same wall. Combined with provenance (see 3.2), this is a natural fit for coexisting disagreement. **Most OWA-compatible of the two proposals for this capability.**
 
 ---
 
-## 6. RFC Interaction Map
+## 4. Current Proposals: OWA Readiness Assessment
 
-The world assumption decision is a **cross-cutting premise** that constrains or is constrained by the following RFCs. The committee should review these interactions before finalizing any of them:
+| Capability | IFCX | IFC-ECS | Required change |
+|---|---|---|---|
+| 3.1 Federated authorship | ✗ Single tree | ≈ Flat array (partial) | Overlay/layer mechanism or merge semantics |
+| 3.2 Provenance | ✗ | ✗ | Add assertedBy / assertedAt / authority fields |
+| 3.3 Unknown ≠ absent | ✗ | ✗ | Add null-sentinel or unknown wrapper |
+| 3.4 Multiple organizations | ✗ Privileged tree | ✓ No hierarchy | IFCX: decouple identity from path |
+| 3.5 Live continuous data | ✗ Snapshot | ✗ Snapshot | Additive delta format (IFC5-006) |
+| 3.6 External references | ≈ Path refs | ✗ | URI-based refs with staleness contract (IFC5-039) |
+| 3.7 Gatekeeper-free ext. | ≈ Informal | ≈ Informal | Normative namespace + discovery (IFC5-005, IFC5-035) |
+| 3.8 Stable identity | ✗ File-local path | ≈ UUID (not resolvable) | URI identity or resolution service (IFC5-003) |
+| 3.9 Federated query | ✗ | ✗ | Query interface definition (IFC5-035) |
+| 3.10 Coexisting disagreement | ≈ Via layers | ✓ Multiple components | IFCX: needs multi-value semantics + provenance |
 
-| RFC | Interaction |
-|---|---|
-| IFC5-001 (Strategic Mode) | OWA implies an extensible, decentralized standard; CWA implies a centrally governed one. The architectural mode choice is downstream of the world assumption. |
-| IFC5-003 (Identity) | OWA requires globally resolvable, persistent, host-independent identity. CWA permits file-local GUIDs. The identity model must match the world assumption. |
-| IFC5-004 (Path Model) | Paths work well for CWA (addresses within a tree). OWA requires URIs that resolve across organizations and time. The path model's load-bearing role changes significantly under OWA. |
-| IFC5-006 (Serialization) | CWA → file-based exchange. OWA → streaming, delta, and API-first exchange patterns. The normative serialization format must be compatible with the world assumption. |
-| IFC5-007 (Scene Graph vs. ECS) | The single privileged scene graph hierarchy is a CWA move. ECS's flat component model is more OWA-compatible. The architecture choice may be partially determined by the world assumption. |
-| IFC5-008 (Relationships) | Under OWA, relationships are additive assertions with provenance. Under CWA, relationships are embedded structure. The modeling strategy differs significantly. |
-| IFC5-010 (Composition / Instancing) | OWA implies composition at read/query time by the consumer. CWA implies composition at authoring time by the producer. |
-| IFC5-021 (Federation) | Federation is a trivial concept under CWA (append two files). It is a foundational protocol concern under OWA (how do independently-hosted datasets interoperate). |
-| IFC5-022 (Versioning) | OWA requires immutable, versioned assertions. CWA permits mutable state. Versioning semantics depend entirely on the world assumption. |
-| IFC5-032 (Extensibility) | OWA enables gatekeeper-free extensibility (endpoints publish new vocabulary). CWA requires central schema governance for new concepts. |
-| IFC5-033 (Change / Transactions) | Under OWA, change is additive (new assertion versions). Under CWA, change is destructive (file overwrite). The change model is a direct consequence of the world assumption. |
-| IFC5-035 (Web / Linked-Data) | JSON-LD, RDF, and SPARQL are natively OWA. Aligning with web standards is significantly easier under OWA. |
-| IFC5-036 (AI Readability) | AI reasoning over portfolio-scale data requires OWA properties: rich links, provenance, unknown vs. absent, federated query. OWA is the substrate AI tools need. |
-| IFC5-039 (JSON Data Model) | The reference syntax (`{"ref": "..."}`) and whether references resolve globally or locally is determined by the world assumption. |
+**Summary:** IFC-ECS's flat model is structurally more OWA-compatible (no privileged hierarchy, native multi-component coexistence). IFCX's path-based scene graph is a CWA structure that would require significant additions (layer mechanism, path-as-view rather than path-as-identity) to support OWA at the same level. Neither proposal has provenance, unknown-vs-absent, or external reference mechanisms today.
 
 ---
 
-## 7. Recommendation
+## 5. Proposed Approaches
 
-*To be filled in after committee discussion.*
+### 5.1 Weak OWA as the normative baseline
 
----
+IFC5 declares weak OWA as a normative premise: absent facts are unknown (not false); assertions are additive; provenance is required on every component. The specific provenance fields, the unknown-sentinel, and the delta format are defined in downstream RFCs but are not optional. Implementations that omit provenance are non-conformant.
 
-## 8. Open Questions
+This is the minimum commitment that delivers capabilities 3.1–3.10 without requiring a full protocol layer or abandoning file-based exchange.
 
-**Q1.** Should IFC5 make an explicit normative declaration of its world assumption, or leave it implicit as IFC4.x did? What are the risks of leaving it implicit again?
+### 5.2 Weak OWA with explicit file-level world declaration
 
-**Q2.** Is the built environment better modeled as a closed world (one authoritative description) or an open world (many partial, simultaneous, valid descriptions)? Is this question different for different phases of the asset lifecycle (design vs. construction vs. operations)?
+Same as 5.1, but IFC5 files carry an explicit header field declaring their world assumption:
+```json
+{ "worldAssumption": "weak-owa", "baselineVersion": "2025-01-01T00:00:00Z" }
+```
+This allows conforming tools to handle both OWA and legacy CWA files correctly. Files without the declaration are treated as CWA for backward compatibility.
 
-**Q3.** If the committee adopts OWA (fully or partially), which of the following are required as normative consequences: globally resolvable identity, provenance, immutable versioning, federated query semantics, decentralized extensibility? Which are optional extensions?
+### 5.3 Strong OWA with protocol layer
 
-**Q4.** Is Approach 4.2 (weak OWA — dataset-level CWA, federation-level OWA) a stable middle ground, or does it collapse to either strong CWA or strong OWA in practice? Are there deployed systems that successfully occupy this position?
+IFC5 commits to strong OWA: "the model" is a query result assembled at read time from independently-operated endpoints. File exchange is a caching/offline convenience, not the primary exchange mechanism. The normative deliverable is a protocol specification, not just a schema.
 
-**Q5.** If IFC5 adopts any form of OWA, what is the minimum protocol specification required — beyond the schema — to make interoperability possible? Does this change the scope of what buildingSMART must standardize?
+This delivers all ten capabilities fully but requires a protocol standard (API shapes, resolution, query semantics) that is out of scope for a schema-focused working group in the near term. It should not be foreclosed by current decisions.
 
-**Q6.** Are there IFC use cases (e.g., single-author design models, regulatory submissions, simple BIM for small buildings) that are better served by CWA semantics, and should IFC5 support both? If so, how is the world assumption declared at the dataset level?
+### 5.4 No normative declaration (status quo)
 
-**Q7.** How does the world assumption interact with legal and contractual frameworks? Signed, stamped deliverables are inherently CWA (a specific person asserting a specific, complete, authorized set of facts at a point in time). Can OWA coexist with certification and compliance workflows?
-
----
-
-## 9. Prototype
-
-- **Required:** No
-- **Notes:** This is a definitional RFC — the decision is a philosophical/architectural premise, not an implementation question. However, the committee may find it useful to evaluate the Hello Wall reference examples (`03 Reference Examples/`) against OWA and CWA lenses: does the IFCX representation imply CWA? Does the IFC-ECS representation imply OWA? What would need to change in each to satisfy the opposite assumption?
+IFC5 does not declare a world assumption. Each RFC makes its own choice. This is what IFC4.x did and is the source of the incompatibilities this RFC is trying to prevent.
 
 ---
 
-## 10. Consequences
+## 6. Open Questions
 
-If **OWA** (Approach 4.1 or 4.2) is adopted, the following become requirements rather than options:
-- IFC5-003 must define globally resolvable identity (URI-based or equivalent)
-- IFC5-004 must reconsider whether path is identity or just addressing
-- IFC5-006 must support streaming/delta exchange, not just whole-file
-- IFC5-007 must avoid a single privileged hierarchy
-- IFC5-008 must define relationships as additive assertions
-- IFC5-021 (Federation) moves from a nice-to-have to a core normative topic
-- IFC5-022, IFC5-033 must specify immutable + versioned state
-- IFC5-032 must specify decentralized extensibility protocol
-- IFC5-035 alignment with web standards becomes structurally natural
+**Q1.** Does the committee accept the weak OWA premise as the normative baseline for IFC5? If not, which capabilities in Section 3 are explicitly out of scope?
 
-If **CWA** (Approach 4.5) is retained:
-- IFC5-003 may continue with file-scoped GUIDs
-- IFC5-004 path model remains valid as-is
-- IFC5-021 is a secondary concern
-- IFC5-022, IFC5-033 may use mutable semantics
-- IFC5-035 web alignment is an integration concern, not a design premise
+**Q2.** For IFCX specifically: should the path be redesigned as a *view identifier* (one of many ways to organize the entity) rather than the entity's canonical address? What is the minimum change to the IFCX path model that makes it OWA-compatible?
+
+**Q3.** For IFC-ECS specifically: given that multiple components of the same type on the same entity are already structurally possible, what are the normative rules for how consumers resolve them? Is the answer "consumer defines a policy," or does IFC5 define precedence rules?
+
+**Q4.** What is the minimum required provenance schema? Is `assertedBy + assertedAt + authority` sufficient, or are additional fields needed (e.g., `confidence`, `method`, `derivedFrom`)?
+
+**Q5.** Should "unknown vs. absent" be handled by a JSON sentinel value (e.g., `null` = unknown, missing key = out of scope), a wrapper object, or a separate assertion record? Which is more tooling-friendly?
+
+**Q6.** Should IFC5 define a normative delta/patch format now (for live continuous data and additive authorship), or defer this to a later RFC? What is the minimum required to unblock the core schema work?
+
+**Q7.** Is the "standard + protocol" distinction (IFC5 defines not only what data is but how conforming participants must interact) in scope for the current working group, or should the protocol layer be a separate — but coordinated — specification effort?
 
 ---
 
-## 11. References
+## 7. Consequences
 
-- "An Open World View of IFC Next" — Dennis Shelden (2024): https://docs.google.com/document/d/1UKmhPHgsVO-u2ZCzwJOKFxSF4lCHCWviY1R9HjCgZMQ
-- W3C Open World Assumption (OWL / RDF): https://www.w3.org/TR/owl2-primer/#Open_World_Assumption
-- Linked Data principles (Berners-Lee): https://www.w3.org/DesignIssues/LinkedData.html
-- SPARQL Federated Query (SPARQL 1.1): https://www.w3.org/TR/sparql11-federated-query/
-- OGC Building Blocks and registries: https://opengeospatial.github.io/ogc-na-tools/
-- buildingSMART IFC5-development: https://github.com/buildingSMART/IFC5-development
-- IFC-ECS: https://github.com/Drshelden/IFC-ECS
+**If OWA (Approach 5.1 or 5.2) is adopted:**
+
+- **IFC5-003 (Identity):** GUIDs must be globally resolvable. File-local GUIDs are insufficient. URI-based identity or a resolution service is required.
+- **IFC5-004 (Path Model):** IFCX paths must be redesigned as view identifiers, not canonical entity addresses. The path model's load-bearing role changes fundamentally.
+- **IFC5-006 (Serialization):** A delta/patch format becomes normative, not optional.
+- **IFC5-007 (Scene Graph vs. ECS):** The scene graph's single hierarchy is structurally incompatible with OWA capability 3.4. This is a concrete architectural disadvantage of IFCX relative to IFC-ECS under OWA semantics.
+- **IFC5-008 (Relationships):** Relationships become additive assertions with provenance, not embedded structural elements.
+- **IFC5-021 (Federation):** Promoted from an optional feature to a core normative concern.
+- **IFC5-022 / IFC5-033 (Versioning / Change):** Mutable state is replaced by immutable versioned assertions.
+- **IFC5-032 (Extensibility):** Decentralized extensibility via namespace declaration becomes normative.
+- **IFC5-035 (Web/Linked Data):** JSON-LD alignment and URI-based resolution become natural rather than optional.
+- **IFC5-036 (AI Readability):** OWA — rich links, provenance, unknown-vs-absent, federated query — is the substrate AI tools require. AI readability is not achievable at scale without OWA foundations.
+
+**If CWA (Approach 5.4) is retained:**
+- All of the above remain optional or deferred.
+- File-local GUIDs, single spatial hierarchy, and snapshot exchange remain valid.
+- Federation, live data, and AI at portfolio scale are out of scope for the normative standard.
+
+---
+
+## 8. References
+
+- "An Open World View of IFC Next" — Greg Schleussner (2026): https://docs.google.com/document/d/1UKmhPHgsVO-u2ZCzwJOKFxSF4lCHCWviY1R9HjCgZMQ
 - Hello Wall reference examples: `03 Reference Examples/Hello-Wall/`
+- W3C Open World Assumption (OWL/RDF): https://www.w3.org/TR/owl2-primer/#Open_World_Assumption
+- Linked Data principles: https://www.w3.org/DesignIssues/LinkedData.html
+- buildingSMART IFC5-development (IFCX): https://github.com/buildingSMART/IFC5-development
+- IFC-ECS: https://github.com/Drshelden/IFC-ECS
 
 ---
 

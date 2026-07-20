@@ -565,13 +565,20 @@ def append_to_rfc_index_tier(script_path, rfc_id, slug, title, prototype_require
 
 
 def update_rfc_count(script_path, delta=1):
-    """Increment the '40 RFCs' count string in a script by `delta`."""
+    """
+    Increment the RFC count string (e.g. '41 RFCs') in a script by `delta`.
+    Only matches standalone counts ≥ 10 to avoid corrupting folder path strings
+    like '02 RFCs' that appear in RFC_DIR definitions.
+    """
     text = script_path.read_text(encoding="utf-8")
-    m = re.search(r'(\d+) RFCs', text)
+    # Require at least a 2-digit number starting with 1-9 (i.e. 10+) so we
+    # never accidentally match the zero-padded folder prefix "02 RFCs".
+    m = re.search(r'\b([1-9]\d+) RFCs\b', text)
     if m:
         old_n = int(m.group(1))
         new_n = old_n + delta
-        text = text.replace(f"{old_n} RFCs", f"{new_n} RFCs")
+        # Use word-boundary replacement to avoid partial matches
+        text = re.sub(rf'\b{old_n} RFCs\b', f'{new_n} RFCs', text)
         script_path.write_text(text, encoding="utf-8")
         print(f"  [COUNT] {script_path.name}: {old_n} → {new_n} RFCs")
 
