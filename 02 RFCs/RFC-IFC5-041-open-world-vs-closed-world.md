@@ -45,7 +45,7 @@ The committee should decide *where on this spectrum* to commit. This RFC argues 
 
 ## 3. The Ten OWA Capabilities and What Each Requires
 
-The "Open World View of IFC Next" (Shelden, 2024) identifies ten capabilities that follow from an OWA premise. This section maps each to the specific architectural or syntactic requirement it creates in IFC5, and assesses where IFCX and IFC-ECS currently stand.
+The "Open World View of IFC Next" (Schleussner, 2026) identifies ten capabilities that follow from an OWA premise. This section maps each to the specific architectural or syntactic requirement it creates in IFC5, and assesses where IFCX and IFC-ECS currently stand.
 
 ### 3.1 Federated Authorship
 *Many parties contribute to one description without overwriting each other.*
