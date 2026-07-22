@@ -71,7 +71,7 @@ Every RFC has an individual feedback form linked in its header and footer. This 
 GitHub Discussions are the open-ended conversation space for each RFC.
 
 - [**View all discussions**](https://github.com/Drshelden/IFCV5Work/discussions)
-- [**Start a new discussion**](https://github.com/Drshelden/IFCV5Work/discussions/new) — use the RFC's category (Tier 1–4) and add its label (e.g. `IFC5-007`) so it is indexed correctly
+- [**Start a new discussion**](https://github.com/Drshelden/IFCV5Work/discussions/new) — use the RFC's category (Tier 1–4) and add its label (e.g. `[IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md)`) so it is indexed correctly
 - Each RFC's header/footer also has a pre-filled "New discussion" link that sets the category, label, and template automatically
 
 When writing a discussion, start your comment with a classification label (see below) so the RFC author can triage responses efficiently.

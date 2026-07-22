@@ -12,9 +12,9 @@
 | **Status** | Idea |
 | **Tier** | 1 — Foundational |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-001 |
+| **Dependencies** | [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md) |
 | **Prototype Required** | No |
-| **Logical position** | Tier 1 — between IFC5-006 and IFC5-007 |
+| **Logical position** | Tier 1 — between [IFC5-006](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-006-serialization-encoding.md) and [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) |
 
 ---
 

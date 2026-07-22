@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-005, IFC5-007 |
+| **Dependencies** | [IFC5-005](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-005-namespaces.md), [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) |
 | **Prototype Required** | No |
 
 ---
@@ -83,9 +83,9 @@ Values that require type disambiguation use wrapper objects: `{"type": "IfcLabel
 
 ## 9. Consequences
 
-- Required before type system decisions can be resolved (IFC5-024)
-- Affects how SELECT types are encoded (IFC5-024)
-- Shapes property encoding (IFC5-013)
+- Required before type system decisions can be resolved ([IFC5-024](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-024-type-system-primitives.md))
+- Affects how SELECT types are encoded ([IFC5-024](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-024-type-system-primitives.md))
+- Shapes property encoding ([IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md))
 
 ## 10. References
 

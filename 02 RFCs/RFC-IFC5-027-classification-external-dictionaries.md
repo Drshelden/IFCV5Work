@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-005, IFC5-009 |
+| **Dependencies** | [IFC5-005](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-005-namespaces.md), [IFC5-009](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md) |
 | **Prototype Required** | No |
 
 ---
@@ -80,8 +80,8 @@ All classifications must resolve to bSDD URIs. Other classification systems are 
 
 ## 9. Consequences
 
-- Tied to namespace and qualified name decisions (IFC5-005)
-- Shapes property validation via bSDD (IFC5-013, IFC5-019)
+- Tied to namespace and qualified name decisions ([IFC5-005](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-005-namespaces.md))
+- Shapes property validation via bSDD ([IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md), [IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md))
 
 ## 10. References
 

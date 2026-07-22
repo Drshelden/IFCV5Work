@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-012, IFC5-021 |
+| **Dependencies** | [IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md), [IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md) |
 | **Prototype Required** | No |
 
 ---
@@ -82,9 +82,9 @@ Core IFC5 schema is always bundled with the validator. Extensions are distribute
 
 ## 9. Consequences
 
-- Directly shapes schema import design (IFC5-012)
-- Informs federation security (IFC5-021)
-- May constrain extensibility (IFC5-032)
+- Directly shapes schema import design ([IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md))
+- Informs federation security ([IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md))
+- May constrain extensibility ([IFC5-032](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-032-extensibility.md))
 
 ## 10. References
 

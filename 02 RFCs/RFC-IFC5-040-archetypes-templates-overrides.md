@@ -12,9 +12,9 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-001, IFC5-003, IFC5-004, IFC5-007, IFC5-009, IFC5-039 |
+| **Dependencies** | [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md), [IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md), [IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md), [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md), [IFC5-009](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md), [IFC5-039](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md) |
 | **Prototype Required** | Yes |
-| **Logical position** | Tier 2 — extends IFC5-009 (Class and Type Representation) and IFC5-010 (Composition, Inheritance, Instancing) |
+| **Logical position** | Tier 2 — extends [IFC5-009](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md) (Class and Type Representation) and [IFC5-010](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-010-composition-inheritance.md) (Composition, Inheritance, Instancing) |
 
 ---
 
@@ -25,7 +25,7 @@ IFC4.x has a concept of "type objects" (e.g., `IfcWallType`) that define shared 
 This gap is significant:
 - Without archetypes, every wall in a model must redundantly carry all of its component data. With archetypes, instances carry only their differences from the template.
 - Without override semantics, composition (inheriting from a base type while customizing it) requires copying data, not referencing and patching it.
-- The path model (IFC5-004) is tightly coupled to USD-style override semantics: paths allow overrides to target sub-nodes precisely. It is an open question whether GUID-based ECS can support equivalent override behavior without paths.
+- The path model ([IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md)) is tightly coupled to USD-style override semantics: paths allow overrides to target sub-nodes precisely. It is an open question whether GUID-based ECS can support equivalent override behavior without paths.
 
 This RFC asks: Should IFC5 define a normative archetype/template mechanism? If so, what are its semantics, and does it require a path hierarchy?
 

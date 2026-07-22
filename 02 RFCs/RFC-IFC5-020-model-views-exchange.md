@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-019 |
+| **Dependencies** | [IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md) |
 | **Prototype Required** | No |
 
 ---
@@ -80,7 +80,7 @@ Profiles are a deployment concern, not a format standard. Any IFC5 file is equal
 ## 9. Consequences
 
 - Determines certification program continuity
-- Shapes validation framework tooling requirements (IFC5-019)
+- Shapes validation framework tooling requirements ([IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md))
 
 ## 10. References
 

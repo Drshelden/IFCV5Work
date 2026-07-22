@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-013 |
+| **Dependencies** | [IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md) |
 | **Prototype Required** | No |
 
 ---
@@ -82,8 +82,8 @@ Render/visualization materials (diffuseColor, PBR) are inline. Engineering mater
 
 ## 9. Consequences
 
-- Tied to property sets decision (IFC5-013)
-- Shapes geometry-material binding in the OpenUSD context (IFC5-015)
+- Tied to property sets decision ([IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md))
+- Shapes geometry-material binding in the OpenUSD context ([IFC5-015](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-015-openusd-alignment.md))
 
 ## 10. References
 

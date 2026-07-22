@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 1 — Foundational |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-001 |
+| **Dependencies** | [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -83,9 +83,9 @@ Every object has a resolvable URI as its canonical identity. UUIDs and paths are
 
 ## 9. Consequences
 
-- Directly shapes the path model (IFC5-004)
-- Required before federation decisions (IFC5-021)
-- Affects round-trip fidelity (IFC5-018)
+- Directly shapes the path model ([IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md))
+- Required before federation decisions ([IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md))
+- Affects round-trip fidelity ([IFC5-018](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-018-backward-compatibility.md))
 
 ## 10. References
 

@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-003, IFC5-005 |
+| **Dependencies** | [IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md), [IFC5-005](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-005-namespaces.md) |
 | **Prototype Required** | No |
 
 ---
@@ -79,9 +79,9 @@ IFC5 is designed from the ground up as a linked-data format. Every object and at
 
 ## 9. Consequences
 
-- Tied to namespace and identity decisions (IFC5-003, IFC5-005)
-- Informs classification encoding (IFC5-027)
-- May constrain URI persistence requirements in versioning (IFC5-022)
+- Tied to namespace and identity decisions ([IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md), [IFC5-005](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-005-namespaces.md))
+- Informs classification encoding ([IFC5-027](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-027-classification-external-dictionaries.md))
+- May constrain URI persistence requirements in versioning ([IFC5-022](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-022-versioning-schema-evolution.md))
 
 ## 10. References
 

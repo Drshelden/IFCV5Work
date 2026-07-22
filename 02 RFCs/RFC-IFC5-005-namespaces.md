@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 1 — Foundational |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-002 |
+| **Dependencies** | [IFC5-002](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-002-normative-model-formalism.md) |
 | **Prototype Required** | No |
 
 ---
@@ -75,8 +75,8 @@ No namespace concept. All attribute and entity names are globally unique within 
 
 ## 9. Consequences
 
-- Determines how schema packages are declared (IFC5-012)
-- Affects property set encoding (IFC5-013)
+- Determines how schema packages are declared ([IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md))
+- Affects property set encoding ([IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md))
 - Affects classification integration (related to material and property RFCs)
 
 ## 10. References

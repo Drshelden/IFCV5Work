@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-011, IFC5-024 |
+| **Dependencies** | [IFC5-011](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md), [IFC5-024](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-024-type-system-primitives.md) |
 | **Prototype Required** | No |
 
 ---
@@ -82,9 +82,9 @@ Schema declares the dimension of each attribute. The document header declares th
 
 ## 9. Consequences
 
-- Affects property encoding (IFC5-013) — unit-bearing property values
-- Shapes geometry precision and coordinate representation (IFC5-014)
-- Tied to type system (IFC5-024) — measure type dimensional semantics
+- Affects property encoding ([IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md)) — unit-bearing property values
+- Shapes geometry precision and coordinate representation ([IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md))
+- Tied to type system ([IFC5-024](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-024-type-system-primitives.md)) — measure type dimensional semantics
 
 ## 10. References
 

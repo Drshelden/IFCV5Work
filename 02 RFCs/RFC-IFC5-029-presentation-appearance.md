@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-015, IFC5-017 |
+| **Dependencies** | [IFC5-015](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-015-openusd-alignment.md), [IFC5-017](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-017-material-modeling.md) |
 | **Prototype Required** | No |
 
 ---
@@ -52,7 +52,7 @@ IfcSurfaceStyle and related objects are preserved as named nodes attached to geo
 
 ### 4.4 Hybrid: engineering materials as objects, render as inline
 
-Engineering material definitions (fire rating, thermal conductivity) use structured property objects (IFC5-017). Render/visualization properties are inline attributes or USD material bindings. Separates concerns cleanly.
+Engineering material definitions (fire rating, thermal conductivity) use structured property objects ([IFC5-017](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-017-material-modeling.md)). Render/visualization properties are inline attributes or USD material bindings. Separates concerns cleanly.
 
 ## 5. Tradeoffs
 
@@ -83,9 +83,9 @@ Engineering material definitions (fire rating, thermal conductivity) use structu
 
 ## 9. Consequences
 
-- Tied to OpenUSD alignment decisions (IFC5-015)
-- Tied to material modeling (IFC5-017)
-- Affects geometry architecture (IFC5-014) — geometry-level style attachment
+- Tied to OpenUSD alignment decisions ([IFC5-015](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-015-openusd-alignment.md))
+- Tied to material modeling ([IFC5-017](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-017-material-modeling.md))
+- Affects geometry architecture ([IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md)) — geometry-level style attachment
 
 ## 10. References
 

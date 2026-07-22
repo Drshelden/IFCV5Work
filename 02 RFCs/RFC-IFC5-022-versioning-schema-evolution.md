@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-012 |
+| **Dependencies** | [IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md) |
 | **Prototype Required** | No |
 
 ---
@@ -77,7 +77,7 @@ Once published, a schema URI is immutable. Aliases map deprecated names to their
 
 ## 9. Consequences
 
-- Determines import URI stability (IFC5-012)
+- Determines import URI stability ([IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md))
 - Affects long-term archival conformance
 
 ## 10. References

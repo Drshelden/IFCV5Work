@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-002, IFC5-023 |
+| **Dependencies** | [IFC5-002](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-002-normative-model-formalism.md), [IFC5-023](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-023-attribute-representation.md) |
 | **Prototype Required** | No |
 
 ---
@@ -82,9 +82,9 @@ Bare JSON primitives for simple types; a `componentType`-style discriminator for
 
 ## 9. Consequences
 
-- Required for property encoding (IFC5-013)
-- Affects attribute representation rules (IFC5-023)
-- Shapes validation framework (IFC5-019)
+- Required for property encoding ([IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md))
+- Affects attribute representation rules ([IFC5-023](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-023-attribute-representation.md))
+- Shapes validation framework ([IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md))
 
 ## 10. References
 

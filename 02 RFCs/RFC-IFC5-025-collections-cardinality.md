@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-023, IFC5-024 |
+| **Dependencies** | [IFC5-023](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-023-attribute-representation.md), [IFC5-024](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-024-type-system-primitives.md) |
 | **Prototype Required** | No |
 
 ---
@@ -81,9 +81,9 @@ Receivers infer collection semantics from the schema. Files contain only bare JS
 
 ## 9. Consequences
 
-- Affects material layer ordering in IFC5-017
-- Shapes geometry array conventions in IFC5-014
-- Required for property set encoding (IFC5-013)
+- Affects material layer ordering in [IFC5-017](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-017-material-modeling.md)
+- Shapes geometry array conventions in [IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md)
+- Required for property set encoding ([IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md))
 
 ## 10. References
 

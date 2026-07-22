@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-008, IFC5-016 |
+| **Dependencies** | [IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md), [IFC5-016](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-016-spatial-structure.md) |
 | **Prototype Required** | No |
 
 ---
@@ -83,9 +83,9 @@ Core IFC5 does not include space boundary encoding. Energy analysis exchanges us
 
 ## 9. Consequences
 
-- Tied to relationship modeling (IFC5-008)
-- Tied to spatial structure (IFC5-016)
-- Relevant to model views (IFC5-020) — energy analysis profile
+- Tied to relationship modeling ([IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md))
+- Tied to spatial structure ([IFC5-016](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-016-spatial-structure.md))
+- Relevant to model views ([IFC5-020](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-020-model-views-exchange.md)) — energy analysis profile
 
 ## 10. References
 

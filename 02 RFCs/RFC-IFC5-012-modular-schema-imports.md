@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-005, IFC5-011 |
+| **Dependencies** | [IFC5-005](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-005-namespaces.md), [IFC5-011](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md) |
 | **Prototype Required** | No |
 
 ---
@@ -79,7 +79,7 @@ The core IFC5 schema is bundled with every conformant implementation. Additional
 
 - Determines how third-party and national extensions are managed
 - Affects offline and air-gapped implementation scenarios
-- Shapes versioning policy (IFC5-022)
+- Shapes versioning policy ([IFC5-022](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-022-versioning-schema-evolution.md))
 
 ## 10. References
 

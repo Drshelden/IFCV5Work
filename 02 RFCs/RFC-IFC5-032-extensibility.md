@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-012, IFC5-022 |
+| **Dependencies** | [IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md), [IFC5-022](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-022-versioning-schema-evolution.md) |
 | **Prototype Required** | No |
 
 ---
@@ -39,7 +39,7 @@ IFCX's schema import mechanism provides a natural extension point, but the gover
 
 ### 4.1 Schema-package extensions
 
-Extensions are distributed as schema packages (IFC5-012). Receivers that do not import the extension schema must preserve unrecognized namespaced attributes verbatim (unknown-extension preservation). Named governance process for promoting extensions to core.
+Extensions are distributed as schema packages ([IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md)). Receivers that do not import the extension schema must preserve unrecognized namespaced attributes verbatim (unknown-extension preservation). Named governance process for promoting extensions to core.
 
 ### 4.2 Strict no-extension policy
 
@@ -82,9 +82,9 @@ Any organization may define extension packages under their registered namespace.
 
 ## 9. Consequences
 
-- Determines schema import governance (IFC5-012)
-- Shapes versioning policy for extensions (IFC5-022)
-- Affects validation (IFC5-019) — how unknown extensions are treated
+- Determines schema import governance ([IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md))
+- Shapes versioning policy for extensions ([IFC5-022](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-022-versioning-schema-evolution.md))
+- Affects validation ([IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md)) — how unknown extensions are treated
 
 ## 10. References
 

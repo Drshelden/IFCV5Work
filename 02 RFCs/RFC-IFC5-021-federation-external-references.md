@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-003, IFC5-004 |
+| **Dependencies** | [IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md), [IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md) |
 | **Prototype Required** | No |
 
 ---
@@ -79,8 +79,8 @@ Federation is a deployment and tooling concern. IFC5 files are self-contained. C
 
 ## 9. Consequences
 
-- Depends on identity model decisions (IFC5-003, IFC5-004)
-- Shapes document structure rules (IFC5-011)
+- Depends on identity model decisions ([IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md), [IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md))
+- Shapes document structure rules ([IFC5-011](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md))
 
 ## 10. References
 

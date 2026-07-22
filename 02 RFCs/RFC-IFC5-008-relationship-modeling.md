@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-007 |
+| **Dependencies** | [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -83,8 +83,8 @@ Parent-child hierarchy encodes decomposition and containment. Semantic relations
 
 ## 9. Consequences
 
-- Directly affects spatial structure representation (IFC5-016)
-- Affects round-trip fidelity (IFC5-018)
+- Directly affects spatial structure representation ([IFC5-016](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-016-spatial-structure.md))
+- Affects round-trip fidelity ([IFC5-018](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-018-backward-compatibility.md))
 - Determines whether inverse attributes are needed (Topic 22)
 
 ## 10. References

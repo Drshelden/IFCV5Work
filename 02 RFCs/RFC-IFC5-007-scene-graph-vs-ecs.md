@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-001, IFC5-003, IFC5-004 |
+| **Dependencies** | [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md), [IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md), [IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md) |
 | **Prototype Required** | Yes |
 | **Absorbs** | Topic 58 (Ambiguities requiring explicit architectural decisions) |
 
@@ -27,7 +27,7 @@ This RFC asks: what is the primary structural organization of an IFC5 model?
 
 ## 2. Background
 
-Both proposals share a common JSON substrate (see IFC5-039) and the concept of a "component" as a dictionary carrying semantic data. The structural differences are significant:
+Both proposals share a common JSON substrate (see [IFC5-039](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md)) and the concept of a "component" as a dictionary carrying semantic data. The structural differences are significant:
 
 **IFCX component structure:**
 ```json

@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-007, IFC5-014 |
+| **Dependencies** | [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md), [IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -81,8 +81,8 @@ IFCX is abandoned; IFC5 uses native USD (.usda/.usdc) with IFC semantics express
 ## 9. Consequences
 
 - Determines feasibility of USD-based visualization tools for IFC5
-- Affects geometry encoding choices (IFC5-014)
-- Shapes composition and inheritance semantics (IFC5-010)
+- Affects geometry encoding choices ([IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md))
+- Shapes composition and inheritance semantics ([IFC5-010](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-010-composition-inheritance.md))
 
 ## 10. References
 

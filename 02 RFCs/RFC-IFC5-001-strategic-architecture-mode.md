@@ -15,7 +15,7 @@
 | **Owner** | TBD |
 | **Dependencies** | None |
 | **Prototype Required** | No |
-| **Note** | Topic 58 (Ambiguities) is absorbed by IFC5-007 |
+| **Note** | Topic 58 (Ambiguities) is absorbed by [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) |
 
 ---
 
@@ -96,7 +96,7 @@ The open question is whether this atomic standard is a **design constraint** (a 
 
 **Q5.** Should IFC5 commit to an **atomic data requirement** — that every data object be typed, named, uniquely identified, and reference-capable — as a cross-cutting constraint that applies regardless of which architectural mode (exchange, scene, ECS, hybrid) is selected?
 
-**Q6.** What is the minimum set of structural fields that defines an "atomic data unit" in IFC5? Is it: `{type, id, attributes}`, `{entityRef, componentType, attributes}`, or something else? Should this be normatively specified at the strategic level or deferred to RFC-IFC5-039?
+**Q6.** What is the minimum set of structural fields that defines an "atomic data unit" in IFC5? Is it: `{type, id, attributes}`, `{entityRef, componentType, attributes}`, or something else? Should this be normatively specified at the strategic level or deferred to RFC-[IFC5-039](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md)?
 
 ## 8. Prototype
 
@@ -106,12 +106,12 @@ The open question is whether this atomic standard is a **design constraint** (a 
 ## 9. Consequences
 
 This decision is the root dependency for every other RFC. It directly shapes:
-- Whether IFC class hierarchy is retained (IFC5-009)
-- Whether relationships remain first-class (IFC5-008)
-- Whether the scene graph replaces IFC spatial structure (IFC5-016)
-- Whether round-tripping is a hard requirement (IFC5-018)
-- The foundational JSON data model and atomic data primitives (IFC5-039)
-- Archetype and template mechanisms, which differ significantly across architectural modes (IFC5-040)
+- Whether IFC class hierarchy is retained ([IFC5-009](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md))
+- Whether relationships remain first-class ([IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md))
+- Whether the scene graph replaces IFC spatial structure ([IFC5-016](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-016-spatial-structure.md))
+- Whether round-tripping is a hard requirement ([IFC5-018](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-018-backward-compatibility.md))
+- The foundational JSON data model and atomic data primitives ([IFC5-039](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md))
+- Archetype and template mechanisms, which differ significantly across architectural modes ([IFC5-040](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-040-archetypes-templates-overrides.md))
 
 ## 10. References
 

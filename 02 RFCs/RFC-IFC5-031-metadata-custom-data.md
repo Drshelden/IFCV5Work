@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-005, IFC5-011 |
+| **Dependencies** | [IFC5-005](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-005-namespaces.md), [IFC5-011](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md) |
 | **Prototype Required** | No |
 
 ---
@@ -51,7 +51,7 @@ A dedicated `migrationMetadata` section carries round-trip aids (original SPF st
 
 ### 4.4 No custom data mechanism
 
-Applications that need custom data use custom property sets (IFC5-013). No unstructured escape hatch. Cleaner but may force property set overhead for simple annotations.
+Applications that need custom data use custom property sets ([IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md)). No unstructured escape hatch. Cleaner but may force property set overhead for simple annotations.
 
 ## 5. Tradeoffs
 
@@ -82,8 +82,8 @@ Applications that need custom data use custom property sets (IFC5-013). No unstr
 
 ## 9. Consequences
 
-- Affects backward compatibility migration strategy (IFC5-018)
-- Shapes document structure conventions (IFC5-011)
+- Affects backward compatibility migration strategy ([IFC5-018](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-018-backward-compatibility.md))
+- Shapes document structure conventions ([IFC5-011](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md))
 
 ## 10. References
 

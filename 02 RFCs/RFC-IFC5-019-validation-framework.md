@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-002, IFC5-012 |
+| **Dependencies** | [IFC5-002](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-002-normative-model-formalism.md), [IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md) |
 | **Prototype Required** | No |
 
 ---
@@ -83,8 +83,8 @@ Validation is defined in tiers: (1) structural, (2) schema, (3) IFC semantic, (4
 
 ## 9. Consequences
 
-- Determines schema formalism requirements (feeds back to IFC5-002)
-- Shapes model view and exchange requirements (IFC5-020)
+- Determines schema formalism requirements (feeds back to [IFC5-002](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-002-normative-model-formalism.md))
+- Shapes model view and exchange requirements ([IFC5-020](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-020-model-views-exchange.md))
 - Affects conformance testing (Topic 53)
 
 ## 10. References

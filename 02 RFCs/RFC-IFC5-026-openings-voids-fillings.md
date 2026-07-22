@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-008, IFC5-016 |
+| **Dependencies** | [IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md), [IFC5-016](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-016-spatial-structure.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -88,9 +88,9 @@ IfcOpeningElement, IfcRelVoidsElement, and IfcRelFillsElement are fully preserve
 
 ## 9. Consequences
 
-- Tied to relationship modeling strategy (IFC5-008)
-- Affects geometry architecture (IFC5-014) — boolean subtraction semantics
-- Affects backward compatibility (IFC5-018) — opening GlobalIds
+- Tied to relationship modeling strategy ([IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md))
+- Affects geometry architecture ([IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md)) — boolean subtraction semantics
+- Affects backward compatibility ([IFC5-018](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-018-backward-compatibility.md)) — opening GlobalIds
 
 ## 10. References
 

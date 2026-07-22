@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-007 |
+| **Dependencies** | [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) |
 | **Prototype Required** | No |
 
 ---
@@ -82,9 +82,9 @@ Normative schema types define the hierarchy; an attribute shorthand (`bsi::ifc::
 
 ## 9. Consequences
 
-- Determines how property applicability is validated (IFC5-019)
-- Shapes the inheritance/instancing decision (IFC5-010)
-- Affects backward compatibility (IFC5-018)
+- Determines how property applicability is validated ([IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md))
+- Shapes the inheritance/instancing decision ([IFC5-010](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-010-composition-inheritance.md))
+- Affects backward compatibility ([IFC5-018](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-018-backward-compatibility.md))
 
 ## 10. References
 

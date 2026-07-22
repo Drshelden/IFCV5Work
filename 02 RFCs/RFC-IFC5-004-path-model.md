@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 1 — Foundational |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-003 |
+| **Dependencies** | [IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -78,8 +78,8 @@ Objects have GUIDs. Hierarchy is an optional view. No path-based addressing. Sim
 
 ## 9. Consequences
 
-- Determines scene graph navigation model (IFC5-007)
-- Affects federation cross-references (IFC5-021)
+- Determines scene graph navigation model ([IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md))
+- Affects federation cross-references ([IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md))
 
 ## 10. References
 

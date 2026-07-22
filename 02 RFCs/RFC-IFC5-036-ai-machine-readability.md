@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-003, IFC5-007 |
+| **Dependencies** | [IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md), [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) |
 | **Prototype Required** | No |
 
 ---
@@ -38,7 +38,7 @@ IFC4.x's positional attributes, opaque STEP instance numbers, and deep inheritan
 
 ### 4.1 Named and typed attributes as a baseline requirement
 
-IFC5 mandates named (not positional) attributes and explicit class declarations. This alone makes the format substantially more AI-readable without additional design work. This is a constraint on IFC5-007 and IFC5-023.
+IFC5 mandates named (not positional) attributes and explicit class declarations. This alone makes the format substantially more AI-readable without additional design work. This is a constraint on [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) and [IFC5-023](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-023-attribute-representation.md).
 
 ### 4.2 Explicit provenance and confidence metadata
 
@@ -61,7 +61,7 @@ AI readability is most reliably achieved not through a separate profile, but thr
 - Every object is uniquely identifiable by a stable ID (GUID, path, or URI) that is stable across exports
 - Object relationships are expressed as references to those stable IDs, not by embedding
 
-This is the "atomic data standard" concept described in IFC5-001 and IFC5-039. From an AI perspective, this atomic standard means:
+This is the "atomic data standard" concept described in [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md) and [IFC5-039](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md). From an AI perspective, this atomic standard means:
 - Any IFC5 document can be parsed into a consistent `{id, type, attributes, references}` structure without schema knowledge
 - Training datasets are consistent across different authors and tools
 - Graph construction (for graph neural networks) requires only the reference links, not schema traversal
@@ -91,9 +91,9 @@ This approach argues that AI readability is not a profile to be layered on top �
 
 **Q4.** Should IFC5 include fields for semantic embeddings or ML model references, or is this out of scope?
 
-**Q5.** Should IFC5 specify a **minimal atomic data unit** — a typed, identified, reference-capable dictionary — as a requirement for the AI-readability conformance profile? Or is the atomic data standard (IFC5-039) sufficient on its own, without a named AI profile?
+**Q5.** Should IFC5 specify a **minimal atomic data unit** — a typed, identified, reference-capable dictionary — as a requirement for the AI-readability conformance profile? Or is the atomic data standard ([IFC5-039](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md)) sufficient on its own, without a named AI profile?
 
-**Q6.** If AI readability is achieved through the foundational data model (approach 4.5), what additional requirements — if any — does this RFC need to add beyond what IFC5-039 and IFC5-001 already specify? Is a separate AI-readability RFC necessary, or should its requirements be merged into the foundational RFCs?
+**Q6.** If AI readability is achieved through the foundational data model (approach 4.5), what additional requirements — if any — does this RFC need to add beyond what [IFC5-039](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md) and [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md) already specify? Is a separate AI-readability RFC necessary, or should its requirements be merged into the foundational RFCs?
 
 ## 8. Prototype
 
@@ -101,10 +101,10 @@ This approach argues that AI readability is not a profile to be layered on top �
 
 ## 9. Consequences
 
-- Provides additional design guidance for IFC5-007 (scene graph vs. ECS)
-- Shapes provenance metadata decisions (IFC5-031)
-- May reinforce normalization preferences in IFC5-013 (property sets)
-- Closely linked to IFC5-039 (foundational JSON data model) and IFC5-001 (atomic data architecture requirement)
+- Provides additional design guidance for [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) (scene graph vs. ECS)
+- Shapes provenance metadata decisions ([IFC5-031](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-031-metadata-custom-data.md))
+- May reinforce normalization preferences in [IFC5-013](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-013-property-sets.md) (property sets)
+- Closely linked to [IFC5-039](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md) (foundational JSON data model) and [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md) (atomic data architecture requirement)
 
 ## 10. References
 

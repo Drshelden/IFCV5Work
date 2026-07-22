@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-009 |
+| **Dependencies** | [IFC5-009](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -85,8 +85,8 @@ Standard buildingSMART property sets (Pset_WallCommon, etc.) become namespaced a
 
 ## 9. Consequences
 
-- Affects material modeling (IFC5-017)
-- Affects validation framework (IFC5-019)
+- Affects material modeling ([IFC5-017](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-017-material-modeling.md))
+- Affects validation framework ([IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md))
 
 ## 10. References
 

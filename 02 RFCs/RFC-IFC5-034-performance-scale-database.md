@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-006, IFC5-007 |
+| **Dependencies** | [IFC5-006](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-006-serialization-encoding.md), [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -80,9 +80,9 @@ IFC5 defines scale profiles: a building profile (current IFCX approach), a city/
 
 ## 9. Consequences
 
-- Directly influences serialization choices (IFC5-006)
-- Shapes ECS vs. scene-graph decision (IFC5-007) — ECS is more DB-friendly
-- Informs geometry encoding (IFC5-014)
+- Directly influences serialization choices ([IFC5-006](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-006-serialization-encoding.md))
+- Shapes ECS vs. scene-graph decision ([IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md)) — ECS is more DB-friendly
+- Informs geometry encoding ([IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md))
 
 ## 10. References
 

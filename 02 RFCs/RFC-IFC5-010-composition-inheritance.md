@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-007, IFC5-009 |
+| **Dependencies** | [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md), [IFC5-009](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -80,8 +80,8 @@ A new, precisely specified `inherits` mechanism designed specifically for IFC ne
 
 ## 9. Consequences
 
-- Determines geometry reuse and instancing behavior (IFC5-014)
-- Affects type library and federation use cases (IFC5-021)
+- Determines geometry reuse and instancing behavior ([IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md))
+- Affects type library and federation use cases ([IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md))
 
 ## 10. References
 

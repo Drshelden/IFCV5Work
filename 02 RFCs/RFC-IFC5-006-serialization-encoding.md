@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 1 — Foundational |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-001 |
+| **Dependencies** | [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md) |
 | **Prototype Required** | No |
 | **Absorbs** | Topics 55 (IFCX fine-grained syntax), 56 (ECS fine-grained syntax), 57 (IFC-SPF fine-grained syntax) |
 
@@ -47,7 +47,7 @@ JSON is the normative encoding; binary JSON alternatives (CBOR, MessagePack) are
 
 ### 4.4 Multi-file model
 
-A logical IFC5 model may span multiple files (semantic data, geometry, type libraries). Requires federation and reference semantics (see IFC5-021).
+A logical IFC5 model may span multiple files (semantic data, geometry, type libraries). Requires federation and reference semantics (see [IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md)).
 
 ## 5. Tradeoffs
 
@@ -78,13 +78,13 @@ A logical IFC5 model may span multiple files (semantic data, geometry, type libr
 
 ## 9. Consequences
 
-- Affects geometry encoding decisions (IFC5-014)
+- Affects geometry encoding decisions ([IFC5-014](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md))
 - Affects streaming and performance considerations (related to scale topics)
-- Determines document structure options (IFC5-011)
+- Determines document structure options ([IFC5-011](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md))
 
 ## 11. Absorbed Topics: Fine-Grained Syntax Decisions (Topics 55, 56, 57)
 
-Topics 55, 56, and 57 of the source inventory enumerate detailed syntax questions for IFCX, ECS, and IFC-SPF respectively. These are not architectural decisions in their own right — they are the *implementation consequences* of decisions made in this RFC and in IFC5-007 (Scene Graph vs. ECS). Once the top-level encoding and structural decisions are resolved, the fine-grained syntax questions below become specification-writing work rather than committee decisions.
+Topics 55, 56, and 57 of the source inventory enumerate detailed syntax questions for IFCX, ECS, and IFC-SPF respectively. These are not architectural decisions in their own right — they are the *implementation consequences* of decisions made in this RFC and in [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md) (Scene Graph vs. ECS). Once the top-level encoding and structural decisions are resolved, the fine-grained syntax questions below become specification-writing work rather than committee decisions.
 
 Key questions that remain open and should be resolved as part of this RFC's acceptance:
 
@@ -100,7 +100,7 @@ Key questions that remain open and should be resolved as part of this RFC's acce
 - Why do inline nested components require (or not require) GUIDs?
 
 **IFC-SPF syntax (Topic 57):**
-These are reference questions for backward compatibility analysis and are fully addressed in IFC5-018. No new decisions needed here.
+These are reference questions for backward compatibility analysis and are fully addressed in [IFC5-018](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-018-backward-compatibility.md). No new decisions needed here.
 
 ## 10. References
 

@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-003, IFC5-021 |
+| **Dependencies** | [IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md), [IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md) |
 | **Prototype Required** | No |
 
 ---
@@ -26,7 +26,7 @@ Digital twin and collaborative BIM use cases require fine-grained change trackin
 
 In IFC4.x, OwnerHistory records the creating and modifying application and timestamp at the object level. There is no attribute-level change tracking, no merge semantics, and no conflict detection. Real-world collaborative BIM relies on proprietary platforms (Revit worksharing, BIM 360, etc.) for change management — not IFC.
 
-If IFC5 adopts layered composition (IFC5-011), each layer naturally corresponds to a changeset. USD's layer stack model provides a precedent.
+If IFC5 adopts layered composition ([IFC5-011](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md)), each layer naturally corresponds to a changeset. USD's layer stack model provides a precedent.
 
 ## 3. Existing IFC4.x Convention
 
@@ -73,7 +73,7 @@ Change management is a platform concern. IFC5 files are snapshots. Change tracki
 
 **Q3.** How are deleted objects represented — tombstone records, omission, or explicit deletion flags?
 
-**Q4.** How does the collaboration model interact with the federation model (IFC5-021)?
+**Q4.** How does the collaboration model interact with the federation model ([IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md))?
 
 ## 8. Prototype
 
@@ -81,9 +81,9 @@ Change management is a platform concern. IFC5 files are snapshots. Change tracki
 
 ## 9. Consequences
 
-- Ties to document structure (IFC5-011) if changeset layers are adopted
-- Affects federation model (IFC5-021)
-- Shapes serialization decisions (IFC5-006) — canonical/deterministic output
+- Ties to document structure ([IFC5-011](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md)) if changeset layers are adopted
+- Affects federation model ([IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md))
+- Shapes serialization decisions ([IFC5-006](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-006-serialization-encoding.md)) — canonical/deterministic output
 
 ## 10. References
 

@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-008, IFC5-010 |
+| **Dependencies** | [IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md), [IFC5-010](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-010-composition-inheritance.md) |
 | **Prototype Required** | No |
 
 ---
@@ -81,8 +81,8 @@ A dedicated section of the scene graph encodes the spatial structure. Other hier
 
 ## 9. Consequences
 
-- Directly tied to relationship modeling decision (IFC5-008)
-- Affects backward compatibility (IFC5-018)
+- Directly tied to relationship modeling decision ([IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md))
+- Affects backward compatibility ([IFC5-018](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-018-backward-compatibility.md))
 
 ## 10. References
 

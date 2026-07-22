@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-007, IFC5-008, IFC5-009 |
+| **Dependencies** | [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md), [IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md), [IFC5-009](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -78,9 +78,9 @@ IFC5 is a new format. IFC4.x migration tools are out of scope for the standard. 
 
 ## 9. Consequences
 
-- Constrains identity model (IFC5-003) if GlobalId preservation is required
-- Constrains class representation (IFC5-009) if inheritance chain must be recoverable
-- Constrains relationship model (IFC5-008) if relationship GUIDs must survive
+- Constrains identity model ([IFC5-003](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md)) if GlobalId preservation is required
+- Constrains class representation ([IFC5-009](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-009-class-type-representation.md)) if inheritance chain must be recoverable
+- Constrains relationship model ([IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md)) if relationship GUIDs must survive
 
 ## 10. References
 

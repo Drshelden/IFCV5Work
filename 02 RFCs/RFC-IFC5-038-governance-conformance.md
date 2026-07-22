@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 4 — Process & Governance |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-019, IFC5-020, IFC5-022 |
+| **Dependencies** | [IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md), [IFC5-020](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-020-model-views-exchange.md), [IFC5-022](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-022-versioning-schema-evolution.md) |
 | **Prototype Required** | No |
 
 ---
@@ -49,7 +49,7 @@ IFC5 schemas are managed on GitHub with open contribution, version-tagged releas
 
 ### 4.4 Conformance profiles replace certification
 
-Instead of software certification, conformance is per-file: IFC5 files are validated against defined profiles (IFC5-020) and a conformance report is attached. No product certification required. Simpler; reduces buildingSMART gatekeeping role.
+Instead of software certification, conformance is per-file: IFC5 files are validated against defined profiles ([IFC5-020](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-020-model-views-exchange.md)) and a conformance report is attached. No product certification required. Simpler; reduces buildingSMART gatekeeping role.
 
 ## 5. Tradeoffs
 
@@ -81,9 +81,9 @@ Instead of software certification, conformance is per-file: IFC5 files are valid
 ## 9. Consequences
 
 - Shapes how the buildingSMART IFC5 program is structured
-- Determines who controls schema URI persistence (IFC5-022)
-- Informs extensibility governance (IFC5-032)
-- Shapes conformance test suite design (referenced in IFC5-019, IFC5-020)
+- Determines who controls schema URI persistence ([IFC5-022](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-022-versioning-schema-evolution.md))
+- Informs extensibility governance ([IFC5-032](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-032-extensibility.md))
+- Shapes conformance test suite design (referenced in [IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md), [IFC5-020](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-020-model-views-exchange.md))
 
 ## 10. References
 

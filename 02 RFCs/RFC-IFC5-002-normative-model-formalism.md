@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 1 — Foundational |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-001 |
+| **Dependencies** | [IFC5-001](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-001-strategic-architecture-mode.md) |
 | **Prototype Required** | No |
 
 ---
@@ -83,9 +83,9 @@ An ontological formalism aligned with linked-data principles. Enables SPARQL que
 
 ## 9. Consequences
 
-- Determines the toolchain required for IFC5 validators (IFC5-019)
-- Determines how schema imports are declared (IFC5-012)
-- Determines whether EXPRESS WHERE rules survive in IFC5 (IFC5-019)
+- Determines the toolchain required for IFC5 validators ([IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md))
+- Determines how schema imports are declared ([IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md))
+- Determines whether EXPRESS WHERE rules survive in IFC5 ([IFC5-019](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-019-validation-framework.md))
 
 ## 10. References
 

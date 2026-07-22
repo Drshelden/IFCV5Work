@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 3 — Domain Modeling |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-007, IFC5-010 |
+| **Dependencies** | [IFC5-007](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md), [IFC5-010](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-010-composition-inheritance.md) |
 | **Prototype Required** | Yes |
 
 ---
@@ -84,7 +84,7 @@ Geometry is not embedded in IFCX files. It is referenced by URI to external asse
 
 ## 9. Consequences
 
-- Shapes OpenUSD geometry mapping decisions (IFC5-015)
+- Shapes OpenUSD geometry mapping decisions ([IFC5-015](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-015-openusd-alignment.md))
 - Affects placement and transforms (Topic 33)
 - Determines quantity takeoff accuracy
 

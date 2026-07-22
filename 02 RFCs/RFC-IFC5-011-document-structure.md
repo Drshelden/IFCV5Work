@@ -13,7 +13,7 @@
 | **Status** | Idea |
 | **Tier** | 2 — Core Architecture |
 | **Owner** | TBD |
-| **Dependencies** | IFC5-006 |
+| **Dependencies** | [IFC5-006](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-006-serialization-encoding.md) |
 | **Prototype Required** | No |
 
 ---
@@ -73,8 +73,8 @@ Records belong to named layers (e.g., `{"layer": "structural", "path": "...", ..
 
 ## 9. Consequences
 
-- Affects how federation overlays are expressed (IFC5-021)
-- Shapes schema import declarations (IFC5-012)
+- Affects how federation overlays are expressed ([IFC5-021](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md))
+- Shapes schema import declarations ([IFC5-012](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md))
 
 ## 10. References
 
