@@ -110,7 +110,7 @@ def extract_approaches(md_path):
     """Extract proposed approach titles from ## 4. Proposed Approaches section."""
     text = md_path.read_text(encoding="utf-8")
     section = re.search(
-        r'##\s+\d*\.?\s*Proposed Approaches?\s*\n(.*?)(?=\n##\s|\Z)',
+        r'##\s+\d*\.?\s*Proposed Approaches?[^\n]*\n(.*?)(?=\n##\s|\Z)',
         text, re.DOTALL | re.IGNORECASE
     )
     if not section:
