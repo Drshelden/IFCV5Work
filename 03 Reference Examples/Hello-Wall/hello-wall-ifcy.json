@@ -1,0 +1,2718 @@
+{
+  "ifcPackage": "1.0",
+  "id": "b9f3e1a2-c847-4d56-9e23-f70a18c5d123",
+  "provenance": {
+    "assertedBy": "technical@buildingsmart.org",
+    "assertedAt": "2026-07-31T00:00:00Z",
+    "authority": "design-intent"
+  },
+  "schemas": {
+    "ifc": {
+      "uri": "https://standards.buildingsmart.org/ifc/v5",
+      "description": "IFC5 core schema — proposed architecture"
+    },
+    "usd": {
+      "uri": "https://ifcx.dev/@openusd.org/usd@v1.ifcx",
+      "description": "OpenUSD geometry schema (carry-through from IFCX)"
+    },
+    "nlsfb": {
+      "uri": "https://identifier.buildingsmart.org/uri/nlsfb/nlsfb2005/2.2",
+      "description": "NL-SfB classification system"
+    }
+  },
+  "data": [
+    {
+      "id": "c0000000-0000-0000-0000-000000000001",
+      "type": "ifc:IfcProjectIdentity",
+      "entity": "14adb22b-d474-48a2-8e8f-6d4c067c1953",
+      "attributes": {
+        "name": "My Project",
+        "description": null,
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcProject"
+        },
+        "legacyStepRef": "#1=IfcProject('0KhR8hr7H8eewFRKm6V1bJ',$,'My Project',$,$,$,$,(#14,#26),#9)"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000002",
+      "type": "ifc:IfcSiteIdentity",
+      "entity": "e0834921-e095-40f0-8874-3c6bd1ec699e",
+      "attributes": {
+        "name": "My Site",
+        "description": null,
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcSite"
+        },
+        "legacyStepRef": "#30=IfcSite('3WWqaXu9L0y8XqF6lHx6cU',$,'My Site',$,$,#53,$,$,$,$,$,$,$,$)"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000003",
+      "type": "ifc:IfcBuildingIdentity",
+      "entity": "e84dc79e-fe9d-4781-9f4b-54dd435cca91",
+      "attributes": {
+        "name": "My Building",
+        "description": null,
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcBuilding"
+        },
+        "legacyStepRef": "#36=IfcBuilding('3eJSUU$fr7WPzBLDr3NCgH',$,'My Building',$,$,#59,$,$,$,$,$,$)"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000004",
+      "type": "ifc:IfcBuildingStoreyIdentity",
+      "entity": "44af358b-3160-4063-8a89-a868335ff3b5",
+      "attributes": {
+        "name": "My Storey",
+        "description": null,
+        "elevation": {
+          "value": 0,
+          "unit": "m"
+        },
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcBuildingStorey"
+        },
+        "legacyStepRef": "#42=IfcBuildingStorey('14hpMBCM10Oug9g6WpN$Er',$,'My Storey',$,$,#65,$,$,$,$)"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000005",
+      "type": "ifc:IfcSpaceIdentity",
+      "entity": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+      "attributes": {
+        "name": "My Space",
+        "description": null,
+        "predefinedType": "SPACE",
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcSpace"
+        },
+        "legacyStepRef": "#1494=IfcSpace('3Z0rjnlPzCt8RzjMulHWMs',$,'My Space',$,$,#1515,#1509,$,$,.SPACE.,$)"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000006",
+      "type": "ifc:IfcWallIdentity",
+      "entity": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b",
+      "attributes": {
+        "name": "Wall",
+        "description": null,
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWall"
+        },
+        "classifications": [
+          {
+            "code": "21.21",
+            "uri": "https://identifier.buildingsmart.org/uri/nlsfb/nlsfb2005/2.2/class/21.21",
+            "system": "NL-SfB"
+          }
+        ],
+        "legacyStepRef": "#1222=IfcWall('2JUHrTM_j3UxZiBnyBfByx',$,'Wall',$,$,#1235,#1230,$,$)"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000007",
+      "type": "ifc:IfcWallTypeIdentity",
+      "entity": "db172c6e-7778-414b-b9cc-599c9dadb93a",
+      "attributes": {
+        "name": "WAL100",
+        "description": null,
+        "predefinedType": "NOTDEFINED",
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWallType"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000008",
+      "type": "ifc:IfcWindowTypeIdentity",
+      "entity": "25503984-6605-43a1-8597-eae657ff5bea",
+      "attributes": {
+        "name": "WT01",
+        "description": null,
+        "predefinedType": "NOTDEFINED",
+        "partitioningType": "NOTDEFINED",
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindowType"
+        },
+        "legacyStepRef": "#459=IfcWindowType('0bK3c4PWL3eOMNwkPN$rlg',$,'WT01',$,$,$,(#436,#458),$,$,.NOTDEFINED.,.NOTDEFINED.,$,$)"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000009",
+      "type": "ifc:IfcWindowIdentity",
+      "entity": "2c2d549f-f9fe-4e22-8590-562fda81a690",
+      "attributes": {
+        "name": "Window",
+        "description": null,
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindow"
+        },
+        "legacyStepRef": "#1262=IfcWindow('0iBLIV_VvE8eMGLY$QWQQG',$,'Window',$,$,#1349,#1291,$,$,$,$,$,$)"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000010",
+      "type": "ifc:IfcWindowIdentity",
+      "entity": "592504dc-469a-44d6-9ae8-c801b591679b",
+      "attributes": {
+        "name": "Window",
+        "description": null,
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindow"
+        },
+        "legacyStepRef": "#1407=IfcWindow('1P9GJSHff4rfheo06raMUR',$,'Window',$,$,#1478,#1435,$,$,$,$,$,$)"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000011",
+      "type": "ifc:IfcOpeningElementIdentity",
+      "entity": "409918e0-f967-4f5e-9d67-c9ab5e1d7332",
+      "attributes": {
+        "name": "Opening",
+        "description": null,
+        "predefinedType": "OPENING",
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcOpeningElement"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000012",
+      "type": "ifc:IfcOpeningElementIdentity",
+      "entity": "9a7ae044-721f-43ca-95a4-5998a06c223e",
+      "attributes": {
+        "name": "Opening",
+        "description": null,
+        "predefinedType": "OPENING",
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcOpeningElement"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000013",
+      "type": "ifc:IfcMaterialIdentity",
+      "entity": "7a187a90-3dcf-58cc-b3a6-51a9a407c55a",
+      "attributes": {
+        "name": "CONCRETE",
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/fish/midas-materials/26/class/CONCRETE"
+        },
+        "diffuseColor": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "opacity": 1
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000014",
+      "type": "ifc:IfcMaterialIdentity",
+      "entity": "4549bada-a37e-5044-bb70-456516cca5a8",
+      "attributes": {
+        "name": "WOOD",
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/fish/midas-materials/26/class/WOOD"
+        },
+        "diffuseColor": [
+          0.8,
+          0.7,
+          0.6
+        ],
+        "opacity": 1
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000015",
+      "type": "ifc:IfcMaterialProperties",
+      "entity": "4549bada-a37e-5044-bb70-456516cca5a8",
+      "attributes": {
+        "psetName": "Pset_MaterialMechanical",
+        "properties": {
+          "StrengthClass": "C24",
+          "MoistureContent": {
+            "value": 0.56,
+            "unit": "1"
+          },
+          "MassDensity": {
+            "value": 529,
+            "unit": "kg/m3"
+          },
+          "GWP_A1_A3": {
+            "value": -629.4,
+            "unit": "kg{CO2e}/m3"
+          },
+          "GWP_A4": {
+            "value": 0,
+            "unit": "kg{CO2e}/m3"
+          },
+          "GWP_A5": {
+            "value": 0,
+            "unit": "kg{CO2e}/m3"
+          },
+          "GWP_C2": {
+            "value": 1.802,
+            "unit": "kg{CO2e}/m3"
+          },
+          "GWP_C3": {
+            "value": 863,
+            "unit": "kg{CO2e}/m3"
+          },
+          "GWP_D": {
+            "value": -274.8,
+            "unit": "kg{CO2e}/m3"
+          }
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000016",
+      "type": "ifc:IfcMaterialIdentity",
+      "entity": "d10e4eb4-6a35-5fbe-9491-7a6fb93f1691",
+      "attributes": {
+        "name": "GLASS",
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/fish/midas-materials/26/class/GLASS"
+        },
+        "diffuseColor": [
+          0.5,
+          0.8,
+          0.6
+        ],
+        "opacity": 0.3
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000017",
+      "type": "ifc:SpatialView",
+      "entity": "14adb22b-d474-48a2-8e8f-6d4c067c1953",
+      "attributes": {
+        "name": "spatial-default",
+        "description": "Default spatial containment hierarchy. Composed from IfcRelAggregates and IfcRelContainedInSpatialStructure rooted at the project entity. Paths are navigational views; entity identity is always the UUID.",
+        "root": {
+          "ref": "14adb22b-d474-48a2-8e8f-6d4c067c1953",
+          "pathLabel": "My_Project"
+        },
+        "composedFrom": [
+          "ifc:IfcRelAggregates",
+          "ifc:IfcRelContainedInSpatialStructure"
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000018",
+      "type": "ifc:IfcRelAggregates",
+      "entity": "14adb22b-d474-48a2-8e8f-6d4c067c1953",
+      "attributes": {
+        "relatedObjects": [
+          {
+            "ref": "e0834921-e095-40f0-8874-3c6bd1ec699e",
+            "pathLabel": "My_Site"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000019",
+      "type": "ifc:IfcRelAggregates",
+      "entity": "e0834921-e095-40f0-8874-3c6bd1ec699e",
+      "attributes": {
+        "relatedObjects": [
+          {
+            "ref": "e84dc79e-fe9d-4781-9f4b-54dd435cca91",
+            "pathLabel": "My_Building"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000020",
+      "type": "ifc:IfcRelAggregates",
+      "entity": "e84dc79e-fe9d-4781-9f4b-54dd435cca91",
+      "attributes": {
+        "relatedObjects": [
+          {
+            "ref": "44af358b-3160-4063-8a89-a868335ff3b5",
+            "pathLabel": "My_Storey"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000021",
+      "type": "ifc:IfcRelAggregates",
+      "entity": "44af358b-3160-4063-8a89-a868335ff3b5",
+      "attributes": {
+        "relatedObjects": [
+          {
+            "ref": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+            "pathLabel": "My_Space"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000022",
+      "type": "ifc:IfcRelContainedInSpatialStructure",
+      "entity": "44af358b-3160-4063-8a89-a868335ff3b5",
+      "attributes": {
+        "relatedElements": [
+          {
+            "ref": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b",
+            "pathLabel": "Wall"
+          },
+          {
+            "ref": "2c2d549f-f9fe-4e22-8590-562fda81a690",
+            "pathLabel": "Window"
+          },
+          {
+            "ref": "592504dc-469a-44d6-9ae8-c801b591679b",
+            "pathLabel": "Window_001"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000023",
+      "type": "ifc:IfcRelDefinesByType",
+      "entity": "db172c6e-7778-414b-b9cc-599c9dadb93a",
+      "attributes": {
+        "relatedObjects": [
+          {
+            "ref": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000024",
+      "type": "ifc:IfcRelDefinesByType",
+      "entity": "25503984-6605-43a1-8597-eae657ff5bea",
+      "attributes": {
+        "relatedObjects": [
+          {
+            "ref": "2c2d549f-f9fe-4e22-8590-562fda81a690"
+          },
+          {
+            "ref": "592504dc-469a-44d6-9ae8-c801b591679b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000025",
+      "type": "ifc:IfcRelDefinesByProperties",
+      "entity": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b",
+      "attributes": {
+        "relatingPropertyDefinition": "Pset_WallCommon"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000026",
+      "type": "ifc:IfcRelDefinesByProperties",
+      "entity": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+      "attributes": {
+        "relatingPropertyDefinition": "Pset_SpaceCommon"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000027",
+      "type": "ifc:IfcRelDefinesByProperties",
+      "entity": "25503984-6605-43a1-8597-eae657ff5bea",
+      "attributes": {
+        "relatingPropertyDefinition": "Pset_WindowTypeCommon"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000028",
+      "type": "ifc:IfcRelVoidsElement",
+      "entity": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b",
+      "attributes": {
+        "relatedOpeningElements": [
+          {
+            "ref": "409918e0-f967-4f5e-9d67-c9ab5e1d7332"
+          },
+          {
+            "ref": "9a7ae044-721f-43ca-95a4-5998a06c223e"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000029",
+      "type": "ifc:IfcRelFillsElement",
+      "entity": "2c2d549f-f9fe-4e22-8590-562fda81a690",
+      "attributes": {
+        "relatingOpeningElement": {
+          "ref": "409918e0-f967-4f5e-9d67-c9ab5e1d7332"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000030",
+      "type": "ifc:IfcRelFillsElement",
+      "entity": "592504dc-469a-44d6-9ae8-c801b591679b",
+      "attributes": {
+        "relatingOpeningElement": {
+          "ref": "9a7ae044-721f-43ca-95a4-5998a06c223e"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000031",
+      "type": "ifc:IfcRelAssociatesMaterial",
+      "entity": "7a187a90-3dcf-58cc-b3a6-51a9a407c55a",
+      "attributes": {
+        "materialRole": "wall-body",
+        "relatedObjects": [
+          {
+            "ref": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000032",
+      "type": "ifc:IfcRelAssociatesMaterial",
+      "entity": "4549bada-a37e-5044-bb70-456516cca5a8",
+      "attributes": {
+        "materialRole": "window-frame",
+        "relatedObjects": [
+          {
+            "ref": "08f06095-3f32-55b9-a353-61c9aca5cc4d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000033",
+      "type": "ifc:IfcRelAssociatesMaterial",
+      "entity": "d10e4eb4-6a35-5fbe-9491-7a6fb93f1691",
+      "attributes": {
+        "materialRole": "window-glazing",
+        "relatedObjects": [
+          {
+            "ref": "5ad6f475-c04c-5628-8b9d-75d0bab0c0e5"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000034",
+      "type": "ifc:IfcRelSpaceBoundary",
+      "entity": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+      "attributes": {
+        "physicalOrVirtualBoundary": "PHYSICAL",
+        "internalOrExternalBoundary": "INTERNAL",
+        "relatedBuildingElement": {
+          "ref": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b"
+        },
+        "connectionGeometryBody": {
+          "ref": "911155b7-f688-51ee-8e3e-b97475be2452"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000035",
+      "type": "ifc:IfcRelSpaceBoundary",
+      "entity": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+      "attributes": {
+        "physicalOrVirtualBoundary": "PHYSICAL",
+        "internalOrExternalBoundary": "INTERNAL",
+        "relatedBuildingElement": {
+          "ref": "2c2d549f-f9fe-4e22-8590-562fda81a690"
+        },
+        "connectionGeometryBody": {
+          "ref": "f3aa8991-7481-5d6b-8dae-f98c372f4a98"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000036",
+      "type": "ifc:IfcRelSpaceBoundary",
+      "entity": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+      "attributes": {
+        "physicalOrVirtualBoundary": "PHYSICAL",
+        "internalOrExternalBoundary": "INTERNAL",
+        "relatedBuildingElement": {
+          "ref": "592504dc-469a-44d6-9ae8-c801b591679b"
+        },
+        "connectionGeometryBody": {
+          "ref": "126781f3-6465-5c39-9216-81cc636eeb39"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000037",
+      "type": "ifc:IfcPropertySet",
+      "entity": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b",
+      "attributes": {
+        "psetName": "Pset_WallCommon",
+        "properties": {
+          "IsExternal": true,
+          "Volume": {
+            "value": 2.783999976,
+            "unit": "m3"
+          },
+          "Height": {
+            "value": 3,
+            "unit": "m"
+          }
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000038",
+      "type": "ifc:IfcPropertySet",
+      "entity": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+      "attributes": {
+        "psetName": "Pset_SpaceCommon",
+        "properties": {
+          "Volume": {
+            "value": 120,
+            "unit": "m3"
+          },
+          "Height": {
+            "value": 3,
+            "unit": "m"
+          }
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000039",
+      "type": "ifc:IfcPropertySet",
+      "entity": "25503984-6605-43a1-8597-eae657ff5bea",
+      "attributes": {
+        "psetName": "Pset_WindowTypeCommon",
+        "properties": {
+          "IsExternal": true,
+          "Volume": {
+            "value": 0.025999999592,
+            "unit": "m3"
+          },
+          "Height": {
+            "value": 1.2,
+            "unit": "m"
+          },
+          "Width": {
+            "value": 0.9,
+            "unit": "m"
+          }
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000040",
+      "type": "ifc:IfcTypical",
+      "entity": "25503984-6605-43a1-8597-eae657ff5bea",
+      "attributes": {
+        "name": "WT01",
+        "description": "Window type. Instances override only their placement transform.",
+        "taxonomy": {
+          "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindowType"
+        },
+        "componentTemplates": [
+          {
+            "slotName": "class",
+            "type": "ifc:IfcWindowIdentity",
+            "inheritable": true,
+            "attributes": {
+              "taxonomy": {
+                "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindow"
+              },
+              "predefinedType": "NOTDEFINED"
+            }
+          },
+          {
+            "slotName": "properties",
+            "type": "ifc:IfcPropertySet",
+            "inheritable": true,
+            "attributes": {
+              "psetName": "Pset_WindowTypeCommon",
+              "properties": {
+                "IsExternal": true,
+                "Height": {
+                  "value": 1.2,
+                  "unit": "m"
+                },
+                "Width": {
+                  "value": 0.9,
+                  "unit": "m"
+                }
+              }
+            }
+          },
+          {
+            "slotName": "geometry/Void",
+            "type": "usd:MeshGeometry",
+            "inheritable": true,
+            "attributes": {
+              "representationIdentifier": "Void",
+              "geometryEntity": {
+                "ref": "8fada721-cff8-590b-8d0b-9300b5fe8e18"
+              },
+              "visibility": "invisible"
+            }
+          },
+          {
+            "slotName": "geometry/Frame",
+            "type": "usd:MeshGeometry",
+            "inheritable": true,
+            "attributes": {
+              "representationIdentifier": "Frame",
+              "geometryEntity": {
+                "ref": "08f06095-3f32-55b9-a353-61c9aca5cc4d"
+              },
+              "material": {
+                "ref": "4549bada-a37e-5044-bb70-456516cca5a8"
+              }
+            }
+          },
+          {
+            "slotName": "geometry/Glazing",
+            "type": "usd:MeshGeometry",
+            "inheritable": true,
+            "attributes": {
+              "representationIdentifier": "Glazing",
+              "geometryEntity": {
+                "ref": "5ad6f475-c04c-5628-8b9d-75d0bab0c0e5"
+              },
+              "material": {
+                "ref": "d10e4eb4-6a35-5fbe-9491-7a6fb93f1691"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000041",
+      "type": "ifc:IfcInstantiates",
+      "entity": "2c2d549f-f9fe-4e22-8590-562fda81a690",
+      "attributes": {
+        "typical": {
+          "ref": "25503984-6605-43a1-8597-eae657ff5bea"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000042",
+      "type": "usd:XformComponent",
+      "entity": "2c2d549f-f9fe-4e22-8590-562fda81a690",
+      "attributes": {
+        "representationIdentifier": "placement",
+        "transform": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1.76767492294312,
+            0,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000043",
+      "type": "ifc:IfcInstantiates",
+      "entity": "592504dc-469a-44d6-9ae8-c801b591679b",
+      "attributes": {
+        "typical": {
+          "ref": "25503984-6605-43a1-8597-eae657ff5bea"
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000044",
+      "type": "usd:XformComponent",
+      "entity": "592504dc-469a-44d6-9ae8-c801b591679b",
+      "attributes": {
+        "representationIdentifier": "placement",
+        "transform": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            4.94660663604736,
+            0,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000045",
+      "type": "ifc:IfcShapeRepresentation",
+      "entity": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b",
+      "attributes": {
+        "representationIdentifier": "Body",
+        "representationType": "SolidModel",
+        "items": [
+          {
+            "ref": "634f90c3-831e-5f29-a9b2-fa69b207821e"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000046",
+      "type": "usd:MeshGeometry",
+      "entity": "634f90c3-831e-5f29-a9b2-fa69b207821e",
+      "attributes": {
+        "mesh": {
+          "faceVertexIndices": [
+            3,
+            0,
+            1,
+            3,
+            1,
+            2,
+            5,
+            4,
+            7,
+            6,
+            5,
+            7,
+            9,
+            8,
+            10,
+            10,
+            8,
+            11,
+            14,
+            12,
+            13,
+            15,
+            12,
+            14,
+            17,
+            16,
+            19,
+            18,
+            17,
+            19,
+            21,
+            20,
+            23,
+            22,
+            21,
+            23,
+            25,
+            24,
+            27,
+            26,
+            25,
+            27,
+            29,
+            28,
+            31,
+            30,
+            29,
+            31,
+            33,
+            32,
+            35,
+            34,
+            33,
+            35,
+            37,
+            36,
+            39,
+            38,
+            37,
+            39,
+            41,
+            40,
+            43,
+            42,
+            41,
+            43,
+            45,
+            44,
+            47,
+            46,
+            45,
+            47,
+            54,
+            50,
+            52,
+            53,
+            50,
+            51,
+            53,
+            52,
+            50,
+            55,
+            53,
+            51,
+            57,
+            54,
+            55,
+            57,
+            56,
+            54,
+            57,
+            55,
+            51,
+            49,
+            58,
+            59,
+            48,
+            49,
+            59,
+            49,
+            50,
+            56,
+            56,
+            50,
+            54,
+            49,
+            56,
+            58,
+            51,
+            48,
+            59,
+            51,
+            59,
+            57,
+            64,
+            62,
+            66,
+            63,
+            62,
+            65,
+            62,
+            64,
+            65,
+            63,
+            65,
+            67,
+            67,
+            66,
+            69,
+            66,
+            68,
+            69,
+            63,
+            67,
+            69,
+            71,
+            70,
+            61,
+            71,
+            61,
+            60,
+            68,
+            62,
+            61,
+            66,
+            62,
+            68,
+            70,
+            68,
+            61,
+            71,
+            60,
+            63,
+            69,
+            71,
+            63
+          ],
+          "points": [
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              10,
+              0.1,
+              0
+            ],
+            [
+              10,
+              0.1,
+              3
+            ],
+            [
+              10,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0.1,
+              0
+            ],
+            [
+              0,
+              0.1,
+              3
+            ],
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              10,
+              0.1,
+              0
+            ],
+            [
+              0,
+              0.1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              3
+            ],
+            [
+              10,
+              0.1,
+              3
+            ],
+            [
+              0,
+              0.1,
+              3
+            ],
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              1.7676749,
+              0,
+              1
+            ],
+            [
+              1.7676749,
+              0.1,
+              1
+            ],
+            [
+              2.667675,
+              0.1,
+              1
+            ],
+            [
+              2.667675,
+              0,
+              1
+            ],
+            [
+              2.667675,
+              0,
+              1
+            ],
+            [
+              2.667675,
+              0.1,
+              1
+            ],
+            [
+              2.667675,
+              0.1,
+              2.2
+            ],
+            [
+              2.667675,
+              0,
+              2.2
+            ],
+            [
+              2.667675,
+              0,
+              2.2
+            ],
+            [
+              2.667675,
+              0.1,
+              2.2
+            ],
+            [
+              1.7676749,
+              0.1,
+              2.2
+            ],
+            [
+              1.7676749,
+              0,
+              2.2
+            ],
+            [
+              1.7676749,
+              0,
+              2.2
+            ],
+            [
+              1.7676749,
+              0.1,
+              2.2
+            ],
+            [
+              1.7676749,
+              0.1,
+              1
+            ],
+            [
+              1.7676749,
+              0,
+              1
+            ],
+            [
+              4.9466066,
+              0,
+              1
+            ],
+            [
+              4.9466066,
+              0.1,
+              1
+            ],
+            [
+              5.8466067,
+              0.1,
+              1
+            ],
+            [
+              5.8466067,
+              0,
+              1
+            ],
+            [
+              5.8466067,
+              0,
+              1
+            ],
+            [
+              5.8466067,
+              0.1,
+              1
+            ],
+            [
+              5.8466067,
+              0.1,
+              2.2
+            ],
+            [
+              5.8466067,
+              0,
+              2.2
+            ],
+            [
+              5.8466067,
+              0,
+              2.2
+            ],
+            [
+              5.8466067,
+              0.1,
+              2.2
+            ],
+            [
+              4.9466066,
+              0.1,
+              2.2
+            ],
+            [
+              4.9466066,
+              0,
+              2.2
+            ],
+            [
+              4.9466066,
+              0,
+              2.2
+            ],
+            [
+              4.9466066,
+              0.1,
+              2.2
+            ],
+            [
+              4.9466066,
+              0.1,
+              1
+            ],
+            [
+              4.9466066,
+              0,
+              1
+            ],
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1.7676749,
+              0,
+              2.2
+            ],
+            [
+              1.7676749,
+              0,
+              1
+            ],
+            [
+              2.667675,
+              0,
+              2.2
+            ],
+            [
+              2.667675,
+              0,
+              1
+            ],
+            [
+              4.9466066,
+              0,
+              2.2
+            ],
+            [
+              4.9466066,
+              0,
+              1
+            ],
+            [
+              5.8466067,
+              0,
+              2.2
+            ],
+            [
+              5.8466067,
+              0,
+              1
+            ],
+            [
+              10,
+              0.1,
+              0
+            ],
+            [
+              10,
+              0.1,
+              3
+            ],
+            [
+              0,
+              0.1,
+              3
+            ],
+            [
+              0,
+              0.1,
+              0
+            ],
+            [
+              1.7676749,
+              0.1,
+              2.2
+            ],
+            [
+              1.7676749,
+              0.1,
+              1
+            ],
+            [
+              2.667675,
+              0.1,
+              2.2
+            ],
+            [
+              2.667675,
+              0.1,
+              1
+            ],
+            [
+              4.9466066,
+              0.1,
+              2.2
+            ],
+            [
+              4.9466066,
+              0.1,
+              1
+            ],
+            [
+              5.8466067,
+              0.1,
+              2.2
+            ],
+            [
+              5.8466067,
+              0.1,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000047",
+      "type": "ifc:IfcShapeRepresentation",
+      "entity": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b",
+      "attributes": {
+        "representationIdentifier": "Axis",
+        "representationType": "Curve2D",
+        "items": [
+          {
+            "ref": "8407e490-ceaa-56e5-96df-2351d9110668"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000048",
+      "type": "usd:CurveGeometry",
+      "entity": "8407e490-ceaa-56e5-96df-2351d9110668",
+      "attributes": {
+        "curve": {
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000049",
+      "type": "ifc:IfcShapeRepresentation",
+      "entity": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b",
+      "attributes": {
+        "representationIdentifier": "Directrix",
+        "representationType": "Curve3D",
+        "items": [
+          {
+            "ref": "9d1fce89-e179-5076-9a3b-1b40eef3524b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000050",
+      "type": "usd:CurveGeometry",
+      "entity": "9d1fce89-e179-5076-9a3b-1b40eef3524b",
+      "attributes": {
+        "curve": {
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000051",
+      "type": "ifc:IfcShapeRepresentation",
+      "entity": "93791d5d-5beb-437b-b8ec-2f1f0ba4bf3b",
+      "attributes": {
+        "representationIdentifier": "Basis",
+        "representationType": "Surface",
+        "items": [
+          {
+            "ref": "367f7f7d-b4c5-50fe-829a-6bbced170dd1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000052",
+      "type": "usd:MeshGeometry",
+      "entity": "367f7f7d-b4c5-50fe-829a-6bbced170dd1",
+      "attributes": {
+        "mesh": {
+          "faceVertexIndices": [
+            0,
+            1,
+            3,
+            2,
+            3,
+            1
+          ],
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0.1,
+              0
+            ],
+            [
+              10,
+              0.1,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000053",
+      "type": "usd:MeshGeometry",
+      "entity": "8fada721-cff8-590b-8d0b-9300b5fe8e18",
+      "attributes": {
+        "mesh": {
+          "faceVertexIndices": [
+            3,
+            0,
+            1,
+            3,
+            1,
+            2,
+            7,
+            4,
+            5,
+            7,
+            5,
+            6,
+            11,
+            8,
+            9,
+            11,
+            9,
+            10,
+            15,
+            12,
+            13,
+            15,
+            13,
+            14,
+            18,
+            16,
+            17,
+            18,
+            19,
+            16,
+            21,
+            20,
+            22,
+            20,
+            23,
+            22
+          ],
+          "points": [
+            [
+              0,
+              -0.6,
+              0
+            ],
+            [
+              0,
+              0.59999996,
+              0
+            ],
+            [
+              0.9,
+              0.59999996,
+              0
+            ],
+            [
+              0.9,
+              -0.6,
+              0
+            ],
+            [
+              0.9,
+              -0.6,
+              0
+            ],
+            [
+              0.9,
+              0.59999996,
+              0
+            ],
+            [
+              0.9,
+              0.59999996,
+              1.2
+            ],
+            [
+              0.9,
+              -0.6,
+              1.2
+            ],
+            [
+              0.9,
+              -0.6,
+              1.2
+            ],
+            [
+              0.9,
+              0.59999996,
+              1.2
+            ],
+            [
+              0,
+              0.59999996,
+              1.2
+            ],
+            [
+              0,
+              -0.6,
+              1.2
+            ],
+            [
+              0,
+              -0.6,
+              1.2
+            ],
+            [
+              0,
+              0.59999996,
+              1.2
+            ],
+            [
+              0,
+              0.59999996,
+              0
+            ],
+            [
+              0,
+              -0.6,
+              0
+            ],
+            [
+              0,
+              -0.6,
+              0
+            ],
+            [
+              0.9,
+              -0.6,
+              0
+            ],
+            [
+              0.9,
+              -0.6,
+              1.2
+            ],
+            [
+              0,
+              -0.6,
+              1.2
+            ],
+            [
+              0,
+              0.59999996,
+              0
+            ],
+            [
+              0.9,
+              0.59999996,
+              0
+            ],
+            [
+              0.9,
+              0.59999996,
+              1.2
+            ],
+            [
+              0,
+              0.59999996,
+              1.2
+            ]
+          ]
+        },
+        "visibility": "invisible"
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000054",
+      "type": "usd:MeshGeometry",
+      "entity": "08f06095-3f32-55b9-a353-61c9aca5cc4d",
+      "attributes": {
+        "mesh": {
+          "faceVertexIndices": [
+            3,
+            0,
+            1,
+            2,
+            3,
+            1,
+            7,
+            4,
+            5,
+            7,
+            5,
+            6,
+            10,
+            11,
+            8,
+            10,
+            8,
+            9,
+            14,
+            15,
+            12,
+            13,
+            14,
+            12,
+            19,
+            17,
+            16,
+            19,
+            16,
+            18,
+            21,
+            22,
+            23,
+            21,
+            23,
+            20,
+            26,
+            25,
+            24,
+            26,
+            27,
+            25,
+            28,
+            30,
+            31,
+            29,
+            28,
+            31,
+            32,
+            34,
+            35,
+            32,
+            35,
+            33,
+            39,
+            36,
+            37,
+            39,
+            37,
+            38,
+            41,
+            42,
+            43,
+            41,
+            43,
+            40,
+            47,
+            44,
+            45,
+            47,
+            45,
+            46,
+            49,
+            50,
+            51,
+            49,
+            51,
+            48,
+            55,
+            53,
+            52,
+            55,
+            52,
+            54,
+            56,
+            58,
+            59,
+            56,
+            59,
+            57,
+            63,
+            61,
+            60,
+            63,
+            60,
+            62
+          ],
+          "points": [
+            [
+              0.099999994,
+              0.05,
+              0.099999994
+            ],
+            [
+              0,
+              0.05,
+              0
+            ],
+            [
+              0,
+              0.05,
+              1.2
+            ],
+            [
+              0.099999994,
+              0.05,
+              1.1
+            ],
+            [
+              0.099999994,
+              0,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0,
+              1.1
+            ],
+            [
+              0,
+              0,
+              1.2
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0.8,
+              0,
+              1.1
+            ],
+            [
+              0.8,
+              0,
+              0.099999994
+            ],
+            [
+              0.9,
+              0,
+              0
+            ],
+            [
+              0.9,
+              0,
+              1.2
+            ],
+            [
+              0.099999994,
+              0,
+              1.1
+            ],
+            [
+              0.8,
+              0,
+              1.1
+            ],
+            [
+              0.9,
+              0,
+              1.2
+            ],
+            [
+              0,
+              0,
+              1.2
+            ],
+            [
+              0.099999994,
+              0,
+              0.099999994
+            ],
+            [
+              0.8,
+              0,
+              0.099999994
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0.9,
+              0,
+              0
+            ],
+            [
+              0.8,
+              0.05,
+              1.1
+            ],
+            [
+              0.9,
+              0.05,
+              1.2
+            ],
+            [
+              0.9,
+              0.05,
+              0
+            ],
+            [
+              0.8,
+              0.05,
+              0.099999994
+            ],
+            [
+              0,
+              0.05,
+              1.2
+            ],
+            [
+              0.099999994,
+              0.05,
+              1.1
+            ],
+            [
+              0.9,
+              0.05,
+              1.2
+            ],
+            [
+              0.8,
+              0.05,
+              1.1
+            ],
+            [
+              0.9,
+              0.05,
+              0
+            ],
+            [
+              0.8,
+              0.05,
+              0.099999994
+            ],
+            [
+              0,
+              0.05,
+              0
+            ],
+            [
+              0.099999994,
+              0.05,
+              0.099999994
+            ],
+            [
+              0,
+              0.05,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0.9,
+              0.05,
+              0
+            ],
+            [
+              0.9,
+              0,
+              0
+            ],
+            [
+              0.9,
+              0,
+              0
+            ],
+            [
+              0.9,
+              0.05,
+              0
+            ],
+            [
+              0.9,
+              0.05,
+              1.2
+            ],
+            [
+              0.9,
+              0,
+              1.2
+            ],
+            [
+              0.8,
+              0,
+              0.099999994
+            ],
+            [
+              0.8,
+              0.05,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0.05,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0,
+              0.099999994
+            ],
+            [
+              0.8,
+              0,
+              1.1
+            ],
+            [
+              0.8,
+              0.05,
+              1.1
+            ],
+            [
+              0.8,
+              0.05,
+              0.099999994
+            ],
+            [
+              0.8,
+              0,
+              0.099999994
+            ],
+            [
+              0.9,
+              0,
+              1.2
+            ],
+            [
+              0.9,
+              0.05,
+              1.2
+            ],
+            [
+              0,
+              0.05,
+              1.2
+            ],
+            [
+              0,
+              0,
+              1.2
+            ],
+            [
+              0,
+              0.05,
+              1.2
+            ],
+            [
+              0,
+              0,
+              1.2
+            ],
+            [
+              0,
+              0.05,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0.099999994,
+              0.05,
+              1.1
+            ],
+            [
+              0.099999994,
+              0,
+              1.1
+            ],
+            [
+              0.8,
+              0.05,
+              1.1
+            ],
+            [
+              0.8,
+              0,
+              1.1
+            ],
+            [
+              0.099999994,
+              0.05,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0.05,
+              1.1
+            ],
+            [
+              0.099999994,
+              0,
+              1.1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000055",
+      "type": "usd:MeshGeometry",
+      "entity": "5ad6f475-c04c-5628-8b9d-75d0bab0c0e5",
+      "attributes": {
+        "mesh": {
+          "faceVertexIndices": [
+            0,
+            1,
+            2,
+            0,
+            2,
+            3,
+            7,
+            4,
+            5,
+            7,
+            5,
+            6,
+            9,
+            10,
+            11,
+            9,
+            11,
+            8,
+            15,
+            12,
+            13,
+            15,
+            13,
+            14,
+            17,
+            18,
+            19,
+            17,
+            19,
+            16,
+            23,
+            20,
+            21,
+            23,
+            21,
+            22
+          ],
+          "points": [
+            [
+              0.8,
+              0.02,
+              0.099999994
+            ],
+            [
+              0.8,
+              0.02,
+              1.1
+            ],
+            [
+              0.099999994,
+              0.02,
+              1.1
+            ],
+            [
+              0.099999994,
+              0.02,
+              0.099999994
+            ],
+            [
+              0.8,
+              0.03,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0.03,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0.03,
+              1.1
+            ],
+            [
+              0.8,
+              0.03,
+              1.1
+            ],
+            [
+              0.8,
+              0.02,
+              1.1
+            ],
+            [
+              0.8,
+              0.03,
+              1.1
+            ],
+            [
+              0.099999994,
+              0.03,
+              1.1
+            ],
+            [
+              0.099999994,
+              0.02,
+              1.1
+            ],
+            [
+              0.099999994,
+              0.02,
+              1.1
+            ],
+            [
+              0.099999994,
+              0.03,
+              1.1
+            ],
+            [
+              0.099999994,
+              0.03,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0.02,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0.02,
+              0.099999994
+            ],
+            [
+              0.099999994,
+              0.03,
+              0.099999994
+            ],
+            [
+              0.8,
+              0.03,
+              0.099999994
+            ],
+            [
+              0.8,
+              0.02,
+              0.099999994
+            ],
+            [
+              0.8,
+              0.02,
+              0.099999994
+            ],
+            [
+              0.8,
+              0.03,
+              0.099999994
+            ],
+            [
+              0.8,
+              0.03,
+              1.1
+            ],
+            [
+              0.8,
+              0.02,
+              1.1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000056",
+      "type": "ifc:IfcShapeRepresentation",
+      "entity": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+      "attributes": {
+        "representationIdentifier": "Body",
+        "representationType": "SolidModel",
+        "items": [
+          {
+            "ref": "15289df1-5ae0-5fc9-8399-19de1fbb87a0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000057",
+      "type": "usd:MeshGeometry",
+      "entity": "15289df1-5ae0-5fc9-8399-19de1fbb87a0",
+      "attributes": {
+        "mesh": {
+          "faceVertexIndices": [
+            0,
+            1,
+            2,
+            0,
+            2,
+            3,
+            6,
+            5,
+            4,
+            6,
+            7,
+            5,
+            10,
+            9,
+            8,
+            10,
+            11,
+            9,
+            13,
+            12,
+            14,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            16,
+            18,
+            19,
+            21,
+            20,
+            22,
+            21,
+            22,
+            23
+          ],
+          "points": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              4,
+              3
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              0,
+              4,
+              3
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              10,
+              4,
+              3
+            ],
+            [
+              10,
+              4,
+              0
+            ],
+            [
+              10,
+              4,
+              3
+            ],
+            [
+              10,
+              4,
+              0
+            ],
+            [
+              10,
+              0,
+              3
+            ],
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              3
+            ],
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              10,
+              4,
+              0
+            ],
+            [
+              10,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              3
+            ],
+            [
+              10,
+              4,
+              3
+            ],
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              10,
+              0,
+              3
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000058",
+      "type": "usd:XformComponent",
+      "entity": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+      "attributes": {
+        "representationIdentifier": "placement",
+        "transform": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0.100000023841858,
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000059",
+      "type": "ifc:IfcPresentationStyle",
+      "entity": "e3035b71-bd9f-4cdc-86fd-b56e2f4605b6",
+      "attributes": {
+        "diffuseColor": [
+          0.6,
+          0.7,
+          0.8
+        ],
+        "opacity": 0.3
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000060",
+      "type": "usd:MeshGeometry",
+      "entity": "911155b7-f688-51ee-8e3e-b97475be2452",
+      "attributes": {
+        "mesh": {
+          "faceVertexIndices": [
+            2,
+            0,
+            1,
+            2,
+            3,
+            0
+          ],
+          "points": [
+            [
+              0,
+              -2.3841858e-08,
+              0
+            ],
+            [
+              0,
+              -2.3841858e-08,
+              3
+            ],
+            [
+              10,
+              -2.3841858e-08,
+              3
+            ],
+            [
+              10,
+              -2.3841858e-08,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000061",
+      "type": "usd:MeshGeometry",
+      "entity": "f3aa8991-7481-5d6b-8dae-f98c372f4a98",
+      "attributes": {
+        "mesh": {
+          "faceVertexIndices": [
+            3,
+            0,
+            1,
+            3,
+            1,
+            2
+          ],
+          "points": [
+            [
+              2.667675,
+              -2.3841858e-08,
+              1
+            ],
+            [
+              1.7676749,
+              -2.3841858e-08,
+              1
+            ],
+            [
+              1.7676749,
+              -2.3841858e-08,
+              2.2
+            ],
+            [
+              2.667675,
+              -2.3841858e-08,
+              2.2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000062",
+      "type": "usd:MeshGeometry",
+      "entity": "126781f3-6465-5c39-9216-81cc636eeb39",
+      "attributes": {
+        "mesh": {
+          "faceVertexIndices": [
+            1,
+            2,
+            3,
+            1,
+            3,
+            0
+          ],
+          "points": [
+            [
+              4.9466066,
+              -2.3841858e-08,
+              2.2
+            ],
+            [
+              5.8466067,
+              -2.3841858e-08,
+              2.2
+            ],
+            [
+              5.8466067,
+              -2.3841858e-08,
+              1
+            ],
+            [
+              4.9466066,
+              -2.3841858e-08,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000063",
+      "type": "ifc:MaterialisedSnapshot",
+      "entity": "2c2d549f-f9fe-4e22-8590-562fda81a690",
+      "attributes": {
+        "resolvedFrom": "WT01",
+        "resolvedAt": "2026-07-31T00:00:00Z",
+        "snapshot": {
+          "taxonomy": {
+            "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindow"
+          },
+          "predefinedType": "NOTDEFINED",
+          "IsExternal": true,
+          "Height": {
+            "value": 1.2,
+            "unit": "m"
+          },
+          "Width": {
+            "value": 0.9,
+            "unit": "m"
+          },
+          "placement": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1.76767492294312,
+              0,
+              1,
+              1
+            ]
+          ],
+          "geometryEntities": {
+            "void": {
+              "ref": "8fada721-cff8-590b-8d0b-9300b5fe8e18"
+            },
+            "frame": {
+              "ref": "08f06095-3f32-55b9-a353-61c9aca5cc4d"
+            },
+            "glazing": {
+              "ref": "5ad6f475-c04c-5628-8b9d-75d0bab0c0e5"
+            }
+          },
+          "materials": {
+            "frame": {
+              "ref": "4549bada-a37e-5044-bb70-456516cca5a8"
+            },
+            "glazing": {
+              "ref": "d10e4eb4-6a35-5fbe-9491-7a6fb93f1691"
+            }
+          }
+        }
+      },
+      "provenance": {
+        "assertedBy": "https://standards.buildingsmart.org/ifc/v5/resolver",
+        "assertedAt": "2026-07-31T00:00:00Z",
+        "authority": "materialized-from",
+        "derivedFrom": [
+          "25503984-6605-43a1-8597-eae657ff5bea",
+          "2c2d549f-f9fe-4e22-8590-562fda81a690"
+        ]
+      }
+    },
+    {
+      "id": "c0000000-0000-0000-0000-000000000064",
+      "type": "ifc:MaterialisedSnapshot",
+      "entity": "592504dc-469a-44d6-9ae8-c801b591679b",
+      "attributes": {
+        "resolvedFrom": "WT01",
+        "resolvedAt": "2026-07-31T00:00:00Z",
+        "snapshot": {
+          "taxonomy": {
+            "ref": "https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWindow"
+          },
+          "predefinedType": "NOTDEFINED",
+          "IsExternal": true,
+          "Height": {
+            "value": 1.2,
+            "unit": "m"
+          },
+          "Width": {
+            "value": 0.9,
+            "unit": "m"
+          },
+          "placement": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              4.94660663604736,
+              0,
+              1,
+              1
+            ]
+          ],
+          "geometryEntities": {
+            "void": {
+              "ref": "8fada721-cff8-590b-8d0b-9300b5fe8e18"
+            },
+            "frame": {
+              "ref": "08f06095-3f32-55b9-a353-61c9aca5cc4d"
+            },
+            "glazing": {
+              "ref": "5ad6f475-c04c-5628-8b9d-75d0bab0c0e5"
+            }
+          },
+          "materials": {
+            "frame": {
+              "ref": "4549bada-a37e-5044-bb70-456516cca5a8"
+            },
+            "glazing": {
+              "ref": "d10e4eb4-6a35-5fbe-9491-7a6fb93f1691"
+            }
+          }
+        }
+      },
+      "provenance": {
+        "assertedBy": "https://standards.buildingsmart.org/ifc/v5/resolver",
+        "assertedAt": "2026-07-31T00:00:00Z",
+        "authority": "materialized-from",
+        "derivedFrom": [
+          "25503984-6605-43a1-8597-eae657ff5bea",
+          "592504dc-469a-44d6-9ae8-c801b591679b"
+        ]
+      }
+    }
+  ]
+}
