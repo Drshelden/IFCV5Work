@@ -1,0 +1,37 @@
+{
+  "batch_id": "2026-08-04-001",
+  "description": "First committee feedback batch — white paper and geometry RFC",
+  "repo_slug": "Drshelden/IFCV5Work",
+  "repo_branch": "master",
+  "sources": [
+    {
+      "id": "github-issue-2",
+      "type": "github_issue",
+      "repo": "Drshelden/IFCV5Work",
+      "number": 2
+    },
+    {
+      "id": "github-discussion-3",
+      "type": "github_discussion",
+      "repo": "Drshelden/IFCV5Work",
+      "number": 3
+    },
+    {
+      "id": "ev-email-2026-08-04",
+      "type": "local_file",
+      "path": "04 Committee Feedback/2026-08-04-001/sources/ev-email.md",
+      "author": "Ev",
+      "date": "2026-08-04",
+      "title": "Committee discussion summary email"
+    }
+  ],
+  "validate_examples": [
+    {
+      "id": "hello-wall-ifcy",
+      "json_path": "../repo/03 Reference Examples/Hello-Wall/hello-wall-ifcy.json",
+      "schema_ts_path": "../ifc5-layered-schema.ts"
+    }
+  ],
+  "rfc_dir": "02 RFCs",
+  "white_paper_path": "00 Architecture Overview/IFC5-Architecture-White-Paper.md"
+}
