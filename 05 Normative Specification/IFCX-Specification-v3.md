@@ -6,7 +6,7 @@
 **Reference example:** `examples/Hello Wall/hello-wall.ifcx`  
 **Schema:** `schema/ifcx.tsp` (TypeSpec) → `schema/out/ts/ifcx.d.ts` (generated TypeScript)  
 **RFC repository:** [Drshelden/IFCV5Work](https://github.com/Drshelden/IFCV5Work/tree/master/02%20RFCs)
-**Cross-reference:** [GitHub](https://github.com/Drshelden/IFCV5Work/blob/master/05%20Normative%20Specification/IFCX-Specification-v3.md) · Google Docs *(link generated on first `sync_and_push` — see `scripts/drive_index.json`)*  
+**Cross-reference:** [GitHub](https://github.com/Drshelden/IFCV5Work/blob/master/05%20Normative%20Specification/IFCX-Specification-v3.md) · [Google Docs](https://docs.google.com/document/d/1VSnRbWFbItd6-dblo_by6QsI6HpOzylGQjFhQutD5Tc)  
 
 > **Status note.** IFCX is in active architectural development. Decisions marked ⚠ are under active committee discussion; the behavior described reflects the current `hello-wall.ifcx` example and buildingSMART alpha conventions, not a finalized normative standard.
 
@@ -85,6 +85,8 @@ IFCX is a JSON-based scene graph exchange format for IFC5. Seven design principl
 
 ### 1.1. JSON as normative data substrate
 
+<sub>💬 [Discuss §1.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A71.1%5D%20JSON%20as%20normative%20data%20substrate&body=%2A%2ASection%3A%2A%2A%20%C2%A71.1%20%E2%80%94%20JSON%20as%20normative%20data%20substrate%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 All IFC5 data is encoded as JSON. STEP Physical File (SPF/ISO-10303-21) is not the exchange format. JSON native types (boolean, number, string, array, object, null) are the canonical scalar primitives. See [RFC-IFC5-039: Foundational JSON Data Model](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md) and [RFC-IFC5-006: Serialization and Encoding](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-006-serialization-encoding.md).
 
 <details>
@@ -99,6 +101,8 @@ IFCY files describe a partial view of a building model. Absent components do not
 
 ### 1.2. Scene graph composition model
 
+<sub>💬 [Discuss §1.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A71.2%5D%20Scene%20graph%20composition%20model&body=%2A%2ASection%3A%2A%2A%20%C2%A71.2%20%E2%80%94%20Scene%20graph%20composition%20model%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 IFCX represents a model as a directed graph of nodes, each addressed by a path. Hierarchy, type composition, and override layering follow a scene graph composition model inspired by OpenUSD. This is explicitly not a flat ECS (Entity-Component-System) array. See [RFC-IFC5-007: Scene Graph vs. ECS vs. Hybrid Architecture](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-007-scene-graph-vs-ecs.md).
 
 <details>
@@ -112,6 +116,8 @@ Entities are bare UUIDs; all meaning is attached as typed components. There is n
 
 ### 1.3. Path-addressed node identity
 
+<sub>💬 [Discuss §1.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A71.3%5D%20Path-addressed%20node%20identity&body=%2A%2ASection%3A%2A%2A%20%C2%A71.3%20%E2%80%94%20Path-addressed%20node%20identity%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Every node is identified by a `path` field. In the current alpha, path values are UUID-like strings derived from IFC GlobalIds. The path simultaneously serves as stable identity and as the graph address at which attribute opinions accumulate. ⚠ Whether path should be the sole identity or one of several identity channels (alongside a separate UUID and URI) is under active discussion. See [RFC-IFC5-003: Identity Model](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-003-identity-model.md) and [RFC-IFC5-004: Path Model and Addressing](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md).
 
 <details>
@@ -124,6 +130,8 @@ Every entity is addressed by a UUID that is globally unique, persistent, and opa
 ---
 
 ### 1.4. Namespace-qualified attribute vocabulary
+
+<sub>💬 [Discuss §1.4](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A71.4%5D%20Namespace-qualified%20attribute%20vocabulary&body=%2A%2ASection%3A%2A%2A%20%C2%A71.4%20%E2%80%94%20Namespace-qualified%20attribute%20vocabulary%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 All semantic attributes use `::` double-colon delimiters to express namespace hierarchy (e.g. `bsi::ifc::class`, `usd::usdgeom::mesh`). This enables multi-vocabulary layering on a single node without key collision. See [RFC-IFC5-005: Namespaces](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-005-namespaces.md) and [RFC-IFC5-023: Attribute Representation](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-023-attribute-representation.md).
 
@@ -139,6 +147,8 @@ A component is a typed, schema-validated record attached to an entity. One entit
 
 ### 1.5. Modular schema imports
 
+<sub>💬 [Discuss §1.5](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A71.5%5D%20Modular%20schema%20imports&body=%2A%2ASection%3A%2A%2A%20%C2%A71.5%20%E2%80%94%20Modular%20schema%20imports%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Vocabulary schemas are not embedded in full; they are referenced by URI. An IFCX file declares which external schema bundles it relies on via an `imports` array. This enables multiple domain vocabularies (IFC, USD, NL-SfB, materials) to coexist in one file without conflicts. See [RFC-IFC5-012: Modular Schema Imports](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-012-modular-schema-imports.md) and [RFC-IFC5-032: Extensibility](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-032-extensibility.md).
 
 <details>
@@ -153,6 +163,8 @@ Containment, type-instance links, voids, and material associations are expressed
 
 ### 1.6. Additive, layer-composable authoring
 
+<sub>💬 [Discuss §1.6](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A71.6%5D%20Additive%2C%20layer-composable%20authoring&body=%2A%2ASection%3A%2A%2A%20%C2%A71.6%20%E2%80%94%20Additive%2C%20layer-composable%20authoring%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Multiple records in the `data` array may refer to the same `path`. Each such record contributes additional attributes, children, or inherits links. This additive-patching model supports layered authoring, federated model assembly, and incremental update without rewriting the full node. Null values signal deletion during composition. See [RFC-IFC5-011: Document-Level Structure](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md) and [RFC-IFC5-021: Federation and External References](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md).
 
 <details>
@@ -166,6 +178,8 @@ Multiple IFCY packages may contribute components to the same entity UUID. There 
 
 ### 1.7. USD alignment for geometry and composition
 
+<sub>💬 [Discuss §1.7](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A71.7%5D%20USD%20alignment%20for%20geometry%20and%20composition&body=%2A%2ASection%3A%2A%2A%20%C2%A71.7%20%E2%80%94%20USD%20alignment%20for%20geometry%20and%20composition%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Geometry payloads and scene composition semantics are directly aligned with OpenUSD conventions (`usd::usdgeom::*`, `usd::xformop`, layer stacks, LIVRPS composition). IFCX is not a USD file but borrows USD's scene graph model to support broad tooling interoperability. See [RFC-IFC5-015: OpenUSD Alignment](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-015-openusd-alignment.md) and [RFC-IFC5-014: Geometry Architecture](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md).
 
 <details>
@@ -176,7 +190,7 @@ IFCY adopts the same USD geometry vocabulary (`usd:MeshGeometry`, `usd:CurveGeom
 </details>
 
 <details>
-<summary>IFCY delta</summary>
+<summary>IFCY additions</summary>
 
 **1.8 — Provenance is a first-class attribute.** Every package carries a package-level provenance record. Individual components may carry their own provenance, overriding the package default. The `authority` field distinguishes design intent from as-built survey from AI inference. IFCX records provenance only for IFC4.x migration traceability (`customdata.originalStepInstance`); IFCY makes provenance a required top-level concern for all authoring contexts.  
 → [RFC-IFC5-037: Security and Trust](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-037-security-trust.md), [RFC-IFC5-031: Metadata and Custom Data](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-031-metadata-custom-data.md)
@@ -194,6 +208,8 @@ IFCY adopts the same USD geometry vocabulary (`usd:MeshGeometry`, `usd:CurveGeom
 ## 2. Document Structure
 
 ### 2.1. Top-level file envelope
+
+<sub>💬 [Discuss §2.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A72.1%5D%20Top-level%20file%20envelope&body=%2A%2ASection%3A%2A%2A%20%C2%A72.1%20%E2%80%94%20Top-level%20file%20envelope%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 An IFCX file is a single JSON object with exactly four top-level keys: `header`, `imports`, `schemas`, and `data`. The key names are unprefixed at the top level (⚠ prefixed `ifcx::` variants have been proposed; the canonical form is TBD).
 
@@ -237,6 +253,8 @@ A valid IFCY file is a JSON object with five required keys: `ifcPackage`, `id`, 
 
 ### 2.2. Header
 
+<sub>💬 [Discuss §2.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A72.2%5D%20Header&body=%2A%2ASection%3A%2A%2A%20%C2%A72.2%20%E2%80%94%20Header%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 The `header` object carries file-level metadata. All four fields are required in the alpha schema.
 
 ```json
@@ -269,6 +287,8 @@ IFCY replaces the `header` object with two separate top-level keys:
 ---
 
 ### 2.3. Imports
+
+<sub>💬 [Discuss §2.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A72.3%5D%20Imports&body=%2A%2ASection%3A%2A%2A%20%C2%A72.3%20%E2%80%94%20Imports%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 The `imports` array lists external schema bundles the file depends on. Each entry is an object with a required `uri` string and an optional `integrity` hash. Imports are ordered; the vocabulary scope of each URI applies to all attributes bearing that namespace prefix.
 
@@ -305,6 +325,8 @@ IFCY has no `imports` array. Instead, the `schemas` map declares namespace prefi
 
 ### 2.4. Schemas
 
+<sub>💬 [Discuss §2.4](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A72.4%5D%20Schemas&body=%2A%2ASection%3A%2A%2A%20%C2%A72.4%20%E2%80%94%20Schemas%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 The `schemas` object declares inline schema entries for attribute keys that are not fully covered by the imported bundles — primarily extension or custom namespaces. Each entry maps a key name to an `IfcxSchema` object containing a `value` field describing the allowed data type and its structure.
 
 ```json
@@ -339,6 +361,8 @@ In IFCY, `schemas` serves only as a namespace prefix registry — it maps short 
 
 ### 2.5. Data array
 
+<sub>💬 [Discuss §2.5](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A72.5%5D%20Data%20array&body=%2A%2ASection%3A%2A%2A%20%C2%A72.5%20%E2%80%94%20Data%20array%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 `data` is an ordered JSON array of node records (`IfcxNode[]`). The array is the entire semantic payload of the file. Multiple records may share the same `path` value; they are composed additively in document order.
 
 <details>
@@ -363,6 +387,8 @@ IFCY adds a required `provenance` top-level key with no IFCX equivalent. It appl
 ## 3. Identity and Addressing
 
 ### 3.1. Path field as node identity
+
+<sub>💬 [Discuss §3.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A73.1%5D%20Path%20field%20as%20node%20identity&body=%2A%2ASection%3A%2A%2A%20%C2%A73.1%20%E2%80%94%20Path%20field%20as%20node%20identity%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 Every node record has exactly one `path` field. The path is the stable, globally unique identifier of the node. It is both the node's canonical name and the address at which attribute contributions accumulate across records and layers.
 
@@ -390,6 +416,8 @@ The UUID is the same value IFCX uses as a path; the structural difference is tha
 
 ### 3.2. UUID-valued paths
 
+<sub>💬 [Discuss §3.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A73.2%5D%20UUID-valued%20paths&body=%2A%2ASection%3A%2A%2A%20%C2%A73.2%20%E2%80%94%20UUID-valued%20paths%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 In `hello-wall.ifcx`, all path values are UUID-like strings (RFC 4122 format) derived deterministically from IFC GlobalIds via a GUID-expansion algorithm. STEP instance numbers (e.g. `#1222`) are not used as node addresses; they are preserved only as provenance metadata. ⚠ Whether IFC GlobalId, UUID v4/v5, URI, or a combination is the normative identity carrier is under active committee discussion.
 
 ```json
@@ -410,6 +438,8 @@ Entity UUIDs carry no parent-child meaning. Two entities are related only by exp
 ---
 
 ### 3.3. Human-readable child edge labels
+
+<sub>💬 [Discuss §3.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A73.3%5D%20Human-readable%20child%20edge%20labels&body=%2A%2ASection%3A%2A%2A%20%C2%A73.3%20%E2%80%94%20Human-readable%20child%20edge%20labels%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 When a node references child nodes via the `children` map (see 4.2), the keys are human-readable label strings — not path values. Labels correspond to meaningful element names within the parent's scope. Duplicate labels are disambiguated with a `_001`, `_002` suffix convention.
 
@@ -443,6 +473,8 @@ All cross-entity references use a `{ "ref": "<uuid>" }` wrapper. An optional `pa
 ## 4. Graph Primitives
 
 ### 4.1. Node record structure
+
+<sub>💬 [Discuss §4.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A74.1%5D%20Node%20record%20structure&body=%2A%2ASection%3A%2A%2A%20%C2%A74.1%20%E2%80%94%20Node%20record%20structure%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 Each entry in the `data` array is an `IfcxNode` with one required field (`path`) and three optional fields (`children`, `inherits`, `attributes`). All three optional fields may appear in the same record or across separate records for the same path.
 
@@ -482,6 +514,8 @@ Every item in the `data` array is a component with four required fields (`id`, `
 ---
 
 ### 4.2. `children` — containment and aggregation
+
+<sub>💬 [Discuss §4.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A74.2%5D%20%60children%60%20%E2%80%94%20containment%20and%20aggregation&body=%2A%2ASection%3A%2A%2A%20%C2%A74.2%20%E2%80%94%20%60children%60%20%E2%80%94%20containment%20and%20aggregation%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 The `children` map encodes parent-child containment edges. Each entry maps a human-readable label to the child node's path. Children relationships replace the IFC4.x `IfcRelAggregates`, `IfcRelContainedInSpatialStructure`, and similar decomposition relations for purposes of hierarchy navigation.
 
@@ -540,6 +574,8 @@ Each relation is a separately addressable component with its own `id` UUID — i
 
 ### 4.3. `inherits` — type-occurrence composition
 
+<sub>💬 [Discuss §4.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A74.3%5D%20%60inherits%60%20%E2%80%94%20type-occurrence%20composition&body=%2A%2ASection%3A%2A%2A%20%C2%A74.3%20%E2%80%94%20%60inherits%60%20%E2%80%94%20type-occurrence%20composition%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 The `inherits` map encodes typed composition arcs. A node may inherit from one or more named sources. On composition expansion, the inheriting node receives all children, inherits, and attributes of the inherited node, with local values taking precedence. This mechanism replaces `IfcRelDefinesByType` for type-to-instance relationships and is analogous to USD class inheritance.
 
 ```json
@@ -583,6 +619,8 @@ The key difference from IFCX: the relationship is a first-class component with i
 
 ### 4.4. Additive patching — multiple records per path
 
+<sub>💬 [Discuss §4.4](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A74.4%5D%20Additive%20patching%20%E2%80%94%20multiple%20records%20per%20path&body=%2A%2ASection%3A%2A%2A%20%C2%A74.4%20%E2%80%94%20Additive%20patching%20%E2%80%94%20multiple%20records%20per%20path%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Multiple records in `data` may share the same `path`. Each record contributes its `children`, `inherits`, and `attributes` content additively. This is the primary mechanism for separating concerns (geometry, classification, properties, provenance) across logical layers in a single file. ⚠ Whether this is the normative exchange model or whether one-record-per-path should be required is under committee review.
 
 ```json
@@ -614,7 +652,7 @@ Each component has its own `id` UUID, making it independently addressable and ov
 </details>
 
 <details>
-<summary>IFCY delta</summary>
+<summary>IFCY additions</summary>
 
 IFCY defines additional typed relation components that have no direct IFCX key equivalent (IFCX handles these through implicit graph structure or attribute objects):
 
@@ -644,6 +682,8 @@ IFCY defines additional typed relation components that have no direct IFCX key e
 ## 5. Type System and Class Identity
 
 ### 5.1. IFC class declaration
+
+<sub>💬 [Discuss §5.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A75.1%5D%20IFC%20class%20declaration&body=%2A%2ASection%3A%2A%2A%20%C2%A75.1%20%E2%80%94%20IFC%20class%20declaration%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 An IFC entity's class is declared via the `bsi::ifc::class` attribute as a structured object carrying both a short code (the IFC class name) and a resolvable URI pointing to the bSDD dictionary entry. Both fields should be present; the URI is the authoritative semantic identifier.
 
@@ -686,6 +726,8 @@ The class name (`IfcWall`) appears in the `type` field rather than as an attribu
 
 ### 5.2. Type node geometry sharing
 
+<sub>💬 [Discuss §5.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A75.2%5D%20Type%20node%20geometry%20sharing&body=%2A%2ASection%3A%2A%2A%20%C2%A75.2%20%E2%80%94%20Type%20node%20geometry%20sharing%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 When multiple occurrences share geometry (e.g. two identical windows), the geometry is placed once on a shared type node. Occurrence nodes inherit the type node via `inherits`, acquiring its geometry without duplication. Occurrences may carry a local `usd::xformop` to place themselves.
 
 ```json
@@ -725,6 +767,8 @@ Each occurrence carries `ifc:IfcInstantiates → typical: { ref: "25503984-..." 
 ---
 
 ### 5.3. Type-level named properties
+
+<sub>💬 [Discuss §5.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A75.3%5D%20Type-level%20named%20properties&body=%2A%2ASection%3A%2A%2A%20%C2%A75.3%20%E2%80%94%20Type-level%20named%20properties%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 Properties on a type node are inherited by all occurrence nodes unless overridden. Named properties such as `bsi::ifc::prop::TypeName` and dimensional values (`Height`, `Volume`) may be declared at the type level.
 
@@ -766,7 +810,7 @@ Type-level properties are declared as `ifc:IfcPropertySet` slots inside the `Ifc
 </details>
 
 <details>
-<summary>IFCY delta</summary>
+<summary>IFCY additions</summary>
 
 **5.4 — `taxonomy.ref` as bSDD URI.** The `taxonomy` object within an identity component carries a `ref` URI as the authoritative class pointer. The short `code` field (e.g. `IfcWall`) is derivable from it and not stored separately.
 
@@ -794,6 +838,8 @@ Type-level properties are declared as `ifc:IfcPropertySet` slots inside the `Ifc
 
 ### 6.1. Namespace `::` syntax
 
+<sub>💬 [Discuss §6.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A76.1%5D%20Namespace%20%60%3A%3A%60%20syntax&body=%2A%2ASection%3A%2A%2A%20%C2%A76.1%20%E2%80%94%20Namespace%20%60%3A%3A%60%20syntax%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Attribute keys use `::` as a namespace separator. The convention is `<registry>::<domain>::<subdomain>::<name>`. Known registered prefixes in hello-wall.ifcx: `bsi` (buildingSMART), `usd` (OpenUSD/Pixar), `nlsfb` (NL-SfB classification). ⚠ UpperCamelCase vs lowerCamelCase in the property name segment is not yet standardized.
 
 ```
@@ -819,6 +865,8 @@ IFCY uses a single `:` colon as the namespace separator in the component `type` 
 
 ### 6.2. Scalar value encoding
 
+<sub>💬 [Discuss §6.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A76.2%5D%20Scalar%20value%20encoding&body=%2A%2ASection%3A%2A%2A%20%C2%A76.2%20%E2%80%94%20Scalar%20value%20encoding%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Scalar values are encoded directly as JSON native types. IFC typed wrappers from STEP (e.g. `IfcBoolean`, `IfcReal`, `IfcLabel`) are not present in attribute values. Booleans are `true`/`false`, numerics are JSON numbers, strings are JSON strings.
 
 ```json
@@ -832,6 +880,8 @@ Scalar values are encoded directly as JSON native types. IFC typed wrappers from
 ---
 
 ### 6.3. Object-valued attributes
+
+<sub>💬 [Discuss §6.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A76.3%5D%20Object-valued%20attributes&body=%2A%2ASection%3A%2A%2A%20%C2%A76.3%20%E2%80%94%20Object-valued%20attributes%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 Attributes with structured values use a JSON object. The object shape is governed by the schema associated with the attribute key (imported or locally declared). There is no separate type-tag field inside the value object; the attribute key itself carries the type.
 
@@ -847,6 +897,8 @@ Attributes with structured values use a JSON object. The object shape is governe
 ---
 
 ### 6.4. Reference values
+
+<sub>💬 [Discuss §6.4](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A76.4%5D%20Reference%20values&body=%2A%2ASection%3A%2A%2A%20%C2%A76.4%20%E2%80%94%20Reference%20values%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 Cross-node references within attributes (e.g. in relationship objects) use a `{ "ref": "<path>" }` wrapper. This distinguishes a reference-to-node from an inline string value.
 
@@ -872,7 +924,7 @@ IFCY uses the same `{ "ref": "<uuid>" }` wrapper but always references entity UU
 </details>
 
 <details>
-<summary>IFCY delta</summary>
+<summary>IFCY additions</summary>
 
 **6.5 — Three-state scalar semantics.** Every attribute value is one of: a typed value `T`, `null` (explicitly unknown — key present but value unknown), or absent (key omitted — no assertion made). IFCX does not define this distinction.
 
@@ -903,6 +955,8 @@ IFCX carries bare numbers (e.g. `"bsi::ifc::prop::Volume": 2.783999976`) with no
 
 ### 7.1. USD geometry alignment
 
+<sub>💬 [Discuss §7.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A77.1%5D%20USD%20geometry%20alignment&body=%2A%2ASection%3A%2A%2A%20%C2%A77.1%20%E2%80%94%20USD%20geometry%20alignment%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Geometry payloads are expressed using USD schema key conventions. IFCX does not define its own geometry vocabulary; it adopts `usd::usdgeom::*` attribute namespaces and the associated data shapes from OpenUSD. All geometry is currently tessellated to mesh and polyline primitives; parametric/BRep geometry is out of scope for the alpha.
 
 ► [RFC-IFC5-015: OpenUSD Alignment](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-015-openusd-alignment.md) · [RFC-IFC5-014: Geometry Architecture](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md)
@@ -910,6 +964,8 @@ Geometry payloads are expressed using USD schema key conventions. IFCX does not 
 ---
 
 ### 7.2. Triangulated mesh
+
+<sub>💬 [Discuss §7.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A77.2%5D%20Triangulated%20mesh&body=%2A%2ASection%3A%2A%2A%20%C2%A77.2%20%E2%80%94%20Triangulated%20mesh%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 Body geometry is encoded as `usd::usdgeom::mesh` with `points` (vertex coordinates as `[x, y, z]` triples) and `faceVertexIndices` (flat integer index array, all faces triangulated). `faceVertexCounts` is implied (all triangles) and omitted.
 
@@ -953,6 +1009,8 @@ IFCY encodes mesh geometry as a standalone `usd:MeshGeometry` component. The mes
 
 ### 7.3. Basis curves
 
+<sub>💬 [Discuss §7.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A77.3%5D%20Basis%20curves&body=%2A%2ASection%3A%2A%2A%20%C2%A77.3%20%E2%80%94%20Basis%20curves%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Linear curve geometry (e.g. wall axis and directrix) uses `usd::usdgeom::basiscurves` with a `points` array. This is used for centerline/reference-curve representations.
 
 ```json
@@ -990,6 +1048,8 @@ Linear axis and directrix curves are carried as `usd:CurveGeometry` components w
 ---
 
 ### 7.4. Transform (placement)
+
+<sub>💬 [Discuss §7.4](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A77.4%5D%20Transform%20%28placement%29&body=%2A%2ASection%3A%2A%2A%20%C2%A77.4%20%E2%80%94%20Transform%20%28placement%29%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 Placement is encoded as `usd::xformop` with a `transform` field holding a 4×4 column-major matrix as a 4-element array of 4-element row arrays. The last row encodes the translation. An identity matrix at world origin does not need to be stated.
 
@@ -1039,6 +1099,8 @@ Placement is a standalone `usd:XformComponent` component. The matrix format is i
 
 ### 7.5. Visibility
 
+<sub>💬 [Discuss §7.5](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A77.5%5D%20Visibility&body=%2A%2ASection%3A%2A%2A%20%C2%A77.5%20%E2%80%94%20Visibility%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Nodes whose geometry should not be rendered by default carry `usd::usdgeom::visibility` with `"visibility": "invisible"`. This is used for type-level geometry nodes that exist solely as composition sources.
 
 ```json
@@ -1063,7 +1125,7 @@ IFCY has no `usd::usdgeom::visibility` attribute equivalent. The visibility/role
 </details>
 
 <details>
-<summary>IFCY delta</summary>
+<summary>IFCY additions</summary>
 
 **7.6 — `ifc:IfcShapeRepresentation`.** A shape representation component links an element entity to one or more geometry entity nodes. The `representationIdentifier` field (`Body`, `Axis`, `Void`, `Frame`, `Glazing`) indicates the geometric role. This replaces IFCX's use of `children` map keys to label geometry roles.
 
@@ -1088,6 +1150,8 @@ IFCY has no `usd::usdgeom::visibility` attribute equivalent. The visibility/role
 ## 8. Spatial Structure and Relationships
 
 ### 8.1. Spatial hierarchy via `children`
+
+<sub>💬 [Discuss §8.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A78.1%5D%20Spatial%20hierarchy%20via%20%60children%60&body=%2A%2ASection%3A%2A%2A%20%C2%A78.1%20%E2%80%94%20Spatial%20hierarchy%20via%20%60children%60%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 The IFC spatial hierarchy (Project → Site → Building → Storey → Space/Element) is expressed entirely through `children` maps. Each spatial container node lists its contained elements by name. This replaces IFC4.x `IfcRelAggregates` and `IfcRelContainedInSpatialStructure` for tree navigation.
 
@@ -1130,6 +1194,8 @@ A consumer traverses the tree by following `IfcRelAggregates` and `IfcRelContain
 
 ### 8.2. Space boundaries
 
+<sub>💬 [Discuss §8.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A78.2%5D%20Space%20boundaries&body=%2A%2ASection%3A%2A%2A%20%C2%A78.2%20%E2%80%94%20Space%20boundaries%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Space boundary relationships (IFC4.x `IfcRelSpaceBoundary`) are objectified as dedicated boundary nodes. Each boundary node carries a `bsi::ifc::spaceBoundary` attribute with `relatedelement` and `relatingspace` ref objects. The boundary node's geometry (its `Body` child) is the face of the bounding surface.
 
 ```json
@@ -1171,6 +1237,8 @@ IFCY expresses space boundaries as a typed relation component. The boundary geom
 
 ### 8.3. Openings and voids
 
+<sub>💬 [Discuss §8.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A78.3%5D%20Openings%20and%20voids&body=%2A%2ASection%3A%2A%2A%20%C2%A78.3%20%E2%80%94%20Openings%20and%20voids%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Void geometry (e.g. window openings within a wall) is represented as a dedicated child node carrying body mesh and a `usd::usdgeom::visibility: invisible` flag on the type-level source node. Filling elements (window frames, glazing) are separate children of the type node inherited by occurrences. ⚠ Normative rules for opening/void/filling relationships are under discussion.
 
 ► [RFC-IFC5-026: Openings, Voids, and Fillings](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-026-openings-voids-fillings.md) · [RFC-IFC5-014: Geometry Architecture](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-014-geometry-architecture.md)
@@ -1210,6 +1278,8 @@ IFCY makes void/filling relationships explicit typed relation components. There 
 ## 9. Properties, Materials, and Classification
 
 ### 9.1. Flat property keys
+
+<sub>💬 [Discuss §9.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A79.1%5D%20Flat%20property%20keys&body=%2A%2ASection%3A%2A%2A%20%C2%A79.1%20%E2%80%94%20Flat%20property%20keys%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 IFC property set values are expressed as flat namespaced attribute keys on the node, not as nested property set objects. The convention is `bsi::ifc::prop::<PropertyName>`. Multiple properties may appear in one attributes block or across separate records for the same path.
 
@@ -1254,6 +1324,8 @@ Property data is attached via `IfcPropertySet` components. Each carries a `psetN
 
 ### 9.2. Material node
 
+<sub>💬 [Discuss §9.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A79.2%5D%20Material%20node&body=%2A%2ASection%3A%2A%2A%20%C2%A79.2%20%E2%80%94%20Material%20node%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Material definitions are expressed as standalone nodes carrying `bsi::ifc::material` (semantic identification), `bsi::ifc::presentation::diffuseColor`, `bsi::ifc::presentation::opacity`, and optionally material performance properties (`bsi::ifc-mat::prop::*`). Material nodes are not children of any building element; elements reference them via `inherits`.
 
 ```json
@@ -1290,6 +1362,8 @@ IFCY has no material node — a material is a first-class entity with its own UU
 
 ### 9.3. Material assignment via `inherits`
 
+<sub>💬 [Discuss §9.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A79.3%5D%20Material%20assignment%20via%20%60inherits%60&body=%2A%2ASection%3A%2A%2A%20%C2%A79.3%20%E2%80%94%20Material%20assignment%20via%20%60inherits%60%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Building elements reference their material node via the `inherits` map using the role key `"material"`. This allows the element to compositionally acquire the material's color, opacity, and semantic attributes.
 
 ```json
@@ -1325,6 +1399,8 @@ The material association is independently addressable and overridable — a diff
 
 ### 9.4. External classification
 
+<sub>💬 [Discuss §9.4](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A79.4%5D%20External%20classification&body=%2A%2ASection%3A%2A%2A%20%C2%A79.4%20%E2%80%94%20External%20classification%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Non-IFC classification systems are attached to element nodes as namespace-qualified attributes, following the same `<registry>::<domain>::class` pattern. Each carries a `code` and a resolvable `uri`.
 
 ```json
@@ -1359,6 +1435,8 @@ External classification references are consolidated into a `classifications` arr
 ---
 
 ### 9.5. Material performance data
+
+<sub>💬 [Discuss §9.5](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A79.5%5D%20Material%20performance%20data&body=%2A%2ASection%3A%2A%2A%20%C2%A79.5%20%E2%80%94%20Material%20performance%20data%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 Material-domain properties (LCA environmental indicators, structural, hygrothermal) are carried as `bsi::ifc-mat::prop::*` attributes on the material node. Compound values (e.g. lifecycle stage breakdown) are JSON objects with stage-code keys.
 
@@ -1408,6 +1486,8 @@ IFCY carries material performance data as `ifc:IfcPropertySet` components attach
 
 ### 10.1. Color and opacity
 
+<sub>💬 [Discuss §10.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A710.1%5D%20Color%20and%20opacity&body=%2A%2ASection%3A%2A%2A%20%C2%A710.1%20%E2%80%94%20Color%20and%20opacity%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Visual presentation is encoded as `bsi::ifc::presentation::diffuseColor` (RGB triple, each value 0.0–1.0) and `bsi::ifc::presentation::opacity` (0.0–1.0, where 1.0 is fully opaque). These may appear on element nodes directly or on material nodes (inherited by elements). ⚠ The normative relationship between element-level and material-level presentation attributes is under discussion.
 
 ```json
@@ -1445,6 +1525,8 @@ Visual rendering properties are carried as a standalone `IfcPresentationStyle` c
 ---
 
 ### 10.2. STEP provenance traceability
+
+<sub>💬 [Discuss §10.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A710.2%5D%20STEP%20provenance%20traceability&body=%2A%2ASection%3A%2A%2A%20%C2%A710.2%20%E2%80%94%20STEP%20provenance%20traceability%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 To support round-tripping and audit of IFC4.x-to-IFCX conversions, each node converted from a STEP entity carries the original STEP line text as `customdata.originalStepInstance`. This field is informational and not expected to be parsed by IFCX consumers. Its schema is declared locally in the file's `schemas` block.
 
@@ -1486,6 +1568,8 @@ IFCY preserves STEP provenance as `legacyStepRef` directly on the `ifc:<Type>Ide
 
 ### 11.1. Layer federation
 
+<sub>💬 [Discuss §11.1](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A711.1%5D%20Layer%20federation&body=%2A%2ASection%3A%2A%2A%20%C2%A711.1%20%E2%80%94%20Layer%20federation%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 Multiple IFCX files are federated by merging their `schemas` dictionaries (by key) and concatenating their `data` arrays in layer order. The resulting unified layer set is then composed using the rules below. Federation is the mechanism for multi-party model assembly (e.g. structural engineer adding data to architect's model).
 
 ► [RFC-IFC5-021: Federation and External References](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-021-federation-external-references.md) · [RFC-IFC5-033: Change, Transactions, and Collaboration](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-033-change-collaboration.md)
@@ -1500,6 +1584,8 @@ Multiple IFCY packages are federated by concatenating their `data` arrays in lay
 ---
 
 ### 11.2. Conflict resolution — last-writer-wins
+
+<sub>💬 [Discuss §11.2](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A711.2%5D%20Conflict%20resolution%20%E2%80%94%20last-writer-wins&body=%2A%2ASection%3A%2A%2A%20%C2%A711.2%20%E2%80%94%20Conflict%20resolution%20%E2%80%94%20last-writer-wins%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 When multiple records for the same `path` contribute conflicting attribute values, the last record in document/layer order wins. This is the current alpha behavior (aligned with USD LIVRPS "Local" and "Referenced" semantics). ⚠ Whether this should be the normative rule or whether conflicts should surface for explicit consumer resolution is a critical open question.
 
@@ -1517,6 +1603,8 @@ IFCY applies last-writer-wins at component-type granularity rather than attribut
 
 ### 11.3. Null as deletion
 
+<sub>💬 [Discuss §11.3](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A711.3%5D%20Null%20as%20deletion&body=%2A%2ASection%3A%2A%2A%20%C2%A711.3%20%E2%80%94%20Null%20as%20deletion%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
+
 A `null` value for a `children`, `inherits`, or `attributes` entry in a later layer signals deletion of that entry from the composed result. This enables targeted removal of graph edges or attribute values across layers without re-emitting the full node.
 
 ► [RFC-IFC5-011: Document-Level Structure](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-011-document-structure.md) · [RFC-IFC5-033: Change, Transactions, and Collaboration](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-033-change-collaboration.md)
@@ -1532,6 +1620,8 @@ IFCY signals component deletion by contributing a component with all-null `attri
 ---
 
 ### 11.4. Composition expansion
+
+<sub>💬 [Discuss §11.4](https://github.com/Drshelden/IFCV5Work/discussions/new?category=-tier-1-foundational&title=%5BSpec%20%C2%A711.4%5D%20Composition%20expansion&body=%2A%2ASection%3A%2A%2A%20%C2%A711.4%20%E2%80%94%20Composition%20expansion%0A%0A%2A%2AComment%20type%3A%2A%2A%20Editorial%20%7C%20Technical%20Defect%20%7C%20Semantic%20Concern%20%7C%20Compatibility%20Concern%20%7C%20Alternative%20Proposal%20%7C%20Evidence%20%7C%20Blocking%20Objection%20%7C%20General%20Support%0A%0A%2A%28delete%20all%20but%20one%29%2A%0A%0A---%0A%0A%2A%2AFeedback%3A%2A%2A%0A%0A%3C%21--%20Be%20specific%20%E2%80%94%20reference%20section%20numbers%20or%20quote%20spec%20text%20where%20relevant%20--%3E%0A%0A---%0A%0A%2A%2ASupporting%20evidence%20or%20examples%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20links%2C%20code%2C%20schema%20examples%2C%20prior%20art%20--%3E%0A%0A---%0A%0A%2A%2AQuestions%20for%20the%20working%20group%3A%2A%2A%0A%0A%3C%21--%20Optional%3A%20number%20each%20question%20Q1%2C%20Q2%2C%20...%20--%3E%0A)</sub>
 
 After federation, a consumer may perform full composition expansion: resolving `inherits` arcs recursively to flatten each node into its full set of inherited and local attributes, children, and inherits. The expanded (flat) form is used for display and query but is not the canonical exchange form. Cycle detection over `inherits`/`children` graphs is required before expansion; cycles are invalid.
 
@@ -1583,7 +1673,7 @@ IFCY carries ten additional open decisions beyond those shared with IFCX:
 </details>
 
 <details>
-<summary>IFCY delta</summary>
+<summary>IFCY additions</summary>
 
 These two sections exist only in IFCY and have no IFCX counterpart.
 

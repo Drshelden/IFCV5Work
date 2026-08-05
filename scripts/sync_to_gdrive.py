@@ -44,6 +44,7 @@ SYNC_FOLDERS = [
     "00 Architecture Overview",
     "01 Decision Register",
     "02 RFCs",
+    "05 Normative Specification",   # ← added
 ]
 
 # Folders synced recursively as raw binary files (not converted to Google Docs)
@@ -272,7 +273,7 @@ def sync_file(service, md_path, folder_id, index, dry_run, pandoc_bin):
         if not dry_run:
             file_id = create_gdoc(service, doc_name, docx_bytes, folder_id)
             index[rel_key] = file_id
-        print(f"  [CREATE] {md_path.name}")
+        print(f"  [CREATE] {md_path.name}  →  https://docs.google.com/document/d/{file_id}/edit")
 
 
 def main():
@@ -337,6 +338,15 @@ def main():
     if not args.dry_run:
         save_index(index)
         print(f"\n✓ drive_index.json updated ({len(index)} entries)")
+
+        # Print Google Docs links for spec files
+        spec_keys = [k for k in index if "05 Normative Specification" in k]
+        if spec_keys:
+            print("\n── Normative Specification Google Docs links ──")
+            for key in sorted(spec_keys):
+                fid = index[key]
+                name = Path(key).stem
+                print(f"  {name}  →  https://docs.google.com/document/d/{fid}/edit")
     else:
         print("\n✓ Dry run complete — no files changed")
 
