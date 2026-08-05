@@ -45,7 +45,7 @@ The committee should decide *where on this spectrum* to commit. This RFC argues 
 
 ## 3. The Ten OWA Capabilities and What Each Requires
 
-The "Open World View of IFC Next" (Schleussner, 2026) identifies ten capabilities that follow from an OWA premise. This section maps each to the specific architectural or syntactic requirement it creates in IFC5, and assesses where IFCX and IFC-ECS currently stand.
+The "Open World View of IFC Next" (Shelden, 2024) identifies ten capabilities that follow from an OWA premise. This section maps each to the specific architectural or syntactic requirement it creates in IFC5, and assesses where IFCX and IFC-ECS currently stand.
 
 ### 3.1 Federated Authorship
 *Many parties contribute to one description without overwriting each other.*
@@ -241,6 +241,8 @@ IFC5 does not declare a world assumption. Each RFC makes its own choice. This is
 **Q6.** Should IFC5 define a normative delta/patch format now (for live continuous data and additive authorship), or defer this to a later RFC? What is the minimum required to unblock the core schema work?
 
 **Q7.** Is the "standard + protocol" distinction (IFC5 defines not only what data is but how conforming participants must interact) in scope for the current working group, or should the protocol layer be a separate — but coordinated — specification effort?
+
+**Q8 — Conflict resolution policy for plain queries (⚠️ Decision required).** The `ProvenanceAuthority` ordering in the current model constitutes an implicit closed-world resolution rule for the common case. The committee must decide: (a) **Normative default with override:** adopt the authority ordering as the normative default for a plain query (e.g., "what is the height of wall W?"), require implementations to declare when they apply a different policy, and require that all opinions and their provenance remain accessible regardless; (b) **Open-world only:** remove the authority ordering, make conflict resolution implementation-defined with mandatory disclosure, and accept that two conformant tools may return different answers to the same query; (c) **Deferred:** treat conflict resolution as out of scope for this version and document that plain queries are undefined when sources disagree. Option (b) risks making "what is the height of wall W?" non-testable in a conformance suite. Option (a) risks re-introducing a form of LIVRPS precedence. The committee decision must be documented here and reflected in RFC-039.
 
 ---
 

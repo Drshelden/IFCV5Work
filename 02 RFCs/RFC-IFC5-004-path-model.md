@@ -70,6 +70,8 @@ Each path record carries a `children` map for one level of the hierarchy. The fu
 
 **Problem:** Closed-world single-tree assumption. No multi-party authorship. No multiple simultaneous views.
 
+> **Planned test case:** A Hello Wall variant demonstrating two simultaneous hierarchies addressing the same window entity by UUID is needed to confirm this design in practice. Until this example exists, the claim that multiple simultaneous views are supported remains unverified by a concrete example. See white paper §2.2.1 for the corrected prose.
+
 ### 4.2 Monolithic SpatialView component
 
 A single typed component carries the complete path→UUID map for a named view:
@@ -234,6 +236,8 @@ When expressing hierarchy as typed components (approaches 4.3–4.5), the direct
 **Q3.** The `pathLabel` field on a ref object is a new pattern in the schema. Should it be defined on `LocalRef` directly, or as a specialised ref type (`ContainedRef`) to avoid polluting all ref usage?
 
 **Q4.** For the composition slot path (`slotName`), what is the normative resolution order when a slot is addressed at multiple levels of nested typicals — innermost wins, or outermost wins?
+
+**Q5.** When an entity appears in a spatial view that differs from where its local transform was originally authored (e.g., a window component with a wall-relative transform, appearing under a storey in the default spatial view), which graph is authoritative for composing transforms? Options: (a) the SpatialView graph always governs transform composition and the authored transforms must be expressed relative to the view-parent; (b) transforms are always relative to the entity's physical parent (the wall), and the SpatialView is purely navigational with no bearing on coordinate frames; (c) each SpatialView declares a `transformSpace` policy. A Hello Wall variant with a non-identity wall transform (e.g., 30° rotation + offset) is required to test any proposed answer.
 
 ---
 

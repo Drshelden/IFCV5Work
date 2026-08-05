@@ -83,7 +83,7 @@ A very brief summary of the key features of IFCX include:
 
 ### 2.2 Limitations
 
-**2.2.1 Path conflating identity with position.** In IFCX, an entity's UUID is simultaneously its identity and its address in the scene tree. This creates a closed-world assumption: an entity has exactly one canonical position, so any organisation that places it differently (a structural model, a phase breakdown, a cost breakdown structure) must either adopt the same tree or create a parallel file with a different hierarchy, losing the shared UUID link. The spatial view concept proposed here separates these concerns: UUID = identity; path = navigational view. ([RFC-IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md), [RFC-IFC5-041](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-041-open-world-vs-closed-world.md))
+**2.2.1 Path conflating identity with position.** In IFCX, an entity's UUID is simultaneously its identity and its address in the scene tree. Paths are navigational aliases, not identity. The same UUID may appear in multiple simultaneous hierarchies — a window can be addressed both by its UUID and by paths in a spatial tree, a systems tree, or a discipline overlay simultaneously. The UUID is stable regardless of tree membership; the path is an address that depends on the view. Note that the current Hello Wall example demonstrates only a single spatial hierarchy; a multi-tree example is planned as a test case (see RFC-004). The spatial view concept proposed here separates these concerns: UUID = identity; path = navigational view. ([RFC-IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md), [RFC-IFC5-041](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-041-open-world-vs-closed-world.md))
 
 The inherited USD composition model (LIVRPS precedence) resolves disagreements by having one opinion win. This is appropriate for a VFX pipeline but inconsistent with multi-party authorship in AEC, where for example a design-intent value and an as-built surveyed value must coexist, each attributed to its source.
 
@@ -91,7 +91,11 @@ A key assumption of this paper is that multiple graphs, paths, and organizations
 
 **2.2.2 Incomplete relation coverage.** IFCX handles containment via `children` and type assignment via `inherits`. Hello Wall introduces `bsi::ifc::spaceBoundary` as an inline attribute. IFC4X has more than thirty `IfcRel*` families — voids, fills, path connections, interference, load groups, material associations, classification associations, and others — few of which map naturally to a scene hierarchy position or a flat attribute. Without a principled mechanism for relation coverage, lossless round-trip from IFC4X is not achievable. ([RFC-IFC5-008](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-008-relationship-modeling.md))
 
-**2.2.3 Composition without resolution.** In IFCX, a window instance record carries only its placement. Its class, geometry, material, and properties are in the window type entity, reachable only by resolving the `inherits` arc. A consumer that reads only the instance record sees an incomplete entity. Any tool — including AI reasoning systems — must implement the USD composition engine before it can answer "what is this object?" This is a practical barrier to machine consumption of IFCX data. ([RFC-IFC5-036](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-036-ai-machine-readability.md))
+**2.2.3 Composition without resolution.** In IFCX, a window instance record carries only its placement. Its class, geometry, material, and properties are in the window type entity, reachable only by resolving the `inherits` arc. A consumer that reads only the instance record sees an incomplete entity. Any tool — including AI reasoning systems — must implement the USD composition engine before it can answer "what is this object?" This is a practical barrier to machine consumption of IFCX data.
+
+> Note: the composition resolution requirement is not entirely new. IFC4 required similar logic for TypeObject → PropertySet → occurrence inheritance, expressed through domain schema prose rather than a formal composition model. IFCX replaces an implicit, idiosyncratic resolution mechanism with an explicit, first-principled one. The burden on consumers is comparable; the gain is that the behaviour is formally specified and testable.
+
+([RFC-IFC5-036](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-036-ai-machine-readability.md))
 
 ---
 
@@ -176,6 +180,8 @@ Key rules:
 - The `id` field is the component's own UUID — distinct from the entity UUID it describes. This enables components to be referenced, versioned, or superseded independently.
 - An entity exists by virtue of being referenced in at least one component. No entity-declaration step is required.
 - Multiple components of the same type from different parties coexist on the same entity. The provenance block — `assertedBy`, `assertedAt`, `authority` — enables consumers to apply their own resolution policy. Authority values include `design-intent`, `as-built`, `survey`, `inferred`, `ai-generated`, `regulatory`, and `materialized-from`.
+
+> **Note — pending committee decision:** The `authority` field ordering constitutes an implicit precedence rule (survey > as-built > design-intent > inferred). This is in tension with the principle that the architecture surfaces conflicts rather than resolving them. The committee must decide between three options: (a) retain the ordering as a normative default for plain queries, requiring consumers to declare when they want a different policy; (b) remove the precedence order and leave query behaviour as implementation-defined with mandatory disclosure; (c) keep provenance metadata but designate conflict resolution as out of scope for this version. Until this is resolved, implementations should treat the authority ordering as advisory only. See RFC-039 and RFC-041.
 
 ([RFC-IFC5-039](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-039-foundational-json-data-model.md), [RFC-IFC5-031](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-031-metadata-custom-data.md), [RFC-IFC5-041](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-041-open-world-vs-closed-world.md))
 
@@ -275,7 +281,9 @@ In the proposed architecture, properties are grouped by pset name, carry UCUM-co
 
 #### 3.3.3 Relationships as Components
 
-Every IFC4X `IfcRel*` family becomes a typed relation component. IFCX handles only two relationship types explicitly: containment via `children`, and type assignment via `inherits`. Other relationships are expressed as inline attributes without a principled general model. For example, space boundary in IFCX is an attribute embedded on the boundary geometry node:
+Every IFC4X `IfcRel*` family becomes a typed relation component. IFCX handles only two relationship types explicitly: containment via `children`, and type assignment via `inherits`. Other relationships are expressed as inline attributes without a principled general model.
+
+> **On the absence of IfcRel\* in IFCX:** IfcRel\* objectified relationships are deliberately absent from IFCX. In IFC4X Express, they provided modularity — through inverse attributes and abstract supertypes — within a monolithic global schema. In an ECS model, typed components with explicit identity and provenance already provide this modularity, making objectified relationships redundant. Complex many-to-many relationships such as system membership and material associations are representable through typed relation components (see the Domestic Hot Water example in the buildingSMART reference repo). Note: this design decision remains contested; see RFC-008 for the open comparison. For example, space boundary in IFCX is an attribute embedded on the boundary geometry node:
 
 **IFCX** (`hello-wall.ifcx`):
 ```json
@@ -402,6 +410,8 @@ This fragmented structure couples identity to position — each entity has exact
 Path segment labels are carried on the `relatedObjects`/`relatedElements` entries of the IfcRel components via an optional `pathLabel` field, co-located with the containment assertion and its provenance.
 
 ([RFC-IFC5-004](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-004-path-model.md), [RFC-IFC5-016](https://github.com/Drshelden/IFCV5Work/blob/master/02%20RFCs/RFC-IFC5-016-spatial-structure.md))
+
+> **Known limitation — transform composition:** The current Hello Wall example works correctly only because the wall has an identity transform (no rotation, no offset). When position is decoupled from identity and an entity appears in a spatial view that differs from where its local transform was originally authored, the authoritative coordinate frame for composing transforms is undefined. Any spatial-view proposal must specify which graph is used for transform composition, and must demonstrate correctness with a non-identity wall transform. This is an open design question tracked in RFC-004 §9.
 
 #### 3.4.2 The Typical — Replacing IfcTypeObject and `inherits`
 

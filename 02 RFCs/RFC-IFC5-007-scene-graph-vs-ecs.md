@@ -63,6 +63,8 @@ Key structural fields: `entityGuid` (entity reference), `componentGuid` (compone
 
 Both have Hello Wall examples in `03 Reference Examples/`.
 
+**On the removal of IfcRel\* objectified relationships:** In IFC4 Express, objectified relationships (IfcRel\* entities) served a specific purpose: they provided schema-level modularity through inverse attributes and abstract supertypes, allowing new relationship types to be added without modifying existing entity definitions. In an ECS model this mechanism is unnecessary — any typed component can carry provenance and identity, and new relationship semantics can be expressed as new component types without touching existing ones. The IFC 5 development work therefore removes IfcRel\* as a first-class construct. This decision is contested; see RFC-008 for the open comparison.
+
 ## 3. Existing IFC4.x Convention
 
 IFC4.x is neither a scene graph nor an ECS. It uses explicit relationship entities (IfcRelAggregates, IfcRelContainedInSpatialStructure) to organize objects, and a deep inheritance hierarchy for type classification.
@@ -160,6 +162,8 @@ Topic 58 of the source inventory lists 20 ambiguities that require explicit arch
 15. How are conflicts between inherited and directly authored values resolved? **(IFC5-010)**
 16. Which information is authoritative when hierarchy and explicit relationships disagree? **(IFC5-008)**
 17. Which information is authoritative when semantic and mesh geometry disagree? **(IFC5-014)**
+
+   > **Topic 17 — candidate resolution (from prototype evidence):** The louistrue geometry-tiers prototype proposes a tier-authority rule: the highest tier present (procedural > BRep > mesh) is authoritative; lower tiers are derived caches. A derived tier carries a content hash (JCS + SHA-256) of its source, allowing consumers to detect freshness without re-deriving. This is one concrete answer; the committee should decide whether to adopt it. See RFC-014 §5 for the tradeoff table.
 18. What constitutes lossless IFC4.x migration? **(IFC5-018)**
 19. How are partial models distinguished from invalid models? **(IFC5-019)**
 20. What minimum subset must every IFCX implementation support? **(IFC5-038)**

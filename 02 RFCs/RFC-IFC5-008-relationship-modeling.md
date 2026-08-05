@@ -76,6 +76,8 @@ Parent-child hierarchy encodes decomposition and containment. Semantic relations
 
 **Q4.** How are cross-file relationships expressed and validated?
 
+**Q5 — Many-to-many relationship comparison (action required).** The committee requires a side-by-side representation of the following relationships in both approaches — (1) ECS typed component style, (2) IfcRel\* objectified style — for exactly these three cases: (a) IfcRelAssociatesMaterial (many walls, one material layer set), (b) IfcRelInterferesElements (two elements, optional description of interference geometry), (c) IfcRelReferencedInSpatialStructure (one element referenced in multiple spatial zones without being contained in any). The comparison must show the data structure, the query pattern, and the provenance attachment point for each. This comparison is a precondition for closing the relationship modeling decision.
+
 ## 8. Prototype
 
 - **Required:** Yes

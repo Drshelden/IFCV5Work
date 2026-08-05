@@ -26,6 +26,8 @@ Leaving them implicit creates ambiguity: future serialization formats, binary en
 
 This RFC proposes to make the foundational JSON data model explicit, declare what is normative and what is a default choice, and identify where international standards apply.
 
+> **Known issue — conflict resolution policy:** The current model defines a `ProvenanceAuthority` enum with an implicit precedence order (survey > as-built > design-intent > inferred). This is in tension with the stated principle that the architecture surfaces conflicts rather than auto-resolving them. A conformance test suite cannot be built until this is resolved: "what is the height of wall W when two packages disagree?" must have one normatively defined answer. See RFC-041 for the open-world dimension of this question. A committee decision is required; options are described in the white paper and in RFC-041 Q8.
+
 ---
 
 ## 2. Background
@@ -163,6 +165,8 @@ This convergence suggests the component is a foundational primitive, not an inci
 ```
 
 The structural fields differ. Whether a minimum common structure can be defined — while allowing both path-based and GUID-based entity references — is a key question for this RFC.
+
+**Component `id` and content hashing:** Each component's `id` is a UUID that uniquely identifies this version of the component. To support staleness detection in derived or cached components, a component MAY carry a `sourceHash` field of the form `"sha256-<hex>"` containing the RFC 8785 JCS canonical hash of the source component from which this component was derived. A consumer resolves a component as `fresh` (hash matches current source), `stale` (hash does not match), or `unknown` (no hash present). This pattern is a candidate for normative status; see RFC-033 §4.5 for the change and collaboration implications.
 
 ---
 

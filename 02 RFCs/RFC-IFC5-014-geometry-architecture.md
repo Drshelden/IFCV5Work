@@ -41,6 +41,8 @@ In IFCX Hello Wall examples, geometry appears as `usd::usdgeom::mesh` nodes with
 
 IFC5 normalizes on tessellated mesh geometry. Parametric geometry may be stored in `customdata` as a migration aid but is not normative.
 
+> **Known limitation:** Both current reference examples use mesh-only geometry. IFC4X geometry is predominantly procedural (extrusions, boolean operations, sweeps); a mesh-only representation is therefore lossy by construction relative to the source, not merely by approximation. The `customdata` migration field preserves the original bytes but not their semantic meaning. This bears on RFC-018 Q4 (backward compatibility) and on the absorbed Topic 17 in RFC-007 (geometry authority). A procedural geometry representation (§4.2 or §4.3) is required for a non-lossy round-trip.
+
 ### 4.2 Parametric geometry retained as schema types
 
 IFC5 includes schema definitions for parametric geometry (extrusions, profiles, B-rep). Tessellation is a derived output, not the authoritative representation.
@@ -62,6 +64,7 @@ Geometry is not embedded in IFCX files. It is referenced by URI to external asse
 | Quantity accuracy | From mesh | From parametric | From parametric | Depends |
 | File size | Large (meshes) | Small | Large | Small |
 | BIM authoring support | Low | High | High | Low |
+| Hash-verifiable derivation | `sha256-hex` on derived tier | Consumer detects fresh / stale / unknown without re-deriving | Requires canonical serialisation (RFC-006 Q1 / RFC 8785 JCS) | Applicable to §4.2 and §4.3; resolves the "two sources of truth" risk |
 
 ## 6. Recommendation
 
@@ -69,9 +72,9 @@ Geometry is not embedded in IFCX files. It is referenced by URI to external asse
 
 ## 7. Open Questions
 
-**Q1.** Are the mesh geometries in IFCX examples authoritative, or derived outputs of parametric construction?
+**Q1 — are meshes authoritative or derived?** *Evidence submitted (louistrue, Discussion #3):* In the geometry-tiers prototype, meshes are derived. Derivation is machine-checkable via a canonical content hash (RFC 8785 JCS + SHA-256) written on the derived component. A consumer resolves the cached mesh as fresh, stale, or unknown relative to its source without re-deriving. This demonstrates satisfiability on a non-upstream variant. The committee should decide whether to adopt content hashing as a normative requirement for derived geometry.
 
-**Q2.** Must receivers be able to distinguish design-intent geometry from visualization geometry?
+**Q2 — must receivers distinguish design-intent from visualization geometry?** *Evidence submitted (louistrue, Discussion #3):* In the prototype, tiers live in separate tables; a consumer declares which tiers it wants, and table access is logged so "a conformant mesh-only consumer reads no other tier's table" is observable and testable. The cost: a node's geometry requires the index and loader, losing schema-free parseability (RFC-036 §4.5). This tension cannot be designed away — it must be decided. The committee should choose between (a) requiring tier separation with the associated tooling cost, or (b) allowing co-location of tiers with derivation marked by convention only.
 
 **Q3.** How is geometry shared between multiple semantic objects (mapped representations)?
 

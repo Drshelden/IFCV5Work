@@ -52,6 +52,10 @@ Each attribute may carry optional provenance metadata (author, timestamp, source
 
 Change management is a platform concern. IFC5 files are snapshots. Change tracking systems (Git, CDE platforms) manage revisions externally.
 
+### 4.5 Content-hash supersession (candidate approach)
+
+A component that is derived from or intended to supersede another carries: (1) the source component's `id` in a `supersedesId` field, and (2) a `sourceHash` field (`sha256-<hex>`) containing the RFC 8785 JCS canonical hash of the source component at derivation time. A consumer can then determine whether the derived component is `fresh` (hash matches the source as currently known), `stale` (hash differs — source has changed since derivation), or `unknown` (no hash). This pattern is lightweight, requires no central registry, and is machine-verifiable without trusting the producer. It is compatible with the open-world assumption: a missing `supersedesId` means the component is independent, not that no supersession exists.
+
 ## 5. Tradeoffs
 
 | Dimension | OwnerHistory | Changeset layers | Attr provenance | No semantics |
