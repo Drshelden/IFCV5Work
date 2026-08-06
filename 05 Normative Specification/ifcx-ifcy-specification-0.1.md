@@ -2,15 +2,11 @@
 
 **Version:** v0.1 Alpha  
 **Date:** 2026-08-05  
-**Source repository:** [buildingSMART/IFC5-development](https://github.com/buildingSMART/IFC5-development)  
-**Reference example:** `examples/Hello Wall/hello-wall.ifcx`  
-**Schema:** `schema/ifcx.tsp` (TypeSpec) → `schema/out/ts/ifcx.d.ts` (generated TypeScript)  
-**RFC repository:** [Drshelden/IFCV5Work](https://github.com/Drshelden/IFCV5Work/tree/master/02%20RFCs)
 **Cross-reference:** [GitHub](https://github.com/Drshelden/IFCV5Work/blob/master/05%20Normative%20Specification/ifcx-ifcy-specification-0.1.md) · [Google Docs](https://docs.google.com/document/d/1VSnRbWFbItd6-dblo_by6QsI6HpOzylGQjFhQutD5Tc)  
 
 > **Status note.** IFCX is in active architectural development. Decisions marked ⚠ are under active committee discussion; the behavior described reflects the current `hello-wall.ifcx` example and buildingSMART alpha conventions, not a finalized normative standard.
 
-> **Reading note (v3).** Collapsed **▶ IFCY delta** blocks are embedded throughout. Blocks after individual sub-sections show how IFCY approaches the same topic differently. Blocks at the end of numbered sections cover IFCY-only features with no IFCX counterpart.
+> **Reading note.** Collapsed **▶ IFCY delta** blocks are embedded throughout. Blocks after individual sub-sections show how IFCY approaches the same topic differently. Blocks at the end of numbered sections cover IFCY-only features with no IFCX counterpart.
 
 ---
 
